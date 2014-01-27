@@ -2,7 +2,7 @@ title:            Greenhouse Blog
 description:      Describe your website here.
 disqus_shortname: greenhouseci
 #Your site's domain goes here. Leave localhost server or blank when working locally.
-url:              http://localhost:4000
+url:              http://blog.greenhouseci.com
 
 # Owner/author information
 owner:
