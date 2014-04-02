@@ -2,7 +2,8 @@ title:            Greenhouse Blog
 description:      Simple and secure continuous integration for mobile apps.
 disqus_shortname: greenhouseci
 #Your site's domain goes here. Leave localhost server or blank when working locally.
-url:              http://blog.greenhouseci.com
+#url:              http://blog.greenhouseci.com
+url:              http://localhost:4000
 
 # Owner/author information
 owner:
