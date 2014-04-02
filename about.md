@@ -4,9 +4,7 @@ permalink: /about/
 title: About Greenhouse
 tags: [Greenhouse]
 image:
-  feature: abstract-5.jpg
-  credit: dargadgetz
-  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
+  feature: greenhouse_bg_cropped_blog_feature_1024x256.jpg
 share: true
 ---
 
