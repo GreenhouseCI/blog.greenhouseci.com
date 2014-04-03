@@ -28,7 +28,7 @@ Tests overview
 ==============
 In the test view, each test can be further expanded to see which class and  method was run, along with the test status.  
 
-In case of test failures, the stacktrace is also included, so you can easily pinpoint where the test occurred.
+In case of test failures, the stacktrace is also included, so you can easily pinpoint where the error occurred.
 
 
 ![Our new improved build view]({{ site.url }}/assets/expanded_test_view.png)
