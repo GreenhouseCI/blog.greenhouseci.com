@@ -4,6 +4,7 @@ title:  "We Have Added Android Unit Test Support!"
 date:   2014-04-03 12:18:52
 categories: Greenhouse update
 share: true
+comments: true
 ---
 
 Good news, everyone!  

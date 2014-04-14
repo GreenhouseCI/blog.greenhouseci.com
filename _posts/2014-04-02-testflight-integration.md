@@ -4,7 +4,7 @@ title:  "TestFlight Integration for iOS"
 date:   2014-04-02 12:18:52
 categories: Greenhouse update
 share: true
-
+comments: true
 ---
 Greenhouse supports publishing your iOS builds to TestFlight.
 This means that you can easily push your build artefacts to your testers to get instant feedback.
