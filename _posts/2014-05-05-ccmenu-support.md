@@ -27,7 +27,7 @@ Set up CCMenu
 ![CCMenu screenshot	]({{ site.url }}//assets/ccmenu_select_projects.png)
 
 
-**That's it, you'e done!**
+**That's it, you're done!**
 
 What's next?
 ------------
