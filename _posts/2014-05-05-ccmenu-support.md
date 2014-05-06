@@ -31,7 +31,7 @@ Set up CCMenu
 
 What's next?
 ------------
-We're still working hard on adding testing support for iOS projects so keep an eye out on our blog for updates.
+We're still working hard on adding testing support for iOS projects so keep an eye on our blog for updates.
 
 Do you use a 3rd party service that we don't support yet? If so then please [let us know](mailto:team@greenhouseci.com) and we'll do our best to make the integration as streamlined as possible!
 
