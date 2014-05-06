@@ -11,7 +11,7 @@ We're proud to announce a new update to Greenhouse - support for [CCMenu][ccmenu
 
 [CCMenu][ccmenu] is a tool for OS X that displays the status of your projects right in your Mac's menu bar. It also sends notifications when a build status changes, provides direct access to the relevant project pages and has some other neat features. 
 
-Of cource our support is not limited to just CCMenu. All apps that use the same data format as CCMenu are supported like [BuildNotify][BuildNotify] for Linux and [CCTray][CCTray] for windows. 
+Of course our support is not limited to just CCMenu. All apps that use the same data format as CCMenu are supported like [BuildNotify][BuildNotify] for Linux and [CCTray][CCTray] for windows. 
 
 ![CCMenu screenshot	]({{ site.url }}//assets/ccmenu_tray_screenshot.png)
 
