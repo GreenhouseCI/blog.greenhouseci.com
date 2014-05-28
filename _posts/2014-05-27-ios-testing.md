@@ -1,22 +1,22 @@
 ---
 layout: post
-title:  "iOS testing is live"
+title:  "iOS Testing is Live"
 date:   2014-05-28 12:19:45
 categories: Greenhouse update
 share: true
 comments: true
 ---
 
-During our latest development phase, we have implemented iOS unit testing with XCTests.
-We have tried to keep the whole process as simple as possible. This means that all you need to do is to add your project, we scan it for tests and run the tests on each build if they are available. 
+In the latest Greenhouse update, we have implemented iOS unit testing with XCTests.
+We have tried to keep the whole process as simple as possible. This means that all you need to do is to add your project, we scan it for tests and run the tests on each build automatically if they are available. 
 
 Note that if you have any existing projects, you might have to rescan the project in the project settings view in order for the tests to be detected.
 
-We have kept the testing user interface the same as for Android.
+The test report screen shows you a simple overview of all passed and failed tests including the failure reason so you can quickly identify what's broken.
 
 ![iOS build view]({{ site.url }}/assets/ios_test_view.png)
 
-The test view gives an detailed overview of the tests, so you can quickly review your current build status. 
+The test view gives a detailed overview of the tests, so you can quickly review your current build status. 
 
 It provides specific information about where the error occurred, including the stacktrace, so you can zoom in fast on the underlying problem in your code.
 
