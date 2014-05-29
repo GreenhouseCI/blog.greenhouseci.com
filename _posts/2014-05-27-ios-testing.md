@@ -30,8 +30,6 @@ The test report screen shows you a simple overview of all passed and failed test
 
 ![iOS build view]({{ site.url }}/assets/ios_test_view.png)
 
-The test view gives a detailed overview of the tests, so you can quickly review your current build status. 
-
 It provides specific information about where the error occurred, including the stacktrace, so you can zoom in fast on the underlying problem in your code.
 
 ![iOS build log]({{ site.url }}/assets/ios_build_log.png)
@@ -43,7 +41,7 @@ We are moving as fast as possible to get out of our beta phase. Here's a quick r
 
 Team support
 ------------
-Most of Greenhouse users are not one man armies, but part of a professioanl team developing mobile applications. Continuous integration is not only useful for developers, but testers and designers as well. The next major feature will be adding support to grant access in Greenhouse to other people that your work with.
+Most of Greenhouse users are not one man armies, but part of a professional team developing mobile applications. Continuous integration is not only useful for developers, but testers and designers as well. The next major feature will be adding support to grant access in Greenhouse to other people that your work with.
 
 More test frameworks
 --------------------
@@ -54,7 +52,7 @@ UI tests
 --------
 Unit tests cannot, unfortunately, catch all of the bugs. This holds especially true for mobile devices for which user interface design is of the utmost importance. The design of the user interface can make or break your app!
 
-This was a brief overview of what's been cooking at the GreenhouseCI headquarters. If you would like see favorite framework be supported by Greenhouse or have us provide integration with that awesome third-party service that you love, please let us know. We'll see what we can do. 
+This was a brief overview of what's been cooking at the GreenhouseCI headquarters. If you would like to see your favorite framework supported by Greenhouse or have us provide integration with that awesome third-party service that you love, please let us know. We'll see what we can do. 
 
 **Stay tuned!**
 
