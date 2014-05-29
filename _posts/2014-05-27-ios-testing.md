@@ -7,10 +7,24 @@ share: true
 comments: true
 ---
 
-In the latest Greenhouse update, we have implemented iOS unit testing with XCTests.
-We have tried to keep the whole process as simple as possible. This means that all you need to do is to add your project, we scan it for tests and run the tests on each build automatically if they are available. 
+More great news!
 
-Note that if you have any existing projects, you might have to rescan the project in the project settings view in order for the tests to be detected.
+In the latest Greenhouse update, we have implemented iOS unit testing with [XCTests][xctests].
+
+We have tried to keep the whole process as simple as possible. This means that all you need to do is to add your project, we scan it for tests and run the tests on each build automatically if they are available. For those of you who have tried the [Android testing][android-testing], the process is exactly the same.
+
+If you have any existing projects, you might have to rescan the project in the project settings view in order for the tests to be detected. For that you have to navigate to project settings page by clicking the wrench icon on your project builds view.
+
+![Project builds]({{ site.url }}/assets/builds.png)
+
+Now up you will be shown project settings. Navigate to build section and hit the rescan button next to branch selection.
+
+![Project builds]({{ site.url }}/assets/rescan-ios.png)
+
+The rescan button triggers our builder to update the configurations and test targets from selected branch.
+This button comes in handy also in situations where you have created a new build conficuration.
+
+And that's it, no more configuration magic to get the running!
 
 The test report screen shows you a simple overview of all passed and failed tests including the failure reason so you can quickly identify what's broken.
 
@@ -43,3 +57,7 @@ Unit tests cannot, unfortunately, catch all of the bugs. This holds especially t
 This was a brief overview of what's been cooking at the GreenhouseCI headquarters. If you would like see favorite framework be supported by Greenhouse or have us provide integration with that awesome third-party service that you love, please let us know. We'll see what we can do. 
 
 **Stay tuned!**
+
+
+[xctests]: https://developer.apple.com/library/ios/documentation/ToolsLanguages/Conceptual/Xcode_Overview/UnitTestYourApp/UnitTestYourApp.html "XCTest framework"
+[android-testing]: http://blog.greenhouseci.com/greenhouse/update/android-testing/ "Android testing"
