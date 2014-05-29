@@ -17,14 +17,14 @@ If you have any existing projects, you might have to rescan the project in the p
 
 ![Project builds]({{ site.url }}/assets/builds.png)
 
-Now up you will be shown project settings. Navigate to build section and hit the rescan button next to branch selection.
+Now the project settings page will be shown in the top. Navigate to the build section and hit the rescan button next to branch selection.
 
 ![Project builds]({{ site.url }}/assets/rescan-ios.png)
 
-The rescan button triggers our builder to update the configurations and test targets from selected branch.
+The rescan button triggers our builder to update the configurations and test targets from the selected branch.
 This button comes in handy also in situations where you have created a new build conficuration.
 
-And that's it, no more configuration magic to get the running!
+And that's it, no more configuration magic to get it running!
 
 The test report screen shows you a simple overview of all passed and failed tests including the failure reason so you can quickly identify what's broken.
 
