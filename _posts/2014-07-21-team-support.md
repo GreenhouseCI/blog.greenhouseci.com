@@ -11,21 +11,33 @@ Beta nevermore!
 --------------
 
 It has certainly been a busy summer trying to keep up with WWDC, hacking on Swing and watching the World Cup.
-Nevertheless, we have perservered and worked hard on bringing Greenhouse out of beta. 
+Nevertheless, we have persevered and worked hard on bringing Greenhouse out of beta. 
 
-As the latest addition to Greenhouse, we have added team support which allows you to grant access to builds, artefacts and build logs to your team mates and customers.
+As the latest addition to Greenhouse, we have added team support which allows you to grant access to builds, artefacts and build logs to your teammates and customers.
 This way there's no more needless account sharing with third parties - users should only be able to see the projects relevant for them, no more, no less. Good for both security and general housekeeping.
 So, without further ado, let's check it out!
 
 Team support
 ------------
 
+
+![Teams overview]({{ site.url }}/assets/team-support-teams-overview.png)
+
 Firstly, just to point out, we have redesigned the user settings page for managing teams. 
 What once was just a boring old gravatar with your name on it has now been transformed into team selection menu. It indicates which team context you are currently working in.
 
-Projects added within a team context are are only visible to the members of that team.
+![Team selection]({{ site.url }}/assets/team-support-team-selection.png)
+
+Projects added within a team context are only visible to the members of that team.
+
+![Team context]({{ site.url }}/assets/team-support-context-example.png)
+
 Note that there's no limit on the number of teams you can create, only on the team members. 
+
 In the manage teams page, you can invite existing Greenhouse users to your team.
+
+![Invite team members]({{ site.url }}/assets/team-support-invite.png)
+
 
 An e-mail confirmation will be sent to the invited user which must be accepted before a user is added to the team.
 
