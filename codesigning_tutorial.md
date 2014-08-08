@@ -35,7 +35,7 @@ Be sure to leave the file format filled as **Certificate (.cer)**.
 ![Keychain save dialog]({{ site.url }}/images/keychain-certificate-dialog-cropped.png)
 
 
-<h2 id="private_file">Private key</h2>
+<h2 id="private_key">Private key</h2>
 Now, repeat the process as in the previous process, except this time be  sure to leave the file format filed as **Personal Information Exchange (.p12)**.
 
 ![Keychain save dialog]({{ site.url }}/images/keychain-save-as-cropped.png)
