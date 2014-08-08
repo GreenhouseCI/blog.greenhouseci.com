@@ -14,8 +14,7 @@ How to add iOS projects to Greenhouse
 Regular iOS projects should work out of the box with Greenhouse. However, there might be some extra hassle when it comes to Cocoapods projects. The following tutorial will demonstrate who to fix and avoid the most common problems with Cocoapods.
 
 
-Cocoapods
-==========
+<h2>Cocoapods</h2>
 Most iOS developers nowadays are using Cocoapods for dependency management. While it is an excellent tool, it is a bit tricky to set up correctly, at least for a CI environment.
 
 Two things that are most likely to go wrong with Pods are:
@@ -24,8 +23,8 @@ Two things that are most likely to go wrong with Pods are:
 2. Not marking your schemes as shared
 
 
-Selecting the correct project 
------------------------------
+<h2 id="select_project">Selecting the correct project</h2>
+
 If your project is using **Cocoapods**, you must select the project the name of which ends with **[workspace]**.
 
 ![Project selection]({{ site.url }}/images/project-selection-cropped.png)
@@ -33,7 +32,7 @@ If your project is using **Cocoapods**, you must select the project the name of 
 Similarly, the respective configuration's name must end with **[scheme]**.
 
 
-Sharing your schemes
+<h2 id="sharing_schemes">Sharing your schemes</h2>
 --------------------
 Schemes that are not marked shared in Xcode cannot be built outside Xcode, thus excluding any CI server as well.
 
