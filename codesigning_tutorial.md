@@ -12,8 +12,7 @@ Unfortunately Apple has made the whole code signing process (some might go to as
 When you are adding your project to Greenhouse, you need three things: a **provisioning profile**, **developer certificate**, and a **private key**.
 
 
-Developer Certificate
-----------------------
+<h2 id="developer_certificate">Developer Certificate</h2>
 
 First, we will get find your **developer certificate**. 
 
@@ -36,8 +35,7 @@ Be sure to leave the file format filled as **Certificate (.cer)**.
 ![Keychain save dialog]({{ site.url }}/images/keychain-certificate-dialog-cropped.png)
 
 
-Private key 
-----------------------
+<h2 id="private_file">Private key</h2>
 Now, repeat the process as in the previous process, except this time be  sure to leave the file format filed as **Personal Information Exchange (.p12)**.
 
 ![Keychain save dialog]({{ site.url }}/images/keychain-save-as-cropped.png)
@@ -46,7 +44,7 @@ Finally, you will be prompted for the **certificate export password**. The passw
 
 That's it. Now all you need is the corresponding provisioning profile.
 
-Provisioning Profile
+<h2 id="provisioning_profile">Provisioning Profile</h2>
 --------------------
 Select the appropriate provisioning profile from <a href="https://developer.apple.com/account/ios/profile/profileList.action">Apple Developer portal</a>.
 Download it and save it somewhere.
