@@ -1,12 +1,16 @@
 ---
 layout: page
 permalink: /tutorials/codesigning_tutorial/
-title: "Tutorial: How to add iOS Credentials to Greenhouse"
+title: "Greenhouse Tutorial"
 tags: [tutorial]
 image:
   feature: greenhouse_bg_cropped_blog_feature_1024x256.jpg
 share: true
 ---
+
+
+How to add iOS Credentials to Greenhouse
+========================================
 
 Unfortunately Apple has made the whole code signing process (some might go to as far as to say needlessly) complicated. 
 When you are adding your project to Greenhouse, you need three things: a **provisioning profile**, **developer certificate**, and a **private key**.
@@ -37,7 +41,7 @@ Be sure to leave the file format filled as **Certificate (.cer)**.
 
 
 Private key 
-----------------------
+-----------
 Now, repeat the process as in the previous process, except this time be  sure to leave the file format filed as **Personal Information Exchange (.p12)**.
 
 ![Keychain save dialog]({{ site.url }}/images/keychain-save-as-cropped.png)

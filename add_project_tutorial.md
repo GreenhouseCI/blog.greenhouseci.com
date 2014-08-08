@@ -1,15 +1,15 @@
 ---
 layout: page
 permalink: /tutorials/add_project/
-title: "Tutorial: How to add iOS projects to Greenhouse"
+title: "Greenhouse Tutorial"
 tags: [tutorial]
 image:
   feature: greenhouse_bg_cropped_blog_feature_1024x256.jpg
 share: true
 ---
 
-Introduction
-============
+How to add iOS projects to Greenhouse
+===============================================
 
 Regular iOS projects should work out of the box with Greenhouse. However, there might be some extra hassle when it comes to Cocoapods projects. The following tutorial will demonstrate who to fix and avoid the most common problems with Cocoapods.
 
