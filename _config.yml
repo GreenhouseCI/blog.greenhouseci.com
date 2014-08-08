@@ -3,6 +3,7 @@ description:      Simple and secure continuous integration for mobile apps.
 disqus_shortname: greenhouseci
 #Your site's domain goes here. Leave localhost server or blank when working locally.
 url:              http://blog.greenhouseci.com
+#url:              
 
 # Owner/author information
 owner:
@@ -26,7 +27,7 @@ owner:
 background: ps_neutral.png
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   UA-42648687-3
+google_analytics:   UA-42648687-1
 google_verify:      
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:         
