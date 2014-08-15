@@ -50,9 +50,15 @@ Make sure that the **shared** checkbox is marked in front of your scheme, then c
 
 Finally, once you have marked the scheme as shared, you will have to add the files that Xcode has generated to your git repository as well.
 
-{% highlight ruby %}
-    git commit -am "fixing shared scheme"
-{% endhighlight %}
+1. Navigate to **Source Control > Commit**.
+
+2. Select the **Shared Data** folder.
+
+3. Enter your commit message in the text field.
+
+4. Select the **Push to remote** option 
+
+5. Click the **Commit Files** button.
 
 Keep in mind that if you have an existing project at Greenhouse, then you will have to rescan your project after pushing the changes to your git repository. Otherwise the new configurations will not show up. You rescan your project for new configurations under your projects settings view:
 
