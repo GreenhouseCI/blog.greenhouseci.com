@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /tutorials/codesigning_tutorial_new/
+permalink: /tutorials/codesigning_tutorial/
 title: "Greenhouse Tutorial"
 tags: [tutorial]
 image:
