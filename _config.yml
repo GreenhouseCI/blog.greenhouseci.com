@@ -2,7 +2,7 @@ title:            Greenhouse Blog
 description:      Simple and secure continuous integration for mobile apps.
 disqus_shortname: greenhouseci
 #Your site's domain goes here. Leave localhost server or blank when working locally.
-url:              http://blog.greenhouseci.com
+# url:              http://blog.greenhouseci.com
 static_files: assets/favicon.ico
 upload: assets/favicon.ico
 
@@ -45,7 +45,6 @@ timezone:    America/New_York
 future:      true
 pygments:    true
 markdown:    kramdown
-
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   /:categories/:title/
 

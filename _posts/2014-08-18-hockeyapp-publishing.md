@@ -22,11 +22,10 @@ In the project view, click on the spanner icon,
 
 this leads you to the project settings view.
 
-In project settings you can see the HockeyApp section.
-By expanding it, you will presented with the following fields
+In project settings you can see the Publishing section on the sidebar. 
+By clicking it, the fields for configuring HockeyApp are displayed.
 
 <img class="post-img" src="{{ site.url }}/assets/hockeyapp.png" />
-
 
 To use HockeyApp:
 <ul>

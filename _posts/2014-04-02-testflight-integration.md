@@ -21,8 +21,8 @@ In the project view, click the spanner icon,
 
 this leads you to the project settings view.
 
-In project settings you can see the TestFlight section.
-By expanding it, you will presented with the following fields
+In project settings you can see the Publishing section on the sidebar.
+By clicking on it, you will be presented with the following fields:
 
 <img class="post-img" src="{{ site.url }}/assets/testflight.png" />
 
