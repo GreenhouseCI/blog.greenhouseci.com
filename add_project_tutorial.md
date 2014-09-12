@@ -62,6 +62,6 @@ Finally, once you have marked the scheme as shared, you will have to add the fil
 
 Keep in mind that if you have an existing project at Greenhouse, then you will have to rescan your project after pushing the changes to your git repository. Otherwise the new configurations will not show up. You rescan your project for new configurations under your projects settings view:
 
-![Recanning project]({{ site.url }}/assets/rescan-ios.png)
+![Recanning project]({{ site.url }}/assets/rescan.png)
 
 That's it!
