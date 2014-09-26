@@ -94,8 +94,8 @@ At the very moment you select/drop the key, we will peek into it and check if it
 password protected. If we discover that the key is indeed protected, we kindly ask you to 
 write the passphrase to the input field that appears under the SSH key field.
 
-You might expect that as we have emphasized `SSH` so much, the `http(s)://` URLs
-won't do the trick any more. And that's true. With SSH key auth you have to use
+You might expect that as we have emphasized `SSH` so much, the `http(s)://` URLs ##  "won't do the trick any more" -> this is written assuming the reader bothers to read every previous
+won't do the trick any more. And that's true. With SSH key auth you have to use ## section, even though those sections will not be relevant for them (I probably won't read about public/basic auth if I use SSH keys).
 `ssh://` prefixed URL and none other than you can provide it.
 
 In general the given URL should be something of the form
@@ -116,7 +116,7 @@ git@bitbucket.org:username/repo-name.git
 
 After you have filled in the repository field and have selected the SSH private key, you can
 hit the green "continue" button and you will be redirected to the
-[select configuration](#select-configuration) part.
+[select configuration](#select-configuration) part.  ## view? section? screen?
 
 ![SSH key protected Git repository](add-repo-ssh-key.png "SSH key protected Git repository")
 
@@ -125,10 +125,10 @@ hit the green "continue" button and you will be redirected to the
 As soon as you submit a repository, either public or private, Greenhouse takes a first look
 at it by listing the `branches` in this repository.
 The next step for you is to **select the branch** you want Greenhouse to scan for projects from.
-To do this you just have to select one branch from the dropdown. If you're confident in your
+To do this you just have to select a branch from the dropdown. If you're confident in your  ##  maybe this somehow implies that the branch cannot be changed afterwards? not sure.
 choice, hit the green "select branch" button.
 
-Clicking on the "select branch" makes send out a request to our builder to start scanning the
+Clicking on the "select branch" makes send out a request to our builder to start scanning the   ## I think this might be too technical. I think from the user's perspective it should be a singular Greenhouse that takes care of everything
 specified repository from this branch. This includes cloning the repository, looking for projects
 from it and searching for the configurations.
 
