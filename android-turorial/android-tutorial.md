@@ -7,9 +7,9 @@ In this tutorial we give detailed instructions for Android project setup in
 To be more precise, in what follows, you'll see how to
 * [add your app's repository](#specify-git-repository),
 * [specify build configuration](#select-configuration),
-* setup Git hook,
-* get your tests up and running,
-* publish your build artefacts to HockeyApp.
+* [setup Git hook](#configure-git-hook),
+* [get your tests up and running](#setup-tests),
+* [publish your build artefacts to HockeyApp](#hockeyapp-publishing).
 
 ## First steps ##
 
@@ -34,7 +34,7 @@ for your **Git repository URL** and **authentication type** for the repository.
 
 In the example below, I have entered our dummy Android app's [GitHub](https://github.com)
 repo URL and selected public authentication:
-![Public Git repository](add-repo-public.png "Public Git repository")
+![Public Git repository](add-app-public.png "Public Git repository")
 
 For authentication you have three options:
  * [public repository](#public-authentication),
@@ -58,7 +58,7 @@ https://user@bitbucket.org/username/repository-name.git
 ```
 
 If you have filled in the repository field, hit the green "continue" button and you will be
-directed to the [select configuration](#select-configuration) part.
+directed to the [select configuration](#select-configuration) section.
 
 ### Username and password authentication ###
 
@@ -81,9 +81,9 @@ All others just make sure your URL starts with a `http(s)://` prefix.
 
 After you have filled in the repository and credentials inputs, you can hit the
 green "continue" button and you will be directed to the
-[select configuration](#select-configuration) part.
+[select configuration](#select-configuration) section.
 
-![Password protected Git repository](add-repo-credentials.png "Password protected Git repository")
+![Password protected Git repository](add-app-credentials.png "Password protected Git repository")
 
 ### SSH key authentication ###
 
@@ -91,14 +91,11 @@ Your repository is protected by an SSH key? No worries, just select **SSH Key** 
 authentication dropdown. You will be displayed an input where you can *drag-n-drop* your
 `SSH private key` or on which you can click to pick the key in a more conventional way.
 At the very moment you select/drop the key, we will peek into it and check if it's
-password protected. If we discover that the key is indeed protected, we kindly ask you to 
+password protected. If we discover that the key is indeed protected, we kindly ask you to
 write the passphrase to the input field that appears under the SSH key field.
 
-You might expect that as we have emphasized `SSH` so much, the `http(s)://` URLs ##  "won't do the trick any more" -> this is written assuming the reader bothers to read every previous
-won't do the trick any more. And that's true. With SSH key auth you have to use ## section, even though those sections will not be relevant for them (I probably won't read about public/basic auth if I use SSH keys).
-`ssh://` prefixed URL and none other than you can provide it.
-
-In general the given URL should be something of the form
+Please note that in case of `SSH key` authentication, you should provide a repository URL
+that starts with `ssh://`, so the given URL should be something of the form
 ```
 ssh://username@example.com/path/to/repo
 ```
@@ -116,23 +113,68 @@ git@bitbucket.org:username/repo-name.git
 
 After you have filled in the repository field and have selected the SSH private key, you can
 hit the green "continue" button and you will be redirected to the
-[select configuration](#select-configuration) part.  ## view? section? screen?
+[select configuration](#select-configuration) section.
 
-![SSH key protected Git repository](add-repo-ssh-key.png "SSH key protected Git repository")
+![SSH key protected Git repository](add-app-ssh-key.png "SSH key protected Git repository")
 
 ## Select configuration ##
 
 As soon as you submit a repository, either public or private, Greenhouse takes a first look
 at it by listing the `branches` in this repository.
 The next step for you is to **select the branch** you want Greenhouse to scan for projects from.
-To do this you just have to select a branch from the dropdown. If you're confident in your  ##  maybe this somehow implies that the branch cannot be changed afterwards? not sure.
-choice, hit the green "select branch" button.
+To do this you just have to select a branch from the dropdown.
+If you've chosen the branch, you can hit the green "select branch" button to proceed.
+(Note that you can change the branch later.)
 
-Clicking on the "select branch" makes send out a request to our builder to start scanning the   ## I think this might be too technical. I think from the user's perspective it should be a singular Greenhouse that takes care of everything
-specified repository from this branch. This includes cloning the repository, looking for projects
-from it and searching for the configurations.
+Clicking on the "select branch" makes Greenhouse to scan the repository from specified branch.
+This includes cloning the repository, looking for projects from it and searching for the
+configurations.
 
 All these actions can be monitored at the same time from your browser via the live log window
 as seen below.
 
-![Scanning projects](add-repo-scan.png "Scanning projects")
+![Scanning projects](add-app-scan-repo.png "Scanning projects")
+
+When the scanning completes you'll be populated with two options: **project** and
+**configuration**.
+
+The **Project** section means here an Android app directory in your repository or the
+repository root. Project in a sense is a container for one or more app flavours. Usually there
+is only one project in the repository, but there might be more, for example when you have a
+library project and a sample app that uses this library.
+In the **configuration** section you can select a `gradle` task that will be used to build
+your app by Greenhouse. The easiest choice there is to pick the `assemble` task which
+builds every possible configuration of your app at once. If you have some specific flavour
+you want to be built say *ExampleFlavour*, then just select `assembleExampleflavour` and you're
+ready to go.
+
+![Configure project](add-app-select-configuration.png "Configure project")
+
+Now there's only one more step to build your Android app  with Greenhouse and that's clicking
+the "save" button!
+
+This action will show you the projects dashboard where you can see the app you just added already
+being built.
+
+![New app](add-app-building.png "New app")
+
+After `git clone` Greenhouse will automatically find the name and icon of your app from the
+repo and updates your project accordingly. To see the progress of your build, just click the
+"View build" you'll be shown the build overview, where you can see the realtime logs of your
+build.
+
+![Build log](add-app-build-log.png "")
+
+## Configure Git hook ##
+
+We assume that you don't want to bother yourself openign the web browser and clicking the "Build"
+button in Greenhouse to see if the build still succeeds after every tiny change in your app's
+codebase. That's why Greenhouse supports
+[**Git hooks**](http://git-scm.com/book/en/Customizing-Git-Git-Hooks) that provide easy way
+to trigger some actions after you push your changes into the repository.
+Using a hook you can trigger a build for every `git push` you make.
+
+
+
+
+
