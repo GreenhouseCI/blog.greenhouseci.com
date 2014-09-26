@@ -91,7 +91,7 @@ Your repository is protected by an SSH key? No worries, just select **SSH Key** 
 authentication dropdown. You will be displayed an input where you can *drag-n-drop* your
 `SSH private key` or on which you can click to pick the key in a more conventional way.
 At the very moment you select/drop the key, we will peek into it and check if it's
-password protected. When we discover that the key is indeed protected, we kindly ask you to
+password protected. If we discover that the key is indeed protected, we kindly ask you to 
 write the passphrase to the input field that appears under the SSH key field.
 
 You might expect that as we have emphasized `SSH` so much, the `http(s)://` URLs
