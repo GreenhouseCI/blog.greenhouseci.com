@@ -15,11 +15,12 @@ share: true
 In this tutorial we give detailed instructions for Android project setup in
 [Greenhouse](https://app.greenhouseci.com).
 To be more precise, in what follows, you'll see how to
-* [add your app's repository](#specify-git-repository)
-* [specify build configuration](#select-configuration)
-* [setup Git hook](#configure-git-hook)
-* [get your tests up and running](#setup-tests)
-* [publish your build artefacts to HockeyApp](#hockeyapp-publishing)
+
+ * [add your app's repository](#specify-git-repository)
+ * [specify build configuration](#select-configuration)
+ * [setup Git hook](#configure-git-hook)
+ * [get your tests up and running](#setup-tests)
+ * [publish your build artefacts to HockeyApp](#hockeyapp-publishing)
 
 ## First steps ##
 
@@ -47,9 +48,10 @@ repo URL and selected public authentication:
 ![Public Git repository]({{ site.url }}/assets/add-app-public-android.png "Public Git repository")
 
 For authentication you have three options:
- * [public repository](#public-authentication),
- * [username and password](#username-and-password-authentication),
- * [SSH key](#ssh-key-authentication).
+
+ * [public repository](#public-authentication)
+ * [username and password](#username-and-password-authentication)
+ * [SSH key](#ssh-key-authentication)
 
 <h3 id="public-authentication">Public authentication</h3>
 
@@ -207,6 +209,51 @@ If you are not hosting your repository on Github or Bitbucket, then setting up t
 When you navigate to the Greenhouse hooks page a **Download hook** button will be shown. Clicking this button downloads a `post-receive` script file. This file *must be* added to your **main Git repository**, where you push your changes, **not your locally checked out version**. 
 
 Finally, you need to add this file to the `.git/hooks` folder which is located at the root of your main Git repository and make the script executable by running
-```bash
+```
 chmod +x post-receive
 ```
+
+<h2 id="setup-tests">Testing</h2>
+Setting up testing in Greenhouse is 100% automatic. When you submit your repository, we scan the selected configuration for tests, and if there are any tests present, we run them for every push.
+
+The test report screen shows you a simple overview of all passed and failed tests including the failure reason so you can quickly identify what's broken.
+
+![iOS build view]({{ site.url }}/assets/ios_test_view.png)
+
+It provides specific information about where the error occurred, including the stacktrace, so you can zoom in fast on the underlying problem in your code.
+
+![iOS build log]({{ site.url }}/assets/ios_build_log.png)
+
+<h2 id="publishing">Publishing</h2>
+Greenhouse supports publishing your Android artefacts to [HockeyApp](#hockeyapp)
+
+<h3 id="hockeyapp">HockeyApp</h3>
+
+In the project view, click on the spanner icon,
+
+<img class="post-img" src="{{ site.url }}/assets/project-spanner.png" />
+
+this leads you to the project settings view.
+
+In project settings you can see the Publishing section on the sidebar. 
+By clicking it, the fields for configuring HockeyApp are displayed.
+
+<img class="post-img" src="{{ site.url }}/assets/hockeyapp.png" />
+
+To use HockeyApp:
+
+* obtain your API token from [here](https://rink.hockeyapp.net/manage/auth_tokens)
+* copy-paste the token to Greenhouse and hit save
+* and that's it!
+
+Other fields are optional, but might come in handy if you'd like to configure a bit more.
+Here's a quick overview of their meaning:
+
+* checking **notify teammates** sends emails for every build to users who are permitted to use your app
+* private option enables the private download page for artefact
+
+Once you have configured HockeyApp for your project, the produced build artefacts are automatically uploaded to HockeyApp and Greenhouse for each build.
+
+<img class="post-img" src="{{ site.url }}/assets/hockeyapp_log_message_cropped.png"/>
+
+In the screenshot, build log reports that it published the build artefacts to both Greenhouse and HockeyApp.
