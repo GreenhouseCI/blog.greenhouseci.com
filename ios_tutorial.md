@@ -103,9 +103,9 @@ write the passphrase to the input field that appears under the SSH key field.
 
 Please note that in case of `SSH key` authentication, you should provide a repository URL
 that starts with `ssh://`, so the given URL should be something of the form
-<pre>
+```code
 ssh://username@example.com/path/to/repo
-</pre>
+```
 However, the exact pattern might vary from one hosting service to another.
 
 For example, [**GitHub**](https://github.com) users have to use URL that has the following
@@ -206,7 +206,9 @@ When you navigate to the Greenhouse hooks page a **Download hook** button will b
 Finally, you need to add this file to the `.git/hooks` folder which is located at the root of your main Git repository and make the script executable by running `chmod +x post-receive`.
 
 <h2 id="setup-tests">Testing</h2>
-Setting up testing in Greenhouse is 100% automatic. When you submit your repository, we scan the selected configuration for tests, and if there are any tests present, we run them for every push.
+Setting up testing in Greenhouse is 100% automatic. When you submit your repository, we scan the selected configuration for tests, and if there are any tests present, we run them for every push. 
+
+Greenhouse currently only supports running XCTests. Additionally, the tests must be a part of your scheme in Xcode, otherwise we cannot detect and run them automatically.
 
 The test report screen shows you a simple overview of all passed and failed tests including the failure reason so you can quickly identify what's broken.
 
