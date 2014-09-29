@@ -149,7 +149,7 @@ When the scanning completes you'll be populated with two options: **project** an
 **configuration**.
 
 The **Project** section means here an Android app directory in your repository or the
-repository root. Project in a sense is a container for one or more app flavours. Usually there
+repository root. Project, in a sense, is a container for one or more app flavours. Usually there
 is only one project in the repository, but there might be more, for example when you have a
 library project and a sample app that uses this library.
 In the **configuration** section you can select a `gradle` task that will be used to build
@@ -160,7 +160,7 @@ ready to go.
 
 ![Configure project]({{ site.url }}/assets/add-app-select-configuration.png "Configure project")
 
-Now there's only one more step to build your Android app  with Greenhouse and that's clicking
+Now there's only one more step to build your Android app with Greenhouse and that's clicking
 the "save" button!
 
 This action will show you the projects dashboard where you can see the app you just added already
@@ -177,14 +177,9 @@ build.
 
 <h2 id="configure-git-hook">Configure Git hook</h2>
 
-We assume that you don't want to bother yourself openign the web browser and clicking the "Build"
+We assume that you don't want to bother yourself opening the web browser and clicking the "Build"
 button in Greenhouse to see if the build still succeeds after every tiny change in your app's
 codebase. That's why Greenhouse supports
-[**Git hooks**](http://git-scm.com/book/en/Customizing-Git-Git-Hooks) that provide easy way
+[**Git hooks**](http://git-scm.com/book/en/Customizing-Git-Git-Hooks) that provide an easy way
 to trigger some actions after you push your changes into the repository.
 Using a hook you can trigger a build for every `git push` you make.
-
-
-
-
-
