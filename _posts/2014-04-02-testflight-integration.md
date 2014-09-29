@@ -33,11 +33,9 @@ Just copy-paste these, hit save, and you are good to go!
 
 All of the other fields are optional, but might be useful if you need some extra configuration.
 Here's a quick overview of their meaning:
-<ul>
-    <li><strong>distribution list</strong> is list of users who have access to the app</li>
-    <li>checking <strong>notify team mates</strong> sends emails for every build to users who are permitted to use your app</li>
-    <li><strong>replace binary option</strong> replaces the application binary that if there exists a binary on TestFlight with the same name and bundle version</li>
-</ul>
+ * **distribution list** is list of users who have access to the app
+ * checking **notify team mates** sends emails for every build to users who are permitted to use your app
+ * **replace binary option** replaces the application binary that if there exists a binary on TestFlight with the same name and bundle version
 
 
 Give it a spin
