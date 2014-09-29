@@ -60,13 +60,13 @@ If you have a public repository stored in [**GitHub**](https://github.com),
 Please note, however, that you have to use `http(s)://` URL for the repository.
 
 So, for [**GitHub**](https://github.com) users, the repo URL should be in the form
-```
+<pre>
 https://github.com/username/repository-name.git
-```
+</pre>
 and for [**Bitbucket**](https://bitbucket.org/) users, the repo URL should look like
-```
+<pre>
 https://user@bitbucket.org/username/repository-name.git
-```
+</pre>
 
 If you have filled in the repository field, hit the green "continue" button and you will be
 directed to the [select configuration](#select-configuration) section.
@@ -81,13 +81,13 @@ in your credentials.
 As with public repos, we expect you to enter your repository URL in `http(s)://` format, otherwise
 you might see a warning that asks you to do so anyway. In conclusion,
 if your repository is in [**GitHub**](https://github.com), the repo URL should be in the form
-```
+<pre>
 https://github.com/username/repository-name.git
-```
+</pre>
 and for [**Bitbucket**](https://bitbucket.org/) users, the repo URL should look like
-```
+<pre>
 https://user@bitbucket.org/username/repository-name.git
-```
+</pre>
 All others just make sure your URL starts with a `http(s)://` prefix.
 
 After you have filled in the repository and credentials inputs, you can hit the
@@ -107,20 +107,20 @@ write the passphrase to the input field that appears under the SSH key field.
 
 Please note that in case of `SSH key` authentication, you should provide a repository URL
 that starts with `ssh://`, so the given URL should be something of the form
-```
+<pre>
 ssh://username@example.com/path/to/repo
-```
+</pre>
 However, the exact pattern might vary from one hosting service to another.
 
 For example, [**GitHub**](https://github.com) users have to use URL that has the following
 pattern:
-```
+<pre>
 git@github.com:username/repo-name.git
-```
+</pre>
 and for [**Bitbucket**](https://bitbucket.org/) users the repo URL should look like
-```
+<pre>
 git@bitbucket.org:username/repo-name.git
-```
+</pre>
 
 After you have filled in the repository field and have selected the SSH private key, you can
 hit the green "continue" button and you will be redirected to the

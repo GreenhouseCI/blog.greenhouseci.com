@@ -82,13 +82,14 @@ in your credentials.
 As with public repos, we expect you to enter your repository URL in `http(s)://` format, otherwise
 you might see a warning that asks you to do so anyway. In conclusion,
 if your repository is in [**GitHub**](https://github.com), the repo URL should be in the form
-```
+<pre>
 https://github.com/username/repository-name.git
-```
+</pre>
+
 and for [**Bitbucket**](https://bitbucket.org/) users, the repo URL should look like
-```
-https://user@bitbucket.org/username/repository-name.git
-```
+
+<pre>https://user@bitbucket.org/username/repository-name.git</pre>
+
 All others just make sure your URL starts with a `http(s)://` prefix.
 
 After you have filled in the repository and credentials inputs, you can hit the
@@ -115,9 +116,9 @@ However, the exact pattern might vary from one hosting service to another.
 
 For example, [**GitHub**](https://github.com) users have to use URL that has the following
 pattern:
-```
+<pre>
 git@github.com:username/repo-name.git
-```
+</pre>
 and for [**Bitbucket**](https://bitbucket.org/) users the repo URL should look like
 ```
 git@bitbucket.org:username/repo-name.git
