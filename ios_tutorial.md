@@ -197,7 +197,9 @@ Finally, you need to add this file to the `.git/hooks` folder which is located a
 <pre><code>chmod +x post-receive</code></pre>
 
 <h2 id="setup-tests">Testing</h2>
-Setting up testing in Greenhouse is 100% automatic. When you submit your repository, we scan the selected configuration for tests, and if there are any tests present, we run them for every push.
+Setting up testing in Greenhouse is 100% automatic. When you submit your repository, we scan the selected configuration for tests, and if there are any tests present, we run them for every push. 
+
+Greenhouse currently only supports running XCTests. Additionally, the tests must be a part of your scheme in Xcode, otherwise we cannot detect and run them automatically.
 
 The test report screen shows you a simple overview of all passed and failed tests including the failure reason so you can quickly identify what's broken.
 
