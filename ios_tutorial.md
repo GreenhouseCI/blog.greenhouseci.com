@@ -238,7 +238,7 @@ By clicking on it, you will be presented with the following fields:
 
 <img class="post-img" src="{{ site.url }}/assets/testflight.png" />
 
-To use TestFlight, insert the your <a href="https://testflightapp.com/account/#api">API token</a> and the <a href="https://testflightapp.com/dashboard/team/edit/">team token</a>.
+To use TestFlight, insert the your [API token](https://testflightapp.com/account/#api) and the [team token](https://testflightapp.com/dashboard/team/edit/).
 Just copy-paste these, hit save, and you are good to go!
 
 
@@ -270,7 +270,7 @@ By clicking it, the fields for configuring HockeyApp are displayed.
 
 To use HockeyApp:
 
- * obtain your API token from <a href="https://rink.hockeyapp.net/manage/auth_tokens">here</a>
+ * obtain your API token from [here](https://rink.hockeyapp.net/manage/auth_tokens)
  * copy-paste the token to Greenhouse and hit save
  * and that's it!
 
