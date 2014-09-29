@@ -14,11 +14,12 @@ share: true
 
 This tutorial guides you through setting up your iOS project in [Greenhouse](https://app.greenhouseci.com).
 The tutorial covers how to:
-* [add your app's repository](#specify-git-repository)
-* [specify build configuration](#select-configuration)
-* [setup Git hooks](#configure-git-hook)
-* [get your tests up and running](#setup-tests)
-* [publish your build artefacts to TestFlight or HockeyApp](#publishing)
+
+ * [add your app's repository](#specify-git-repository)
+ * [specify build configuration](#select-configuration)
+ * [setup Git hooks](#configure-git-hook)
+ * [get your tests up and running](#setup-tests)
+ * [publish your build artefacts to TestFlight or HockeyApp](#publishing)
 
 ## First steps ##
 
@@ -46,6 +47,7 @@ and selected public authentication:
 ![Public Git repository]({{ site.url }}/assets/add-app-public.png "Public Git repository")
 
 For authentication you have three options:
+
  * [public repository](#public-authentication),
  * [username and password](#username-and-password-authentication),
  * [SSH key](#ssh-key-authentication).
@@ -236,7 +238,6 @@ By clicking on it, you will be presented with the following fields:
 
 <img class="post-img" src="{{ site.url }}/assets/testflight.png" />
 
-
 To use TestFlight, insert the your <a href="https://testflightapp.com/account/#api">API token</a> and the <a href="https://testflightapp.com/dashboard/team/edit/">team token</a>.
 Just copy-paste these, hit save, and you are good to go!
 
@@ -268,12 +269,14 @@ By clicking it, the fields for configuring HockeyApp are displayed.
 <img class="post-img" src="{{ site.url }}/assets/hockeyapp.png" />
 
 To use HockeyApp:
+
  * obtain your API token from <a href="https://rink.hockeyapp.net/manage/auth_tokens">here</a>
  * copy-paste the token to Greenhouse and hit save
  * and that's it!
 
 Other fields are optional, but might come in handy if you'd like to configure a bit more.
 Here's a quick overview of their meaning:
+
  * checking **notify teammates** sends emails for every build to users who are permitted to use your app
  * private option enables the private download page for artefact
 
