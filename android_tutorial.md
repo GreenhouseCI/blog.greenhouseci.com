@@ -35,23 +35,23 @@ But let's get our hands dirty and see how the process works in detail.
 The first time you log in to [Greenhouse](https://app.greenhouseci.com) you'll be
 presented with an empty dashboard that encourages you to "Add an app to get started!"
 Let's get going by clicking on "add new app".
-![Greenhouse dashboard]({{ site.url }}assets/empty-dashboard.png "Greenhouse dashboard")
+![Greenhouse dashboard]({{ site.url }}/assets/empty-dashboard.png "Greenhouse dashboard")
 
-## Specify Git repository ##
+<h2 id="specify-git-repository">Specify Git repository</h2>
 
 Clicking the "add new app" card on the dashboard will open a new project creation flow that asks
 for your **Git repository URL** and **authentication type** for the repository.
 
 In the example below, I have entered our dummy Android app's [GitHub](https://github.com)
 repo URL and selected public authentication:
-![Public Git repository]({{ site.url }}assets/add-app-public.png "Public Git repository")
+![Public Git repository]({{ site.url }}/assets/add-app-public.png "Public Git repository")
 
 For authentication you have three options:
  * [public repository](#public-authentication),
  * [username and password](#username-and-password-authentication),
  * [SSH key](#ssh-key-authentication).
 
-### Public authentication ###
+<h3 id="public-authentication">Public authentication</h3>
 
 If you have a public repository stored in [**GitHub**](https://github.com),
 [**Bitbucket**](https://bitbucket.org/) or any other Git server, you should select
@@ -70,7 +70,7 @@ https://user@bitbucket.org/username/repository-name.git
 If you have filled in the repository field, hit the green "continue" button and you will be
 directed to the [select configuration](#select-configuration) section.
 
-### Username and password authentication ###
+<h3 id="username-and-password-authentication">Username and password authentication</h3>
 
 In case you have a **password protected repository**, or in other words you are using
 *basic auth* to protect your repo, you should select **Username and password**
@@ -93,9 +93,9 @@ After you have filled in the repository and credentials inputs, you can hit the
 green "continue" button and you will be directed to the
 [select configuration](#select-configuration) section.
 
-![Password protected Git repository]({{ site.url }}assets/add-app-credentials.png "Password protected Git repository")
+![Password protected Git repository]({{ site.url }}/assets/add-app-credentials.png "Password protected Git repository")
 
-### SSH key authentication ###
+<h3 id="ssh-key-authentication">SSH key authentication</h3>
 
 Your repository is protected by an SSH key? No worries, just select **SSH Key** from the
 authentication dropdown. You will be displayed an input where you can *drag-n-drop* your
@@ -125,9 +125,9 @@ After you have filled in the repository field and have selected the SSH private 
 hit the green "continue" button and you will be redirected to the
 [select configuration](#select-configuration) section.
 
-![SSH key protected Git repository]({{ site.url }}assets/add-app-ssh-key.png "SSH key protected Git repository")
+![SSH key protected Git repository]({{ site.url }}/assets/add-app-ssh-key.png "SSH key protected Git repository")
 
-## Select configuration ##
+<h2 id="select-configuration">Select configuration</h2>
 
 As soon as you submit a repository, either public or private, Greenhouse takes a first look
 at it by listing the `branches` in this repository.
@@ -143,7 +143,7 @@ configurations.
 All these actions can be monitored at the same time from your browser via the live log window
 as seen below.
 
-![Scanning projects]({{ site.url }}assets/add-app-scan-repo.png "Scanning projects")
+![Scanning projects]({{ site.url }}/assets/add-app-scan-repo.png "Scanning projects")
 
 When the scanning completes you'll be populated with two options: **project** and
 **configuration**.
@@ -158,7 +158,7 @@ builds every possible configuration of your app at once. If you have some specif
 you want to be built say *ExampleFlavour*, then just select `assembleExampleflavour` and you're
 ready to go.
 
-![Configure project]({{ site.url }}assets/add-app-select-configuration.png "Configure project")
+![Configure project]({{ site.url }}/assets/add-app-select-configuration.png "Configure project")
 
 Now there's only one more step to build your Android app  with Greenhouse and that's clicking
 the "save" button!
@@ -166,16 +166,16 @@ the "save" button!
 This action will show you the projects dashboard where you can see the app you just added already
 being built.
 
-![New app]({{ site.url }}assets/add-app-building.png "New app")
+![New app]({{ site.url }}/assets/add-app-building.png "New app")
 
 After `git clone` Greenhouse will automatically find the name and icon of your app from the
 repo and updates your project accordingly. To see the progress of your build, just click the
 "View build" you'll be shown the build overview, where you can see the realtime logs of your
 build.
 
-![Build log]({{ site.url }}assets/add-app-build-log.png "Build log")
+![Build log]({{ site.url }}/assets/add-app-build-log.png "Build log")
 
-## Configure Git hook ##
+<h2 id="configure-git-hook">Configure Git hook</h2>
 
 We assume that you don't want to bother yourself openign the web browser and clicking the "Build"
 button in Greenhouse to see if the build still succeeds after every tiny change in your app's
