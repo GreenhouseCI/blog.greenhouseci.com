@@ -59,11 +59,11 @@ If you have a public repository stored in [**GitHub**](https://github.com),
 Please note, however, that you have to use `http(s)://` URL for the repository.
 
 So, for [**GitHub**](https://github.com) users, the repo URL should be in the form
-```text
+```
 https://github.com/username/repository-name.git
 ```
 and for [**Bitbucket**](https://bitbucket.org/) users, the repo URL should look like
-```text
+```
 https://user@bitbucket.org/username/repository-name.git
 ```
 
@@ -80,11 +80,11 @@ in your credentials.
 As with public repos, we expect you to enter your repository URL in `http(s)://` format, otherwise
 you might see a warning that asks you to do so anyway. In conclusion,
 if your repository is in [**GitHub**](https://github.com), the repo URL should be in the form
-```text
+```
 https://github.com/username/repository-name.git
 ```
 and for [**Bitbucket**](https://bitbucket.org/) users, the repo URL should look like
-```text
+```
 https://user@bitbucket.org/username/repository-name.git
 ```
 All others just make sure your URL starts with a `http(s)://` prefix.
@@ -113,11 +113,11 @@ However, the exact pattern might vary from one hosting service to another.
 
 For example, [**GitHub**](https://github.com) users have to use URL that has the following
 pattern:
-```text
+```
 git@github.com:username/repo-name.git
 ```
 and for [**Bitbucket**](https://bitbucket.org/) users the repo URL should look like
-```text
+```
 git@bitbucket.org:username/repo-name.git
 ```
 
@@ -183,3 +183,27 @@ codebase. That's why Greenhouse supports
 [**Git hooks**](http://git-scm.com/book/en/Customizing-Git-Git-Hooks) that provide an easy way
 to trigger some actions after you push your changes into the repository.
 Using a hook you can trigger a build for every `git push` you make.
+
+Greenhouse automatically detects the hook information from your repository URL and provides the necessary instructions for setting it up. Git hook information is available from project settings view (Navigate to dashboard, click on the name of your project and then on the little spanner icon), in the **Hooks** subsection.
+
+<h3>Github hooks</h3>
+![Github hook]({{ site.url }}/assets/github-git-hook.png "Github hook")
+To setup a hook in Github, navigate to the **Hooks** subsection. Click on **Github hooks page** link that automatically redirects you to your repository settings page in Github.
+
+Now click on **Add webhook** and copy and paste the Payload URL from the text box in Greenhouse to Github.
+Note that you must be logged into Github, otherwise Github will tell you that the link is invalid.
+
+<h3>Bitbucket hooks</h3>
+To setup a hook for Bitbucket, navigate to the **Hooks subsection**. Click on **Bitbucet hooks page** link that automatically redirects you to your repository settings page in Github.
+![Bitbucket hook]({{ site.url }}/assets/bitbucket-git-hook.png "Bitbucket hook")
+
+Now click on **Add hook**, choose **POST** from the menu and copy and paste the URL from the text box in Greenhouse to Bitbucket.
+
+Note that you must be logged into Bitbucket, otherwise Bitbucket will tell you that the link is invalid.
+<h3>Generic hooks</h3>
+If you are not hosting your repository on Github or Bitbucket, then setting up the hook can be a bit more involved.
+
+![Generic hook]({{ site.url }}/assets/generic-git-hook.png "Generic hook")
+When you navigate to the Greenhouse hooks page a **Download hook** button will be shown. Clicking this button downloads a `post-receive` script file. This file *must be* added to your **main Git repository**, where you push your changes, **not your locally checked out version**. 
+
+Finally, you need to add this file to the `.git/hooks` folder which is located at the root of your main Git repository and make the script executable by running `chmod +x post-receive`.
