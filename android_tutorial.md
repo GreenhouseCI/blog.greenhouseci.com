@@ -81,6 +81,8 @@ if your repository is in [**GitHub**](https://github.com), the repo URL should b
 <pre><code>https://github.com/username/repository-name.git</code></pre>
 and for [**Bitbucket**](https://bitbucket.org/) users, the repo URL should look like
 <pre><code>https://user@bitbucket.org/username/repository-name.git</code></pre>
+and for [**Bitbucket**](https://bitbucket.org/) users, the repo URL should look like
+
 All others just make sure your URL starts with a `http(s)://` prefix.
 
 After you have filled in the repository and credentials inputs, you can hit the

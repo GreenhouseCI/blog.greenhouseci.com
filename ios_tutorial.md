@@ -44,7 +44,7 @@ for your **Git repository URL** and **authentication type** for the repository.
 
 In the example below, I have entered the [GitHub](https://github.com) repository URL of our dummy iOS app
 and selected public authentication:
-![Public Git repository]({{ site.url }}/assets/add-app-public.png "Public Git repository")
+![Public Git repository]({{ site.url }}/assets/add-app-public-ios.png "Public Git repository")
 
 For authentication you have three options:
 
@@ -60,13 +60,9 @@ If you have a public repository stored in [**GitHub**](https://github.com),
 Please note, however, that you have to use `http(s)://` URL for the repository.
 
 So, for [**GitHub**](https://github.com) users, the repo URL should be in the form
-```
-https://github.com/username/repository-name.git
-```
+<pre>https://github.com/username/repository-name.git</pre>
 and for [**Bitbucket**](https://bitbucket.org/) users, the repo URL should look like
-```
-https://user@bitbucket.org/username/repository-name.git
-```
+<pre>https://user@bitbucket.org/username/repository-name.git</pre>
 
 If you have filled in the repository field, hit the green "continue" button and you will be
 directed to the [select configuration](#select-configuration) section.
@@ -81,20 +77,20 @@ in your credentials.
 As with public repos, we expect you to enter your repository URL in `http(s)://` format, otherwise
 you might see a warning that asks you to do so anyway. In conclusion,
 if your repository is in [**GitHub**](https://github.com), the repo URL should be in the form
-```
+<pre>
 https://github.com/username/repository-name.git
-```
+</pre>
 and for [**Bitbucket**](https://bitbucket.org/) users, the repo URL should look like
-```
+<pre>
 https://user@bitbucket.org/username/repository-name.git
-```
+</pre>
 All others just make sure your URL starts with a `http(s)://` prefix.
 
 After you have filled in the repository and credentials inputs, you can hit the
 green "continue" button and you will be directed to the
 [select configuration](#select-configuration) section.
 
-![Password protected Git repository]({{ site.url }}/assets/add-app-credentials.png "Password protected Git repository")
+![Password protected Git repository]({{ site.url }}/assets/add-app-credentials-ios.png "Password protected Git repository")
 
 <h3 id="ssh-key-authentication">SSH key authentication</h3>
 
@@ -107,26 +103,26 @@ write the passphrase to the input field that appears under the SSH key field.
 
 Please note that in case of `SSH key` authentication, you should provide a repository URL
 that starts with `ssh://`, so the given URL should be something of the form
-```
+<pre>
 ssh://username@example.com/path/to/repo
-```
+</pre>
 However, the exact pattern might vary from one hosting service to another.
 
 For example, [**GitHub**](https://github.com) users have to use URL that has the following
 pattern:
-```
+<pre>
 git@github.com:username/repo-name.git
-```
+</pre>
 and for [**Bitbucket**](https://bitbucket.org/) users the repo URL should look like
-```
+<pre>
 git@bitbucket.org:username/repo-name.git
-```
+</pre>
 
 After you have filled in the repository field and have selected the SSH private key, you can
 hit the green "continue" button and you will be redirected to the
 [select configuration](#select-configuration) section.
 
-![SSH key protected Git repository]({{ site.url }}/assets/add-app-ssh-key.png "SSH key protected Git repository")
+![SSH key protected Git repository]({{ site.url }}/assets/add-app-ssh-key-ios.png "SSH key protected Git repository")
 
 <h2 id="select-configuration">Select configuration</h2>
 
@@ -144,7 +140,7 @@ configurations.
 All these actions can be monitored at the same time from your browser via the live log window
 as seen below.
 
-![Scanning projects]({{ site.url }}/assets/add-app-scan-repo.png "Scanning projects")
+![Scanning projects]({{ site.url }}/assets/add-app-scan-repo-ios.png "Scanning projects")
 
 When the scanning completes you'll be populated with two options: **project** and
 **configuration**.
@@ -159,7 +155,7 @@ builds every possible configuration of your app at once. If you have some specif
 you want to be built say *ExampleFlavour*, then just select `assembleExampleflavour` and you're
 ready to go.
 
-![Configure project]({{ site.url }}/assets/add-app-select-configuration.png "Configure project")
+![Configure project]({{ site.url }}/assets/add-app-select-configuration-ios.png "Configure project")
 
 Now there's only one more step to build your Android app with Greenhouse and that's clicking
 the "save" button!
@@ -167,14 +163,14 @@ the "save" button!
 This action will show you the projects dashboard where you can see the app you just added already
 being built.
 
-![New app]({{ site.url }}/assets/add-app-building.png "New app")
+![New app]({{ site.url }}/assets/add-app-building-ios.png "New app")
 
 After `git clone` Greenhouse will automatically find the name and icon of your app from the
 repo and updates your project accordingly. To see the progress of your build, just click the
 "View build" you'll be shown the build overview, where you can see the realtime logs of your
 build.
 
-![Build log]({{ site.url }}/assets/add-app-build-log.png "Build log")
+![Build log]({{ site.url }}/assets/add-app-build-log-ios.png "Build log")
 
 <h2 id="configure-git-hook">Configure Git hook</h2>
 
@@ -238,7 +234,7 @@ By clicking on it, you will be presented with the following fields:
 
 <img class="post-img" src="{{ site.url }}/assets/testflight.png" />
 
-To use TestFlight, insert the your <a href="https://testflightapp.com/account/#api">API token</a> and the <a href="https://testflightapp.com/dashboard/team/edit/">team token</a>.
+To use TestFlight, insert the your [API token](https://testflightapp.com/account/#api) and the [team token](https://testflightapp.com/dashboard/team/edit/).
 Just copy-paste these, hit save, and you are good to go!
 
 
@@ -270,7 +266,7 @@ By clicking it, the fields for configuring HockeyApp are displayed.
 
 To use HockeyApp:
 
- * obtain your API token from <a href="https://rink.hockeyapp.net/manage/auth_tokens">here</a>
+ * obtain your API token from [here](https://rink.hockeyapp.net/manage/auth_tokens)
  * copy-paste the token to Greenhouse and hit save
  * and that's it!
 
