@@ -15,11 +15,11 @@ share: true
 In this tutorial we give detailed instructions for Android project setup in
 [Greenhouse](https://app.greenhouseci.com).
 To be more precise, in what follows, you'll see how to
-* [add your app's repository](#specify-git-repository),
-* [specify build configuration](#select-configuration),
-* [setup Git hook](#configure-git-hook),
-* [get your tests up and running](#setup-tests),
-* [publish your build artefacts to HockeyApp](#hockeyapp-publishing).
+* [add your app's repository](#specify-git-repository)
+* [specify build configuration](#select-configuration)
+* [setup Git hook](#configure-git-hook)
+* [get your tests up and running](#setup-tests)
+* [publish your build artefacts to HockeyApp](#hockeyapp-publishing)
 
 ## First steps ##
 
