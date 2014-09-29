@@ -61,13 +61,17 @@ If you have a public repository stored in [**GitHub**](https://github.com),
 Please note, however, that you have to use `http(s)://` URL for the repository.
 
 So, for [**GitHub**](https://github.com) users, the repo URL should be in the form
+
 ```
 https://github.com/username/repository-name.git
 ```
+
 and for [**Bitbucket**](https://bitbucket.org/) users, the repo URL should look like
+
 ```
 https://user@bitbucket.org/username/repository-name.git
 ```
+
 
 If you have filled in the repository field, hit the green "continue" button and you will be
 directed to the [select configuration](#select-configuration) section.
