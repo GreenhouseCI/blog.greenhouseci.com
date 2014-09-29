@@ -62,7 +62,7 @@ Please note, however, that you have to use `http(s)://` URL for the repository.
 
 So, for [**GitHub**](https://github.com) users, the repo URL should be in the form
 
-```
+```bash
 https://github.com/username/repository-name.git
 ```
 
