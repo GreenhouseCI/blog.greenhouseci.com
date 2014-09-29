@@ -81,7 +81,6 @@ if your repository is in [**GitHub**](https://github.com), the repo URL should b
 <pre><code>https://github.com/username/repository-name.git</code></pre>
 and for [**Bitbucket**](https://bitbucket.org/) users, the repo URL should look like
 <pre><code>https://user@bitbucket.org/username/repository-name.git</code></pre>
-and for [**Bitbucket**](https://bitbucket.org/) users, the repo URL should look like
 
 All others just make sure your URL starts with a `http(s)://` prefix.
 
@@ -124,7 +123,7 @@ at it by listing the `branches` in this repository.
 The next step for you is to **select the branch** you want Greenhouse to scan for projects from.
 To do this you just have to select a branch from the dropdown.
 If you've chosen the branch, you can hit the green "select branch" button to proceed.
-(Note that you can change the branch later.)
+*(Note that you can change the branch later.)*
 
 Clicking on the "select branch" makes Greenhouse to scan the repository from specified branch.
 This includes cloning the repository, looking for projects from it and searching for the
@@ -145,7 +144,7 @@ library project and a sample app that uses this library.
 In the **configuration** section you can select a `gradle` task that will be used to build
 your app by Greenhouse. The easiest choice there is to pick the `assemble` task which
 builds every possible configuration of your app at once. If you have some specific flavour
-you want to be built say *ExampleFlavour*, then just select `assembleExampleflavour` and you're
+you want to be built, say *ExampleFlavour*, then just select `assembleExampleflavour` and you're
 ready to go.
 
 ![Configure project]({{ site.url }}/assets/add-app-select-configuration-android.png "Configure project")
@@ -160,7 +159,7 @@ being built.
 
 After `git clone` Greenhouse will automatically find the name and icon of your app from the
 repo and updates your project accordingly. To see the progress of your build, just click the
-"View build" you'll be shown the build overview, where you can see the realtime logs of your
+"View build" and you'll be shown the build overview, where you can see the realtime logs of your
 build.
 
 ![Build log]({{ site.url }}/assets/add-app-build-log-android.png "Build log")
@@ -174,7 +173,7 @@ codebase. That's why Greenhouse supports
 to trigger some actions after you push your changes into the repository.
 Using a hook you can trigger a build for every `git push` you make.
 
-Greenhouse automatically detects the hook information from your repository URL and provides the necessary instructions for setting it up. Git hook information is available from project settings view (Navigate to dashboard, click on the name of your project and then on the little spanner icon), in the **Hooks** subsection.
+Greenhouse automatically detects the hook information from your repository URL and provides the necessary instructions for setting it up. Git hook information is available from project settings view (*Navigate to dashboard, click on the name of your project and then on the little spanner icon*), in the **Hooks** subsection.
 
 <h3>Github hooks</h3>
 ![Github hook]({{ site.url }}/assets/github-git-hook.png "Github hook")
@@ -200,15 +199,18 @@ Finally, you need to add this file to the `.git/hooks` folder which is located a
 <pre><code>chmod +x post-receive</code></pre>
 
 <h2 id="setup-tests">Testing</h2>
-Setting up testing in Greenhouse is 100% automatic. When you submit your repository, we scan the selected configuration for tests, and if there are any tests present, we run them for every push.
+
+Setting up testing in Greenhouse is 100% automatic. When you submit your repository, we scan the selected configuration for tests. If there are any tests present and you have selected a configuration with `build` prefix, we'll run the tests for every build you make.
+
+In detail, Greenhouse looks for `instrumentTest` or `androidTest` directory from your project based on Android Gradle plugin version specified in the project's `build.gradle` file. (*If you have overridden the default tests directory in your build script, then Greenhouse will look for that.*)
 
 The test report screen shows you a simple overview of all passed and failed tests including the failure reason so you can quickly identify what's broken.
 
-![iOS build view]({{ site.url }}/assets/ios_test_view.png)
+![Tests view]({{ site.url }}/assets/android_test_view.png "Tests view")
 
 It provides specific information about where the error occurred, including the stacktrace, so you can zoom in fast on the underlying problem in your code.
 
-![iOS build log]({{ site.url }}/assets/ios_build_log.png)
+![Build log]({{ site.url }}/assets/android_build_log.png "Build log")
 
 <h2 id="publishing">Publishing</h2>
 Greenhouse supports publishing your Android artefacts to [HockeyApp](#hockeyapp)
