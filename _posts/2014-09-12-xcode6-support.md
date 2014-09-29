@@ -10,4 +10,5 @@ comments: true
 With the release of a new generation of iPhones and iOS 8, we have made Xcode 6 available for all our users.
 This means that you can set up CI for your Swift apps in just a couple of minutes and submit your awesome Swift applications to App Store.
 
+<!--more-->
 ![Xcode 6]({{ site.url }}/assets/xcode6-swift.png)

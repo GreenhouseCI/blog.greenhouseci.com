@@ -12,6 +12,7 @@ Beta nevermore!
 
 It has certainly been a busy summer trying to keep up with WWDC, hacking on Swing and watching the World Cup.
 Nevertheless, we have persevered and worked hard on bringing Greenhouse out of beta. 
+<!--more-->
 
 As the latest addition to Greenhouse, we have added team support which allows you to grant access to builds, artefacts and build logs to your teammates and customers.
 This way there's no more needless account sharing with third parties - users should only be able to see the projects relevant for them, no more, no less. Good for both security and general housekeeping.
@@ -19,7 +20,6 @@ So, without further ado, let's check it out!
 
 Team support
 ------------
-
 
 ![Teams overview]({{ site.url }}/assets/team-support-teams-overview.png)
 

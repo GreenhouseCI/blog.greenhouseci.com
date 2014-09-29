@@ -13,6 +13,8 @@ In the latest Greenhouse update, we have implemented iOS unit testing with [XCTe
 
 We have tried to keep the whole process as simple as possible. This means that all you need to do is to add your project, we scan it for tests and run the tests on each build automatically if they are available. For those of you who have tried the [Android testing][android-testing], the process is exactly the same.
 
+<!--more-->
+
 If you have any existing projects, you might have to rescan the project in the project settings view in order for the tests to be detected. For that you have to navigate to project settings page by clicking the wrench icon on your project builds view.
 
 ![Project builds]({{ site.url }}/assets/builds.png)

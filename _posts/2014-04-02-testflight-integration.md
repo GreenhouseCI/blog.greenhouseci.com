@@ -11,6 +11,8 @@ This means that you can easily push your build artefacts to your testers to get 
 
 *Note: TestFlight integration is no longer available for your Android projects, as TestFlight is discontinuing their Android support.*
 
+<!--more-->
+
 Setting it up
 =========
 The setup is simple. Here's a quick guide:

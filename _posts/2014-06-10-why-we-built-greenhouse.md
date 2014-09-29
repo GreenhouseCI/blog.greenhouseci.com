@@ -11,6 +11,7 @@ comments: true
 We often get the question of why we started with Greenhouse when there are other options available for mobile developers. We found out that we spent almost $6000 per year for the free tool that we used.
 
 To be honest we used Hudson/Jenkins for many years as our Android, iOS and Windows Phone continuous integration server of choice at [Mobi Lab][mobi.lab]. Let me be clear - Jenkins, in general, is awesome! It's extremely configurable and extendable and with some help you can make it do stuff like check out code from a CMVC repo in response to a local filesystem event, build a .NET project, run your tests on hundreds of Jenkins slaves or publish your artefacts to a good old FTP server. However all of this freedom comes with a price.
+<!--more-->
 
 Running our own Jenkins instance seemed like a cost-effective choice at first but in reality somebody has to take care of a lot of housekeeping:
 

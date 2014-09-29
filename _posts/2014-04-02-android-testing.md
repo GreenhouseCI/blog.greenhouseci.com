@@ -11,6 +11,7 @@ Good news, everyone!
 
 We have just added support for Android unit testing using Gradle.  
 There have been quite a few changes, so let's walk through them one at a time.
+<!--more-->
 
 Build overview
 ==============

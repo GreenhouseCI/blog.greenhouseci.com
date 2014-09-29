@@ -14,6 +14,7 @@ We're proud to announce a new update to Greenhouse - support for [CCMenu][ccmenu
 Of course our support is not limited to just CCMenu. All apps that use the same data format as CCMenu are supported like [BuildNotify][BuildNotify] for Linux and [CCTray][CCTray] for windows. 
 
 ![CCMenu screenshot	]({{ site.url }}/assets/ccmenu_tray_screenshot.png)
+<!--more-->
 
 Set up CCMenu
 -------------

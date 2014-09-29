@@ -32,3 +32,7 @@ pre {
     border-radius: 3px;
     padding: 10px;
 }
+
+.read-more-link {
+    text-decoration: underline;
+}

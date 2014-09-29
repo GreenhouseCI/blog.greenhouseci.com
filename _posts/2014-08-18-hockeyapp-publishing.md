@@ -6,11 +6,14 @@ categories: Greenhouse update
 share: true
 comments: true
 ---
+
 With *<a href="http://hockeyapp.net">HockeyApp</a>* you can distribute your iOS and Android apps, get feedback about your progress and collect crash reports of your apps.
 
 We are happy to announce that Greenhouse latest update introduces HockeyApp integration so that you could conveniently distribute your artefacts to testers and clients.
 
 Greenhouse already supported *<a href="https://www.testflightapp.com">TestFlight</a>* publishing but as it happens, one cannot publish Android applications to TestFlight. With HockeyApp integration we hope to fill that gap.
+
+<!--more-->
 
 Quick setup
 =========

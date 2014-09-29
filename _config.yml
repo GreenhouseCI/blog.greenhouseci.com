@@ -11,7 +11,7 @@ owner:
   name:           Greenhouseci.com
   avatar:         avatar.jpg
   bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
-  email:          you@email.com
+  email:          team@greenhouseci.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        greenhouseci
   facebook:       
@@ -50,6 +50,8 @@ permalink:   /:categories/:title/
 
 # Amount of post to show on home page
 paginate: 3
+
+excerpt_separator: <!--more-->
 
 kramdown:
   auto_ids: true
