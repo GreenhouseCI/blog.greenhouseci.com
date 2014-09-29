@@ -28,19 +28,14 @@ By clicking it, the fields for configuring HockeyApp are displayed.
 <img class="post-img" src="{{ site.url }}/assets/hockeyapp.png" />
 
 To use HockeyApp:
-<ul>
-    <li>obtain your API token from <a href="https://rink.hockeyapp.net/manage/auth_tokens">here</a>;</li>
-    <li>copy-paste the token to Greenhouse and hit save;</li>
-    <li>and that's it!</li>
-</ul>
-
+ * obtain your API token from <a href="https://rink.hockeyapp.net/manage/auth_tokens">here</a>;
+ * copy-paste the token to Greenhouse and hit save;
+ * and that's it!
 
 Other fields are optional, but might come in handy if you'd like to configure a bit more.
 Here's a quick overview of their meaning:
-<ul>
-    <li>checking <strong>notify teammates</strong> sends emails for every build to users who are permitted to use your app;</li>
-    <li><strong>private</strong> option enables the private download page for artefact.</li>
-</ul>
+ * checking **notify teammates** sends emails for every build to users who are permitted to use your app;
+ * **private** option enables the private download page for artefact.
 
 
 Try it out
