@@ -120,34 +120,136 @@ As soon as you submit a repository, either public or private, Greenhouse takes a
 at it by listing the `branches` in this repository.
 The next step for you is to **select the branch** you want Greenhouse to scan for projects from.
 To do this you just have to select a branch from the dropdown.
-If you've chosen the branch, you can hit the green "select branch" button to proceed.
-(Note that you can change the branch later.)
+If you've chosen the branch, you can hit the green "select branch" button to proceed
+(note that you can change the branch later).
 
-Clicking on the "select branch" makes Greenhouse to scan the repository from specified branch.
+Clicking on the "select branch" makes Greenhouse to scan the repository from the specified branch.
 This includes cloning the repository, looking for projects from it and searching for the
 configurations.
 
 All these actions can be monitored at the same time from your browser via the live log window
 as seen below.
 
+**If you are using Cocoapods to manage the dependencies of your project, please refer to the [<u>Cocoapods section</u>](#cocoapods) before continuing reading this section!**
+
+Once the project scanning has finished, you need to do the following
+
+* Select a project or a workspace - **Projects** are are containers for code, resources and different build settings.
+**Workspaces** are containers of different projects.
+    
+* Based on the previous selection of **project** or **workspace**, you will need to select either a **Target** (projects) or a **Scheme** (workspaces)
+
+Now that you are done with the build configuration, all that is left is providing the corresponding code signing files.
+
+* [Developer Certificate](#developer-certificate)
+* [Provisioning Profile](#provisioning-profile)
+
+*You you might want to skip over to [<u>running your first build</u>](#first-build), if you already now how to provide your developer certificate and provisioning profile*
+
+<h3 id="developer-certificate">Developer Certificate</h3>
+----------------------
+*Feel free to [<u>skip</u>](#provisioning-profile) this section if you know how to export your developer certificate*
+
+
+First, we will get find your **developer certificate**. 
+
+Open up **Keychain Access** by searching for it in Spotlight. 
+In the **Categories** submenu on the left side bar select **My Certificates**
+
+![Teams overview]({{ site.url }}/images/keychain-expanded-cropped.png)
+
+The name of the certificate should start with **iPhone Developer:**
+
+Once you have located your developer certificate, select **File -> Export Items** from the OSX menu bar.
+
+![Teams overview]({{ site.url }}/images/keychain-export-cropped.png)
+![Teams overview]({{ site.url }}/images/keychain-not-expanded-cropped.png)
+
+This will prompt you to save the developer certificate. 
+
+![Keychain save dialog]({{ site.url }}/images/keychain-save-as-cropped.png)
+
+Be sure to leave the file format filed as **Personal Information Exchange (.p12)**, as saving the certificate with the **.cer**  extension will not include your private key.
+
+Finally, you will be prompted for the **certificate export password**. The password is not actually mandatory and you can leave as blank, but it is recommended to use a strong password.
+
+That's it. Now all you need is the corresponding provisioning profile.
+
+<h3 id="provisioning-profile">Provisioning Profile</h3>
+--------------------
+*Feel free to [<u>skip</u>](#first-build) this section if you know how to find the corresponding provisioning profile for your application*
+
+Select the appropriate provisioning profile from <a href="https://developer.apple.com/account/ios/profile/profileList.action">Apple Developer portal</a>.
+Download it and save it somewhere.
+
+
+That's it. If you successfully downloaded your developer certificate that should be everything you need. Now you can upload both of these files. 
+We check that the provisioning profile and developer certificate match. And will let you know if something goes wrong.
+
+
 ![Scanning projects]({{ site.url }}/assets/add-app-scan-repo-ios.png "Scanning projects")
 
-When the scanning completes you'll be populated with two options: **project** and
-**configuration**.
+Regular iOS projects should work out of the box with Greenhouse. However, there might be some extra hassle when it comes to Cocoapods projects. 
 
-The **Project** section means here an Android app directory in your repository or the
-repository root. Project, in a sense, is a container for one or more app flavours. Usually there
-is only one project in the repository, but there might be more, for example when you have a
-library project and a sample app that uses this library.
-In the **configuration** section you can select a `gradle` task that will be used to build
-your app by Greenhouse. The easiest choice there is to pick the `assemble` task which
-builds every possible configuration of your app at once. If you have some specific flavour
-you want to be built say *ExampleFlavour*, then just select `assembleExampleflavour` and you're
-ready to go.
+
+<h3 id="cocoapods">Cocoapods</h3>
+*Note that you can [<u>skip</u>](#first-build) this section if you are not using Cocoapods for dependency management*
+
+Most iOS developers nowadays are using Cocoapods for dependency management. While it is an excellent tool, it is a bit tricky to set up correctly, at least for a CI environment.
+
+Two things that are most likely to go wrong with Pods are:
+
+1. Selecting a non-workspace project 
+2. Not marking your schemes as shared
+
+
+<h4 id="select_project">Selecting the correct project</h4>
+
+If your project is using **Cocoapods**, you must select the project the name of which ends with **[workspace]**.
+
+![Project selection]({{ site.url }}/images/project-selection-cropped.png)
+
+Similarly, the respective configuration's name must end with **[scheme]**.
+
+
+<h4 id="sharing_schemes">Sharing your schemes</h4>
+--------------------
+Schemes that are not marked shared in Xcode cannot be built outside Xcode, thus excluding any CI server as well.
+
+Let's walk through the process of sharing a scheme
+
+Navigate to **Product-> Scheme -> Manage Schemes**
+
+![Schemes Menu]({{ site.url }}/images/schemes-menu-cropped.png)
+
+You will then be displayed a list of schemes, each denoted as being **shared** or not.
+
+![Schemes Dialog]({{ site.url }}/images/schemes-dialog-cropped.png)
+
+Make sure that the **shared** checkbox is marked in front of your scheme, then click **OK**.
+
+Finally, once you have marked the scheme as shared, you will have to add the files that Xcode has generated to your git repository as well.
+
+1. Navigate to **Source Control > Commit**.
+
+2. Select the **Shared Data** folder.
+
+3. Enter your commit message in the text field.
+
+4. Select the **Push to remote** option 
+
+5. Click the **Commit Files** button.
+
+
+![Recanning project]({{ site.url }}/assets/rescan.png)
+
+<h3 id="first-build">Running your first build</h3>
+
+That's it!
 
 ![Configure project]({{ site.url }}/assets/add-app-select-configuration-ios.png "Configure project")
 
-Now there's only one more step to build your Android app with Greenhouse and that's clicking
+Now there's only one more step left to build your iOS app with Greenhouse and that's clicking
 the "save" button!
 
 This action will show you the projects dashboard where you can see the app you just added already
