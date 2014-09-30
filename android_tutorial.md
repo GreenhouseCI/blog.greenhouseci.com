@@ -21,6 +21,7 @@ To be more precise, in what follows, you'll see how to
  * [setup Git hook](#configure-git-hook)
  * [get your tests up and running](#setup-tests)
  * [publish your build artefacts to HockeyApp](#hockeyapp-publishing)
+ * [handle build versioning](#build-versioning)
 
 ## First steps ##
 
@@ -245,3 +246,16 @@ Once you have configured HockeyApp for your project, the produced build artefact
 <img class="post-img" src="{{ site.url }}/assets/hockeyapp_log_message_cropped.png"/>
 
 In the screenshot, build log reports that it published the build artefacts to both Greenhouse and HockeyApp.
+
+<h2 id="build-versioning">Build versioning</h2>
+
+To make your build version management easy, Greenhouse exports two environment variables
+that you can use in your build scripts: `GREENHOUSE_BUILD` and `BUILD_NUMBER`.
+
+`GREENHOUSE_BUILD` is set to `True` in Greenhouse for every build and it indicates that your build is currently running in a CI environment. `BUILD_NUMBER` environment variable 
+holds the total count of builds (including the ongoing build) for this project in Greenhouse. In other words, if you have triggered 10 builds for some project in Greenhouse, the next time you build it `BUILD_NUMBER` will be exported as `11`.
+
+In your `build.gradle` script you can check these values with
+<pre><code>greenhouseBuild = System.getenv("GREENHOUSE_BUILD")</code></pre>
+and
+<pre><code>greenhouseBuildNumber = System.getenv("BUILD_NUMBER")</code></pre>
