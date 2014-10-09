@@ -385,7 +385,7 @@ In the screenshot, build log reports that it published the build artefacts to bo
 To make your build version management easy, Greenhouse exports two environment variables
 that you can use in your build scripts: `GREENHOUSE_BUILD` and `BUILD_NUMBER`.
 
-`GREENHOUSE_BUILD` is set to `True` in Greenhouse for every build and it indicates that your build is currently running in a CI environment. `BUILD_NUMBER` environment variable 
+`GREENHOUSE_BUILD` is set to `true` in Greenhouse for every build and it indicates that your build is currently running in a CI environment. `BUILD_NUMBER` environment variable 
 holds the total count of builds (including the ongoing build) for this project in Greenhouse. In other words, if you have triggered 10 builds for some project in Greenhouse, the next time you build it `BUILD_NUMBER` will be exported as `11`.
 
 Since the iOS build ecosystem supports running arbitrary scripts as a part of your build process, you can check the existence and the value of these environment variables in either bash or a scripting language of your choice (such as Ruby or Python).
