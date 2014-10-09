@@ -164,7 +164,6 @@ The name of the certificate should start with **iPhone Developer:**
 Once you have located your developer certificate, select **File -> Export Items** from the OSX menu bar.
 
 ![Teams overview]({{ site.url }}/images/keychain-export-cropped.png)
-![Teams overview]({{ site.url }}/images/keychain-not-expanded-cropped.png)
 
 This will prompt you to save the developer certificate. 
 
