@@ -374,7 +374,7 @@ Once you have configured HockeyApp for your project, the produced build artefact
 
 <img class="post-img" src="{{ site.url }}/assets/hockeyapp_log_message_cropped.png"/>
 
-In the screenshot, build log reports that it published the build artefacts to both Greenhouse and HockeyApp.
+In the screenshot, build log reports that it has published the build artefacts to both Greenhouse and HockeyApp.
 
 *Note that for iOS projects you can configure publishing to both HockeyApp and TestFlight. In that case Greenhouse will publish the artefacts to each configured service.*
 
