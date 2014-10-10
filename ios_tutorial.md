@@ -131,7 +131,7 @@ configurations.
 All these actions can be monitored at the same time from your browser via the live log window
 as seen below.
 
-**If you are using Cocoapods to manage the dependencies of your project, please refer to the [<u>Cocoapods section</u>](#cocoapods) before continuing reading this section!**
+**If you are using Cocoapods to manage the dependencies of your project, please refer to the [<u>Cocoapods section</u>](#cocoapods) before continuing to read this section!**
 
 Once the project scanning has finished, you need to do the following
 
@@ -140,22 +140,21 @@ Once the project scanning has finished, you need to do the following
     
 * Based on the previous selection of **project** or **workspace**, you will need to select either a **Target** (projects) or a **Scheme** (workspaces)
 
-Now that you are done with the build configuration, all that is left is providing the corresponding code signing files.
+Now that you are done with the build configuration, all that is left to provide the corresponding code signing files.
 
 * [Developer Certificate](#developer-certificate)
 * [Provisioning Profile](#provisioning-profile)
 
-*You you might want to skip over to [<u>running your first build</u>](#first-build), if you already now how to provide your developer certificate and provisioning profile*
+*You you might want to skip over to [<u>running your first build</u>](#first-build), if you already know how to provide your developer certificate and provisioning profile*
 
 <h3 id="developer-certificate">Developer Certificate</h3>
 ----------------------
 *Feel free to [<u>skip</u>](#provisioning-profile) this section if you know how to export your developer certificate*
 
-
-First, we will get find your **developer certificate**. 
+First, we will find your **developer certificate**. 
 
 Open up **Keychain Access** by searching for it in Spotlight. 
-In the **Categories** submenu on the left side bar select **My Certificates**
+In the **Categories** submenu on the left sidebar select **My Certificates**
 
 ![Teams overview]({{ site.url }}/images/keychain-expanded-cropped.png)
 
@@ -170,7 +169,7 @@ This will prompt you to save the developer certificate.
 
 ![Keychain save dialog]({{ site.url }}/images/keychain-save-as-cropped.png)
 
-Be sure to leave the file format filed as **Personal Information Exchange (.p12)**, as saving the certificate with the **.cer**  extension will not include your private key.
+Be sure to leave the file format filled as **Personal Information Exchange (.p12)**, as saving the certificate with the **.cer**  extension will not include your private key.
 
 Finally, you will be prompted for the **certificate export password**. The password is not actually mandatory and you can leave as blank, but it is recommended to use a strong password.
 
@@ -210,7 +209,7 @@ If your project is using **Cocoapods**, you must select the project the name of 
 
 ![Project selection]({{ site.url }}/images/project-selection-cropped.png)
 
-Similarly, the respective configuration's name must end with **[scheme]**.
+Similarly, the respective configuration name must end with **[scheme]**.
 
 
 <h4 id="sharing_schemes">Sharing your schemes</h4>
@@ -260,7 +259,7 @@ being built.
 
 After `git clone` Greenhouse will automatically find the name and icon of your app from the
 repo and updates your project accordingly. To see the progress of your build, just click the
-"View build" you'll be shown the build overview, where you can see the realtime logs of your
+"View build" you'll be shown the build overview, where you can see the real time logs of your
 build.
 
 ![Build log]({{ site.url }}/assets/add-app-build-log-ios.png "Build log")
