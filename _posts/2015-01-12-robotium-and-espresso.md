@@ -7,12 +7,12 @@ share: true
 comments: true
 ---
 
-UI testing is much like flossing, we all know that it is good for us, but we still, for some reason or another, tend to not do it.
+UI testing is much like flossing, we all know that it is good for us, but for some reason or another, we still tend to not do it.
 <!--more-->
 
 We at Greenhouse have compiled a list of common reasons not to test:
 
-1. **My tests take way too long**. What is more, running them breaks my workflow, as I have to wait for the tests to finish running before I can continue my development work.
+1. **My tests take way too long to complete**. What is more, running them breaks my workflow, as I have to wait for the tests to finish running before I can continue my development work.
 2. **Tests are unreliable**. Someone at the Megacorp made us create a big UI test suite, but nobody checks the status of these tests anymore, because they fail randomly due to timing issues.
 3. **Testing is expensive**. My manager does not care about testing, because it takes all the time away from developing features.
 4. **Automated UI testing does not find bugs**. My buddy QA Steve has found way more bugs than any automated system. Let the QA do their work and the developers theirs!
@@ -21,7 +21,7 @@ We at Greenhouse have compiled a list of common reasons not to test:
 I'm sure you have heard all of these before, perhaps from your manager, your teammates or you yourself have made one or several of these claims.
 However, the whole idea of continuous integration relies on testing the application for every code change. Sure, it may build, but how can you be sure that it does not crash as soon as you open up the app? 
 
-Let's look at the each of the claims from above and try to counter them.
+Let's look at claim from above and try to counter them.
 
 1. This is the number one reason why you should be using a CI solution like Greenhouse. Outsource the running of tests to a safe environment, so that you can keep working on your code and be notified only if something goes South. Outsourcing it to the continuous integration server is not a silver bullet though. If the test suite takes 3 hours to run, you will get the results 3 hours later regardless. This is why your tests should be fast as well.
 2. It is easy to see why UI tests might not be as reliable as unit tests. Navigating between different activities can cause subtle timing issues. The typical solution to timing issues is using a sufficiently long timeout or employing a number of retries to some operation. In addition to being annoying to write, timeouts and retries make your tests painfully slow.
@@ -35,7 +35,7 @@ The two most popular UI frameworks for Android today are Espresso and Robotium. 
 We will review the two frameworks according to these criteria.
 
 
-Robotium
+Robotium ![Robotium]({{ site.url }}/assets/logo-robotium.png){: .heading-icon }
 --------
 
 Robotium really improves on the simplicity of writing tests in comparison to native Android Instrumentation. 
@@ -67,10 +67,10 @@ Which translates into
 Robotium provides timeout based mechanisms to cope with timing issues that are inherent to UI testing. The downside of using timeouts is that they are not reliable and slow the testing down considerably.
 
 
-Espresso
+Espresso ![Espresso]({{ site.url }}/assets/logo-espresso.jpeg){: .heading-icon }
 --------
 
-Previously we mentioned that writing and debugging tests can be cumbersome due to synchronization issues. Add a little sleep or retry here, and another timeout there, it all starts to add up. Soon your test suite will take too long to run. Furthermore, the tests start failing randomly, leaving your wondering whether your app is broken or if there is some annoying timing issue at play.
+Previously, we mentioned that writing and debugging tests can be cumbersome due to synchronization issues. Add a little sleep or retry here, and another timeout there, it all starts to add up. Soon your test suite will take too long to run. Furthermore, the tests start failing randomly, leaving you wondering whether your app is broken or if there is some annoying timing issue at play.
 
 Espresso improves on this situation immensely. For both regular Android Instrumentation tests and Robotium, the tests run in a separate thread from the UI without any synchronization. Espresso automatically synchronizes the UI with the tests actions and assertions, so you do not have to worry about timing issues anymore. As a result, the tests are both more reliable and fast.
 
@@ -79,7 +79,7 @@ Hamcrest string matchers make finding views a lot easier and flexible in compari
 
 <pre><code>
 onView(withId(R.id.submit_button)).perform(click()).check(matches(isDisplayed()));</code></pre>
-This following snippet follows where we left off with the login screen example. The snippet, which reads like it is written in some cool functional language, performs a click on the submit button and check if it is displayed after that. The ability to filter and combine different matchers make Espresso very powerful and useful.
+This following snippet follows where we left off with the login screen example. The snippet, which reads like it is written in some cool functional language, performs a click on the submit button and checks if it is displayed after that. The ability to filter and combine different matchers make Espresso very powerful and useful.
 
 
 New features
