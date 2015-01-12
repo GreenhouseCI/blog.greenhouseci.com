@@ -8,7 +8,7 @@ comments: true
 ---
 
 Happy New Year! The holidays have been a busy time trying to bring you more features. Finally, we have added support for iOS app extensions.
-App extensions are a way to enable users take advantage of your app's functionality while outside of the application.
+App extensions are a way for users to take advantage of your app's features while outside of the application.
 
 <!--more-->
 
