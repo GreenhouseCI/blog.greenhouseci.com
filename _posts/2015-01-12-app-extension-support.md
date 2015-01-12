@@ -34,6 +34,37 @@ The types of extensions are:
 Developers are able to select the type of extension that best matches their needed functionality and build their
 own solution on top of that.
 
+Adding an App Extension
+-------------------------
+
+Creating an extension is really easy. All you need to do is add a new target to your project:
+
+
+![Add Extension Target]({{ site.url }}/assets/app-extension-target.png)
+
+
+---
+
+
+Fill out the required information. As you can see, extension's bundle identifier extends the host application's identifier.
+This is why additional profiles are required to distribute the app.
+
+![Add Extension Name]({{ site.url }}/assets/app-extension-name.png)
+
+
+---
+
+
+Now all that's left to do is write your extension implementation. Xcode will generate an extension template for you.
+Each extension type has its specific template that you can use as a base for your awesome features.
+
+The following template was generated for our sample application's share extension:
+
+
+![Add Extension Implementation]({{ site.url }}/assets/app-extension-impl.png)
+
+
+
 Building an App Extension
 -------------------------
 
