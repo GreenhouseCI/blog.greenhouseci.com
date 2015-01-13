@@ -85,7 +85,17 @@ This following snippet follows where we left off with the login screen example. 
 New features
 ------------
 
-We are glad to announce that Greenhouse now supports both Robotium and Espresso UI automation tests. Also, since we switched to using Genymotion emulators instead of Android emulators, the testing process in Greenhouse has become a lot faster and more reliable.
+We are glad to announce that Greenhouse now supports both Robotium and Espresso UI automation tests.
+Also, since we switched to using Genymotion emulators instead of Android emulators, the testing process in Greenhouse has become a lot faster and more reliable.
+
+
+Since we were using stock Android emulators before, the improvements in build durations for Android projects are significant.
+Genymotion startup is alot faster when compared to stock emulators.
+We created a little comparison chart between the two and Android builds with tests are now almost 2x faster.
+You can see the results in the following chart:
+
+![Genymotion vs Android]({{ site.url }}/assets/genymotion-vs-android-chart.png)
+
 
 Coming up
 ---------
