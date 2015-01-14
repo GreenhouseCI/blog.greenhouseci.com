@@ -39,7 +39,7 @@ Robotium ![Robotium]({{ site.url }}/assets/logo-robotium.png){: .heading-icon }
 --------
 
 Robotium really improves on the simplicity of writing tests in comparison to native Android Instrumentation. 
-Android Instrumentation forces you to write a lot of boilerplate for retrieving UI elements from the views. Robotium, on the other hand, provides you with the Solo object that provides are more human-friendly interface. 
+Android Instrumentation forces you to write a lot of boilerplate for retrieving UI elements from the views. Robotium, on the other hand, provides you with the Solo object that provides more human-friendly interface. 
 
 To best illustrate the difference between the two, imagine a simple login screen with two input fields (username and password) and a submit button.
 
