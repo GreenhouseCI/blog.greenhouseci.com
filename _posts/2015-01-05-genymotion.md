@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Why we are started using Genymotion emulators for continuous integration"
+title:  "Why we started using Genymotion emulators for continuous integration"
 date:   2015-01-05 16:00:00
 categories: Greenhouse update
 share: true
 comments: true
 ---
 
-When we started out developing support for Android, especially support for Android testing things did not go as smoothly as expected. 
+When we started out developing support for Android, especially support for Android testing, things did not go as smoothly as expected. 
 
 <!--more-->
 
