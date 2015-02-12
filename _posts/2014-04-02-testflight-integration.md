@@ -19,15 +19,18 @@ The setup is simple. Here's a quick guide:
 
 In the project view, click the spanner icon,
 
-<img class="post-img" src="{{ site.url }}/assets/spanner.png" />
+<a data-lightbox="testflight-integration" href="{{ site_url }}/assets/spanner.png">
+    <img class="post-img" src="{{ site.url }}/assets/spanner.png" />
+</a>
 
 this leads you to the project settings view.
 
 In project settings you can see the Publishing section on the sidebar.
 By clicking on it, you will be presented with the following fields:
 
-<img class="post-img" src="{{ site.url }}/assets/testflight.png" />
-
+<a data-lightbox="testflight-integration" href="{{ site_url }}/assets/testflight.png">
+    <img class="post-img" src="{{ site.url }}/assets/testflight.png" />
+</a>
 
 To use TestFlight, insert the your <a href="https://testflightapp.com/account/#api">API token</a> and the <a href="https://testflightapp.com/dashboard/team/edit/">team token</a>.
 Just copy-paste these, hit save, and you are good to go!
@@ -44,7 +47,9 @@ Give it a spin
 =========
 Once you have configured Testflight for your project, the produced build artefacts are automatically uploaded to TestFlight and Greenhouse for each build. 
 
-<img class="post-img" src="{{ site.url }}/assets/testflight_log_message_cropped.png"/>
+<a data-lightbox="testflight-integration" href="{{ site_url }}/assets/testflight_log_message_cropped.png">
+    <img class="post-img" src="{{ site.url }}/assets/testflight_log_message_cropped.png"/>
+</a>
 
 In the screenshot, build log reports that it published the build artefacts to both Greenhouse and TestFlight.
 

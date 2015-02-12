@@ -21,14 +21,18 @@ The setup is simple, and for those of you who have used TestFlight integration b
 
 In the project view, click on the spanner icon,
 
-<img class="post-img" src="{{ site.url }}/assets/project-spanner.png" />
+<a data-lightbox="hockeyapp-publishing" href="{{ site_url }}/assets/project-spanner.png">
+    <img class="post-img" src="{{ site.url }}/assets/project-spanner.png" />
+</a>
 
 this leads you to the project settings view.
 
 In project settings you can see the Publishing section on the sidebar. 
 By clicking it, the fields for configuring HockeyApp are displayed.
 
-<img class="post-img" src="{{ site.url }}/assets/hockeyapp.png" />
+<a data-lightbox="hockeyapp-publishing" href="{{ site_url }}/assets/hockeyapp.png">
+    <img class="post-img" src="{{ site.url }}/assets/hockeyapp.png" />
+</a>
 
 To use HockeyApp:
  * obtain your API token from <a href="https://rink.hockeyapp.net/manage/auth_tokens">here</a>;
@@ -45,7 +49,9 @@ Try it out
 =========
 Once you have configured HockeyApp for your project, the produced build artefacts are automatically uploaded to HockeyApp and Greenhouse for each build.
 
-<img class="post-img" src="{{ site.url }}/assets/hockeyapp_log_message_cropped.png"/>
+<a data-lightbox="hockeyapp-publishing" href="{{ site_url }}/assets/hockeyapp_log_message_cropped.png">
+    <img class="post-img" src="{{ site.url }}/assets/hockeyapp_log_message_cropped.png"/>
+</a>
 
 In the screenshot, build log reports that it published the build artefacts to both Greenhouse and HockeyApp.
 

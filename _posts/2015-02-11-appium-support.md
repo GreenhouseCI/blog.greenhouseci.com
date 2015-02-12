@@ -93,7 +93,8 @@ For **Android**, you needed to select a build target (a target with **build** pr
 This is all in the past now. When you add your project, we enable all of the tests by default. You can disable or enable them as you go, if the need be. For **iOS** you can now also **test a single target** if your scheme contains multiple targets.
 
 <a data-lightbox="testing" href="{{ site_url }}/assets/testing_view.png">
-<img class="post-img" src="{{ site_url }}/assets/testing_view.png"/></a>
+    <img class="post-img" src="{{ site_url }}/assets/testing_view.png"/>
+</a>
 
 <h2>Coming up</h2>
 
