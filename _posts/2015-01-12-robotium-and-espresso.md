@@ -94,8 +94,9 @@ Genymotion startup is alot faster when compared to stock emulators.
 We created a little comparison chart between the two and Android builds with tests are now almost 2x faster.
 You can see the results in the following chart:
 
-![Genymotion vs Android]({{ site.url }}/assets/genymotion-vs-android-chart.png)
-
+<a data-lightbox="genymotion-vs-android" href="{{ site_url }}/assets/genymotion-vs-android-chart.png">
+    <img class="post-img" src="{{ site.url }}/assets/genymotion-vs-android-chart.png" title="Genymotion vs Android"/>
+</a>
 
 Coming up
 ---------

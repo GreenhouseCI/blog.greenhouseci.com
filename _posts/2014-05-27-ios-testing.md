@@ -17,11 +17,15 @@ We have tried to keep the whole process as simple as possible. This means that a
 
 If you have any existing projects, you might have to rescan the project in the project settings view in order for the tests to be detected. For that you have to navigate to project settings page by clicking the wrench icon on your project builds view.
 
-![Project builds]({{ site.url }}/assets/builds.png)
+<a data-lightbox="ios-testing" href="{{ site_url }}/assets/builds.png">
+    <img class="post-img" src="{{ site.url }}/assets/builds.png" title="Project builds"/>
+</a>
 
 Now the project settings page will be shown in the top. Navigate to the build section and hit the rescan button next to branch selection.
 
-![Project builds]({{ site.url }}/assets/rescan.png)
+<a data-lightbox="ios-testing" href="{{ site_url }}/assets/rescan.png">
+    <img class="post-img" src="{{ site.url }}/assets/rescan.png" title="Project builds"/>
+</a>
 
 The rescan button triggers our builder to update the configurations and test targets from the selected branch.
 This button comes in handy also in situations where you have created a new build configuration.
@@ -30,11 +34,16 @@ And that's it, no more configuration magic to get it running!
 
 The test report screen shows you a simple overview of all passed and failed tests including the failure reason so you can quickly identify what's broken.
 
-![iOS build view]({{ site.url }}/assets/ios_test_view.png)
+<a data-lightbox="ios-testing" href="{{ site_url }}/assets/ios_test_view.png">
+    <img class="post-img" src="{{ site.url }}/assets/ios_test_view.png" title="iOS build view"/>
+</a>
+
 
 It provides specific information about where the error occurred, including the stacktrace, so you can zoom in fast on the underlying problem in your code.
 
-![iOS build log]({{ site.url }}/assets/ios_build_log.png)
+<a data-lightbox="ios-testing" href="{{ site_url }}/assets/ios_build_log.png">
+    <img class="post-img" src="{{ site.url }}/assets/ios_build_log.png" title="iOS build log"/>
+</a>
 
 
 Coming up

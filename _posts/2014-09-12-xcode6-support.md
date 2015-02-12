@@ -11,4 +11,7 @@ With the release of a new generation of iPhones and iOS 8, we have made Xcode 6 
 This means that you can set up CI for your Swift apps in just a couple of minutes and submit your awesome Swift applications to App Store.
 
 <!--more-->
-![Xcode 6]({{ site.url }}/assets/xcode6-swift.png)
+
+<a data-lightbox="xcode6-support" href="{{ site_url }}/assets/xcode6-swift.png">
+    <img class="post-img" src="{{ site.url }}/assets/xcode6-swift.png" title="Xcode 6"/>
+</a>

@@ -21,23 +21,31 @@ So, without further ado, let's check it out!
 Team support
 ------------
 
-![Teams overview]({{ site.url }}/assets/team-support-teams-overview.png)
+<a data-lightbox="team-support" href="{{ site_url }}/assets/team-support-teams-overview.png">
+    <img class="post-img" src="{{ site.url }}/assets/team-support-teams-overview.png" title="Teams overview"/>
+</a>
 
 Firstly, just to point out, we have redesigned the user settings page for managing teams. 
 What once was just a boring old gravatar with your name on it has now been transformed into team selection menu. It indicates which team context you are currently working in.
 
-![Team selection]({{ site.url }}/assets/team-support-team-selection.png)
+<a data-lightbox="team-support" href="{{ site_url }}/assets/team-support-team-selection.png">
+    <img class="post-img" src="{{ site.url }}/assets/team-support-team-selection.png" title="Team selection"/>
+</a>
 
 Projects added within a team context are only visible to the members of that team.
 
-![Team context]({{ site.url }}/assets/team-support-context-example.png)
+<a data-lightbox="team-support" href="{{ site_url }}/assets/team-support-context-example.png">
+    <img class="post-img" src="{{ site.url }}/assets/team-support-context-example.png" title="Team context"/>
+</a>
+
 
 Note that there's no limit on the number of teams you can create, only on the team members. 
 
 In the manage teams page, you can invite existing Greenhouse users to your team.
 
-![Invite team members]({{ site.url }}/assets/team-support-invite.png)
-
+<a data-lightbox="team-support" href="{{ site_url }}/assets/team-support-invite.png">
+    <img class="post-img" src="{{ site.url }}/assets/team-support-invite.png" title="Invite team members"/>
+</a>
 
 An e-mail confirmation will be sent to the invited user which must be accepted before a user is added to the team.
 

@@ -22,8 +22,9 @@ If the project you're building has tests, Greenhouse will automatically detect t
 So, every time you build your project we run the corresponding unit tests. We extract the SDK target version for the build
 and run the tests on the appropriate emulator.
 
-![Our new improved build view]({{ site.url }}/assets/new_build_view.png)
-
+<a data-lightbox="android-testing" href="{{ site_url }}/assets/new_build_view.png">
+    <img class="post-img" src="{{ site.url }}/assets/new_build_view.png" title="Our new improved build view"/>
+</a>
 
 
 Tests overview 
@@ -32,10 +33,9 @@ In the test view, each test can be further expanded to see which class and  meth
 
 In case of test failures, the stacktrace is also included, so you can easily pinpoint where the error occurred.
 
-
-![Our new improved build view]({{ site.url }}/assets/expanded_test_view.png)
-
-
+<a data-lightbox="android-testing" href="{{ site_url }}/assets/expanded_test_view.png">
+    <img class="post-img" src="{{ site.url }}/assets/expanded_test_view.png" title="Our new improved build view"/>
+</a>
 
 
 Warning status
@@ -44,7 +44,10 @@ Builds with failing tests are marked with an orange exclamation mark, so you can
 are failing due to broken tests.
 
 
-![Failed tests are shown with an orange warning indicator]({{ site.url }}/assets/failed_tests_cropped.png)
+<a data-lightbox="android-testing" href="{{ site_url }}/assets/failed_tests_cropped.png">
+    <img class="post-img" src="{{ site.url }}/assets/failed_tests_cropped.png" title="Failed tests are shown with an orange warning indicator"/>
+</a>
+
 
 We realise that there might be cases where unit tests might fail, but you may still want to get the build artefacts. 
 For this reason, we always upload the build artefacts, regardless of the test results.

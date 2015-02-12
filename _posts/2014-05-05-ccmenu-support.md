@@ -13,19 +13,31 @@ We're proud to announce a new update to Greenhouse - support for [CCMenu][ccmenu
 
 Of course our support is not limited to just CCMenu. All apps that use the same data format as CCMenu are supported like [BuildNotify][BuildNotify] for Linux and [CCTray][CCTray] for windows. 
 
-![CCMenu screenshot	]({{ site.url }}/assets/ccmenu_tray_screenshot.png)
+<a data-lightbox="ccmenu" href="{{ site_url }}/assets/ccmenu_tray_screenshot.png">
+    <img class="post-img" src="{{ site.url }}/assets/ccmenu_tray_screenshot.png" title="CCMenu screenshot"/>
+</a>
+
 <!--more-->
 
 Set up CCMenu
 -------------
 1. Find the CC feed URL from your Greenhouse [profile page](https://app.greenhouseci.com/#/user) under the Build notificatons section:
-![CCMenu screenshot	]({{ site.url }}/assets/cc_feed_url.png)
+
+<a data-lightbox="ccmenu" href="{{ site_url }}/assets/cc_feed_url.png">
+    <img class="post-img" src="{{ site.url }}/assets/cc_feed_url.png" title="CCMenu screenshot"/>
+</a>
 
 2. Enter the feed URL into CCMenu from `Preferences... -> [+]`
-![CCMenu screenshot	]({{ site.url }}/assets/ccmenu_add_feed.png)
+
+<a data-lightbox="ccmenu" href="{{ site_url }}/assets/ccmenu_add_feed.png">
+    <img class="post-img" src="{{ site.url }}/assets/ccmenu_add_feed.png" title="CCMenu screenshot"/>
+</a>
 
 3. Select the projects that you want to monitor:
-![CCMenu screenshot	]({{ site.url }}/assets/ccmenu_select_projects.png)
+
+<a data-lightbox="ccmenu" href="{{ site_url }}/assets/ccmenu_select_projects.png">
+    <img class="post-img" src="{{ site.url }}/assets/ccmenu_select_projects.png" title="CCMenu screenshot"/>
+</a>
 
 
 **That's it, you're done!**
