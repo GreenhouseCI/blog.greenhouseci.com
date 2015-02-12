@@ -104,7 +104,7 @@ We have added a testing configuration view where you can disable or enable tests
 Previously you could not disable tests for **iOS** and we ran them for every build. 
 For **Android**, you needed to select a build target (a target with **build** prefix). 
 
-This is all in the past now. When you add your project, we enable all of the tests by default. You can disable or enable them as you go, if the need be. For **iOS** you can now also **test a single target** if your scheme contains multiple targets.
+This is all in the past now. When you add your project, we enable all of the tests by default. You can disable or enable them as you go, if need be. For **iOS** you can now also **test a single target** if your scheme contains multiple targets.
 
 <a data-lightbox="testing" href="{{ site_url }}/assets/testing_view.png">
     <img class="post-img" src="{{ site_url }}/assets/testing_view.png"/>
@@ -113,7 +113,7 @@ This is all in the past now. When you add your project, we enable all of the tes
 <h2>Coming up</h2>
 
 <h3>Saucelab support for Appium</h3>
-Many people choose to run their Appium tests in the Saucelabs cloud. Saucelabs allows you to view test runs live in the browser and provides video captures for later viewing. These two features are very important if you want diagnose problems in your UI tests. So, one of the upcoming features is running the UI tests in Saucelabs.
+Many people choose to run their Appium tests in the <a href="https://saucelabs.com/">Saucelabs</a> cloud. Saucelabs allows you to view test runs live in the browser and provides video captures for later viewing. These two features are very important if you want to diagnose problems in your UI tests. So, one of the upcoming features is running the UI tests in Saucelabs.
 
 <h3>More languages for Appium</h3>
 Perhaps you would like to write your tests in another language other than Java or PHP?
