@@ -256,6 +256,10 @@ that you can use in your build scripts: `GREENHOUSE_BUILD` and `BUILD_NUMBER`.
 holds the total count of builds (including the ongoing build) for this project in Greenhouse. In other words, if you have triggered 10 builds for some project in Greenhouse, the next time you build it `BUILD_NUMBER` will be exported as `11`.
 
 In your `build.gradle` script you can check these values with
-<pre><code>greenhouseBuild = System.getenv("GREENHOUSE_BUILD")</code></pre>
+{% highlight java %}
+greenhouseBuild = System.getenv("GREENHOUSE_BUILD")
+{% endhighlight %}
 and
-<pre><code>greenhouseBuildNumber = System.getenv("BUILD_NUMBER")</code></pre>
+{% highlight java %}
+greenhouseBuildNumber = System.getenv("BUILD_NUMBER")
+{% endhighlight %}

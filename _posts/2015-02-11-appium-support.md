@@ -16,7 +16,7 @@ We currently enable writing Appium tests in either Java or PHP.
 <a href="http://appium.io/">Appium</a> is a mobile automation platform that provides a cross-platform API for writing tests.
 This means that you can use the same API to write tests for both Android and iOS. This leads to better code reuse, because if you are developing your application for both Android and iOS in parallel, the functionality is quite likely very similar. So, you reuse the same tests for both platforms.
 
-What is even more cool about Appium, is that you can write the tests in your language of choosing. Yes, you heard that right, the only requirement is that your language provides the WebDriver API. *Language of your choosing* might have been  a bit of stretch as you unfortunately cannot write tests in neither <a href="http://esolangs.org/wiki/Malbolge">Malbolge</a> or <a href="http://esolangs.org/wiki/chicken">chicken</a>. But you are not limited to writing tests in Objective C for iOS or Java for Android. You can just as easily write them in your favorite scripting language, like PHP, Ruby or Python. 
+What is even more cool about Appium, is that you can write the tests in your language of choosing. Yes, you heard that right, the only requirement is that your language provides the WebDriver API. *Language of your choosing* might have been  a bit of stretch as you unfortunately cannot write tests in neither <a href="http://esolangs.org/wiki/Malbolge">Malbolge</a> nor <a href="http://esolangs.org/wiki/chicken">chicken</a>. But you are not limited to writing tests in Objective C for iOS or Java for Android. You can just as easily write them in your favorite scripting language, like PHP, Ruby or Python. 
 
 
 <h2>Running Appium tests in Greenhouse</h2>
@@ -42,15 +42,19 @@ or <strong>*.apk file</strong> for Android.
 For <b>Android</b>, this should be the relative path from the test file to the <code>apk</code> as in the following examples:
 
 <h4>Java example</h4>
-<pre>File classpathRoot = new File(System.getProperty("user.dir"));
+
+{% highlight java %}
+File classpathRoot = new File(System.getProperty("user.dir"));
 File appPath = new File(classpathRoot, "../../App/build/outputs/apk/App-greenhouseandroid-debug.apk");
 DesiredCapabilities capabilities = new DesiredCapabilities();
 ...
 capabilities.setCapability("app", appPath);
-</pre>
+{% endhighlight %}
 
 <h4>PHP example</h4>
-<pre>define("APP_PATH", realpath(dirname(__FILE__).'/../../App/build/outputs/apk/App-greenhouseandroid-debug.apk'));
+
+{% highlight php %}
+define("APP_PATH", realpath(dirname(__FILE__).'/../../App/build/outputs/apk/App-greenhouseandroid-debug.apk'));
 
 class BaseTest extends Sauce\Sausage\WebDriverTestCase {
     ...
@@ -59,22 +63,30 @@ class BaseTest extends Sauce\Sausage\WebDriverTestCase {
         'seleniumServerRequestsTimeout' => 120,
         'desiredCapabilities' => array(
             ...
-            'app' => APP_PATH)</pre>
+            'app' => APP_PATH)
+{% endhighlight %}
 
-Please note that we highly recommend that you set the **seleniumServerRequestsTimeout** to a value of at least 120. The default value (60 seconds) causes the tests to be skipped randomly.
+Please note that we highly recommend that you set the **seleniumServerRequestsTimeout** for PHP to a value of at least 120. The default value (60 seconds) causes the tests to be skipped randomly.
 
 <h3>iOS</h3>
 
 For iOS, we export an environment variable <code>GREENHOUSE_SYMROOT</code>. This will hold the path of the current build's SYMROOT. Your tests should use this variable as in the following examples: <br />
+
 <h4>Java example</h4>
-<pre>String appPath = System.getenv("GREENHOUSE_SYMROOT");
+
+{% highlight java %}
+String appPath = System.getenv("GREENHOUSE_SYMROOT");
 File appDir = new File(appPath, "Debug-iphonesimulator");
 File app = new File(appDir, "greenhouse-ios.app");
 DesiredCapabilities capabilities = new DesiredCapabilities();
 ...
-capabilities.setCapability("app", app.getAbsolutePath());</pre>
+capabilities.setCapability("app", app.getAbsolutePath());
+{% endhighlight %}
+
 <h4>PHP example</h4>
-<pre>define("APP_PATH", realpath(getenv("GREENHOUSE_SYMROOT")."/Debug-iphonesimulator/greenhouse-ios.app"));
+
+{% highlight php %}
+define("APP_PATH", realpath(getenv("GREENHOUSE_SYMROOT")."/Debug-iphonesimulator/greenhouse-ios.app"));
 
 class BaseTest extends Sauce\Sausage\WebDriverTestCase {
     ..
@@ -84,10 +96,11 @@ class BaseTest extends Sauce\Sausage\WebDriverTestCase {
             'desiredCapabilities' => array(
                 ...
                 'app' => APP_PATH)</pre>
+{% endhighlight %}
 
-Please note that we highly recommend that you set the **seleniumServerRequestsTimeout** to a value of at least 120. The default value (60 seconds) causes the tests to be skipped randomly.
+Please note that we highly recommend that you set the **seleniumServerRequestsTimeout** for PHP to a value of at least 120. The default value (60 seconds) causes the tests to be skipped randomly.
 
-Example code is available for both <a href="https://github.com/lauriskr/greenhouse-android/tree/appium">Android</a> and <a href="https://github.com/lauriskr/greenhouse-ios/tree/appium/greenhouse-ios/appium">iOS</a>
+Example code is available for both <a href="https://github.com/GreenhouseCI/greenhouse-android/tree/appium">Android</a> and <a href="https://github.com/GreenhouseCI/greenhouse-ios/tree/appium/greenhouse-ios/appium">iOS</a>.
 
 <h3>Testing view</h3> 
 We have added a testing configuration view where you can disable or enable tests.
@@ -95,7 +108,7 @@ We have added a testing configuration view where you can disable or enable tests
 Previously you could not disable tests for **iOS** and we ran them for every build. 
 For **Android**, you needed to select a build target (a target with **build** prefix). 
 
-This is all in the past now. When you add your project, we enable all of the tests by default. You can disable or enable them as you go, if the need be. For **iOS** you can now also **test a single target** if your scheme contains multiple targets.
+This is all in the past now. When you add your project, we enable all of the tests by default. You can disable or enable them as you go, if need be. For **iOS** you can now also **test a single target** if your scheme contains multiple targets.
 
 <a data-lightbox="testing" href="{{ site_url }}/assets/testing_view.png">
     <img class="post-img" src="{{ site_url }}/assets/testing_view.png"/>
@@ -104,7 +117,7 @@ This is all in the past now. When you add your project, we enable all of the tes
 <h2>Coming up</h2>
 
 <h3>Saucelab support for Appium</h3>
-Many people choose to run their Appium tests in the Saucelabs cloud. Saucelabs allows you to view test runs live in the browser and provides video captures for later viewing. These two features are very important if you want diagnose problems in your UI tests. So, one of the upcoming features is running the UI tests in Saucelabs.
+Many people choose to run their Appium tests in the <a href="https://saucelabs.com/">Saucelabs</a> cloud. Saucelabs allows you to view test runs live in the browser and provides video captures for later viewing. These two features are very important if you want to diagnose problems in your UI tests. So, one of the upcoming features is running the UI tests in Saucelabs.
 
 <h3>More languages for Appium</h3>
 Perhaps you would like to write your tests in another language other than Java or PHP?

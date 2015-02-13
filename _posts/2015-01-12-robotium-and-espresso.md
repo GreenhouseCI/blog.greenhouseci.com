@@ -45,19 +45,25 @@ To best illustrate the difference between the two, imagine a simple login screen
 
 To test the login form in Android Instrumention, we would have to write something like this:
 
-<pre><code>EditText username = (EditText) mActivity.findViewById(R.id.username);
+{% highlight java %}
+EditText username = (EditText) mActivity.findViewById(R.id.username);
 EditText password = (EditText) mActivity.findViewById(R.id.password);
 Button loginButton = (Button) mActivity.findViewById(R.id.submit_button);
 username.requstFocus();
 username.setText("MyUsername");
 password.requstFocus();
 password.setText("MyPassword");
-loginButton.performClick();</code></pre>
+loginButton.performClick();
+{% endhighlight %}
 
 This, as you can imagine, is quite cumbersome. A more intuitive way would be writing the tests from a user's perspective. 
-<pre><code>robo.enterText(0, "user-name");
+
+{% highlight java %}
+robo.enterText(0, "user-name");
 robo.enterText(1, "password");
-robo.clickButton(0);</code></pre>
+robo.clickButton(0);
+{% endhighlight %}
+
 Which translates into 
 
 1. "Enter MyUsername into the first field"
@@ -77,8 +83,10 @@ Espresso improves on this situation immensely. For both regular Android Instrume
 In addition, Espresso makes use of the Hamcrest selectors.
 Hamcrest string matchers make finding views a lot easier and flexible in comparison to both Robotium's Solo and the Android Instrumentation.
 
-<pre><code>
-onView(withId(R.id.submit_button)).perform(click()).check(matches(isDisplayed()));</code></pre>
+{% highlight java %}
+onView(withId(R.id.submit_button)).perform(click()).check(matches(isDisplayed()));
+{% endhighlight %}
+
 This following snippet follows where we left off with the login screen example. The snippet, which reads like it is written in some cool functional language, performs a click on the submit button and checks if it is displayed after that. The ability to filter and combine different matchers make Espresso very powerful and useful.
 
 
