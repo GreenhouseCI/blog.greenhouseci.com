@@ -56,10 +56,12 @@ class BaseTest extends Sauce\Sausage\WebDriverTestCase {
     ...
     public static $browsers = array(
         array(
-         ...
+        'seleniumServerRequestsTimeout' => 120,
         'desiredCapabilities' => array(
             ...
             'app' => APP_PATH)</pre>
+
+Please note that we highly recommend that you set the **seleniumServerRequestsTimeout** to a value of at least 120. The default value (60 seconds) causes the tests to be skipped randomly.
 
 <h3>iOS</h3>
 
@@ -78,10 +80,13 @@ class BaseTest extends Sauce\Sausage\WebDriverTestCase {
     ..
     public static $browsers = array(
         array(
-        ...
-        'desiredCapabilities' => array(
-            ...
-            'app' => APP_PATH)</pre>
+            'seleniumServerRequestsTimeout' => 120,
+            'desiredCapabilities' => array(
+                ...
+                'app' => APP_PATH)</pre>
+
+Please note that we highly recommend that you set the **seleniumServerRequestsTimeout** to a value of at least 120. The default value (60 seconds) causes the tests to be skipped randomly.
+
 Example code is available for both <a href="https://github.com/lauriskr/greenhouse-android/tree/appium">Android</a> and <a href="https://github.com/lauriskr/greenhouse-ios/tree/appium/greenhouse-ios/appium">iOS</a>
 
 <h3>Testing view</h3> 
