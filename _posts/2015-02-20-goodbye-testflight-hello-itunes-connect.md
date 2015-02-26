@@ -25,7 +25,7 @@ Now that we have all of the bad stuff out of the way, here's the good news. Rega
 How to setup publishing
 -----------------------
 
-Unfortunately, Apple does not provide an API for iTunes Connect as TestFlight did. Greenhouse enables publishing to TestFlight via the Application Loader application. This means that we need your Apple ID and password do perform the publishing on your behalf.
+Unfortunately, Apple does not provide an API for iTunes Connect as TestFlight did. Greenhouse enables publishing to iTunes Connect via the Application Loader application. This means that we need your Apple ID and password to perform the publishing on your behalf.
 
 First, log in to <a href="https://itunesconnect.apple.com/WebObjects/iTunesConnect.woa">iTunes Connect</a>
 
