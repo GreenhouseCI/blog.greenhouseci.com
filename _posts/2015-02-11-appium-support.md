@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Goodbye TestFlight! Hello iTunes Connect"
-date:   2015-02-20 16:00:00
+title:  "Greenhouse has added support for Appium"
+date:   2015-02-11 16:00:00
 categories: Greenhouse update
 share: true
 comments: true
