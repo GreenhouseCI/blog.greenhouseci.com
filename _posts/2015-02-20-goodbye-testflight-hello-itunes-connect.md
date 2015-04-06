@@ -10,7 +10,7 @@ comments: true
 We have some bad news and some good news. Let's start with the bad news. As you may or may not know already, <a href="http://help.testflightapp.com/customer/portal/articles/1768754">Apple has decided to discontinue TestFlight</a>. 
 <!--more-->
 
-However, as an alternative, Apple has suggested people use iTunes Connect for build distribution.
+However, as an alternative, Apple has suggested people use TestFlight Beta Testing in iTunes Connect for build distribution.
 There are some obvious downsides to this. 
 
 Firstly, publishing to iTunes Connect requires that the application is signed with App Store distribution certificate. 
