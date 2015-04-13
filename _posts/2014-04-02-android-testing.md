@@ -2,7 +2,9 @@
 layout: post
 title:  "We Have Added Android Unit Test Support!"
 date:   2014-04-03 12:18:52
+author: uku
 categories: Greenhouse update
+tags: [testing, android]
 share: true
 comments: true
 ---

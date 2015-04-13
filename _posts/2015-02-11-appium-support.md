@@ -2,7 +2,9 @@
 layout: post
 title:  "Greenhouse has added support for Appium"
 date:   2015-02-11 16:00:00
+author: uku
 categories: Greenhouse update
+tags: [testing, appium, android, ios]
 share: true
 comments: true
 ---

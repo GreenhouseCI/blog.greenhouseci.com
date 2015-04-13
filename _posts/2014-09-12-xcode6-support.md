@@ -1,8 +1,10 @@
 ---
 layout: post
 title:  "Xcode 6 with Swift Support"
-date:   2014-09-09 16:00:00
+date:   2014-09-12 16:00:00
+author: lauris
 categories: Greenhouse update
+tags: [ios]
 share: true
 comments: true
 ---

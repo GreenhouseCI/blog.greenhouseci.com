@@ -2,7 +2,9 @@
 layout: post
 title:  "E-mail and iOS OTA distribution"
 date:   2015-01-21 16:00:00
+author: lauris
 categories: Greenhouse update
+tags: [publishing, ios]
 share: true
 comments: true
 ---

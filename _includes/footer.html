@@ -1,1 +1,30 @@
-<span>&copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">HPSTR Theme</a>.</span>
+<div class="footer-wrapper"> <!-- footer wrapper -->
+  <hr>
+    <div class="container">
+      <footer>
+          <ul class="list-inline pull-left">
+            <li><a href="about-us.html" onclick="trackFooter('about us', 'about-us.html'); ">About Us</a></li>
+            <li><a href="faq.html" onclick="trackFooter('faq', 'faq.html'); ">FAQ</a></li>
+            <li><a href="contact-us.html" onclick="trackFooter('contact us', 'contact-us.html'); ">Contact Us</a></li>
+            <li>
+              <a href="https://twitter.com/GreenhouseCI" onclick="trackFooter('twitter @GreenhouseCI', 'https://twitter.com/GreenhouseCI'); "><i class="fa fa-twitter fa-lg"></i>@GreenhouseCI</a>
+            </li>
+          </ul>
+          <ul class="list-inline pull-right">
+            <li><a href="tos.html" onclick="trackFooter('terms of service', 'tos.html'); ">Terms</a></li>
+            <li><a href="privacy-policy.html" onclick="trackFooter('privacy policy', 'privacy-policy.html'); ">Privacy</a></li>
+          </ul>
+        <div class="clearfix"></div>
+      </footer>
+    </div> <!-- /container -->
+</div> <!-- / footer wrapper -->
+
+<script type="text/javascript">
+  var trackFooter = function(label, url) {
+    ga('send', 'event', 'footer', 'click', label, {'hitCallback':
+      function () {
+          document.location = url;
+     }
+   });
+  };
+</script>

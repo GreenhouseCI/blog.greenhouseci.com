@@ -1,66 +1,59 @@
-<meta charset="utf-8">
-<title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-{% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+	<meta name="theme-color" content="#12B868">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}Greenhouseci.com announcements and everything related to continuous integration for mobile apps{% endif %}">
+    <meta name="author" content="Greenhouseci.com">
+    <meta name="keywords" content="continuous integration, ci, mobile ci, continuous delivery, ci server, build server, ios, android, jenkins, jenkins alternative, cisimple alternative, buildozer alternative">
+    <link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
 
-{% if site.owner.twitter %}<!-- Twitter Cards -->
-{% if page.image.feature %}<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{{ site.url }}/images/{{ page.image.feature }}">
-{% else %}<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="{% if page.image.thumb %}{{ site.url }}/images/{{ page.image.thumb }}{% else %}{{ site.url }}/images/{{ site.logo }}{% endif %}">{% endif %}
-<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-<meta name="twitter:creator" content="@{{ site.owner.twitter }}">{% endif %}
+	<title>{% if page.title %}{{ page.title }}{% else %}Greenhouseci.com - blog{% endif %}</title>
 
-<!-- Open Graph -->
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="article">
-<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-<meta property="og:url" content="{{ site.url }}{{ page.url }}">
-<meta property="og:site_name" content="{{ site.title }}">
+	<!-- Bootstrap core CSS -->
+	<link href="{{ site.url }}/css/bootstrap.css" rel="stylesheet">
 
-{% if site.google_verify %}<meta name="google-site-verification" content="{{ site.google_verify }}">{% endif %}
-{% if site.bing_verify %}<meta name="msvalidate.01" content="{{ site.bing_verify }}">{% endif %}
+	<!-- Custom styles for this template -->
+	<link href="{{ site.url }}/css/color-styles.css" rel="stylesheet">
+	<link href="{{ site.url }}/css/ui-elements.css" rel="stylesheet">
+	<link href="{{ site.url }}/css/custom.css" rel="stylesheet">
+	<!-- Blog specific styles -->
+	<link href="{{ site.url }}/css/main.css" rel="stylesheet">
 
-{% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
-<link rel="canonical" href="{{ canonical }}">
-<link href="{{ site.url }}/feed.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
-{% if site.owner.google_plus %}<link rel="author" href="{{ site.owner.google_plus }}?rel=author">{% endif %}
+	<!-- Resources -->
+	<link href="{{ site.url }}/css/animate.css" rel="stylesheet">
+    <link href="{{ site.url }}/css/lightbox.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="{{ site.url }}/assets/js/lightbox.min.js"></script>
 
-<!-- For all browsers -->
-<link rel="stylesheet" href="{{ site.url }}/assets/css/main.min.css">
-<link rel="stylesheet" href="{{ site.url }}/css/custom.css">
-<link rel="stylesheet" href="{{ site.url }}/css/lightbox.css">
-<!-- Webfonts -->
-<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-42648687-3', 'blog.greenhouseci.com');
+		// ga('create', 'UA-42648687-1', {'cookieDomain': 'none'});
+		ga('send', 'pageview');
+	</script>
 
-<meta http-equiv="cleartype" content="on">
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 
-<!-- Load Modernizr -->
-<script src="{{ site.url }}/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
-
-<!-- Icons -->
-<!-- 16x16 -->
-<link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
-<!-- 32x32 -->
-<link rel="shortcut icon" href="{{ site.url }}/favicon.png">
-<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="{{ site.url }}/images/apple-touch-icon-precomposed.png">
-<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.url }}/images/apple-touch-icon-72x72-precomposed.png">
-<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.url }}/images/apple-touch-icon-114x114-precomposed.png">
-<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.url }}/images/apple-touch-icon-144x144-precomposed.png">
-
-{% if page.image.background or site.background %}
-{% capture background %}{% if page.image.background %}{{ page.image.background }}{% else %}{{ site.background }}{% endif %}{% endcapture %}
-{% unless background contains 'http://' or background contains 'https://' %}{% capture background %}{{ site.url }}/images/{{ background }}{% endcapture %}{% endunless %}
-<style type="text/css">body {background-image:url({{ background }});}</style>
-{% endif %}
+	<!--Start of Zopim Live Chat Script-->
+	<script type="text/javascript">
+		window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+		d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+		_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+		$.src='//v2.zopim.com/?1tdR1LPazbm60z41M4zdfZzVqMo9oDnj';z.t=+new Date;$.
+		type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+	</script>
+	<!--End of Zopim Live Chat Script-->
+</head>

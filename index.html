@@ -1,60 +1,91 @@
 ---
-layout: post-index
-title: Latest Posts
-description: "List of latests posts @ blog.greenhouseci.com"
-tags: [Jekyll, theme, themes, responsive, blog, modern]
-image:
-  feature: greenhouse_bg_cropped_blog_feature_1024x256.jpg
+layout: default
 ---
 
-{% for post in paginator.posts %}
-<article class="hentry">
-  <header>
-    <div class="entry-meta"><span class="entry-date date published updated"><time datetime="{{ post.date | date_to_xmlschema }}"><a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a></time></span><span class="author vcard"><span class="fn"><a href="{{ site.url }}/about/" title="About {{ site.owner.name }}">{{ site.owner.name }}</a></span></span>{% if site.disqus_shortname and post.comments %}&nbsp; &bull; &nbsp;<span class="entry-comments"><a href="{{ site.url }}{{ post.url }}#disqus_thread">Comment</a></span>{% endif %}</div><!-- /.entry-meta -->
-    {% if post.link %}
-      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}"><i class="icon-double-angle-right"></i></a> <a href="{{ post.link }}">{{ post.title }}</a></h1>
-    {% else %}
-      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a></h1>
-    {% endif %}
-  </header>
-  <div class="entry-content">
-    {{ post.excerpt }}
-    <a class="read-more-link" href="{{ site.url }}{{ post.url }}">Read more</a>
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-{% endfor %}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>Greenhouse Blog <small>Announcements, news and everything related to CI</small></h3>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="timeline">
+        {% for post in paginator.posts %}
+        <div class="blg-summary">
+          {% capture weekago %}{{'now' | date: '%s' | minus : 604800}}{% endcapture %}
+          {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
+          <h3 {% if weekago < posttime %} class="new" {% endif %} ><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+          <div class="timeline-info hidden-xs">
+            <img src="{% include author.html post=post get="avatar" %}" class="blg-author" alt="...">
+            <time datetime="2014-01-10" class="hidden-xs">{{ post.date | date: "%b %-d, %Y" }}</time>
+          </div>
+          <ul class="text-muted list-inline blg-header">
+            <li><i class="fa fa-user"></i> {% include author.html post=post get="name" %}</li>
+            <li><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}</li>
+            <li><i class="fa fa-comments-o"></i> <a href="{{ site.url }}{{ post.url }}/#disqus_thread">0 Comments</a>.</li>
+          </ul>
+          <hr>
+          <p class="blg-text">
+            {{ post.excerpt | remove: '<p>' | remove: '</p>' }} 
+            <a href="{{ site.url }}{{ post.url }}">Continue reading &#8594;</a>
+          </p>
+          <p class="tags">
+            {% if post.tags.size > 0 %}
+              {% for post_tag in post.tags %}
+                {% for data_tag in site.data.tags %}
+                  {% if data_tag.slug == post_tag %}
+                    <a href="/tag/{{ data_tag.slug }}" class="background-color bg-hover-color">{{ data_tag.name }}</a>
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+            {% endif %}
+          </p>
+        </div>
+        {% endfor %}
+      </div>
 
-<div class="pagination">
-  {% if paginator.previous_page %}
-    {% if paginator.previous_page == 1 %}
-      <a href="{{ site.url }}" class="btn">Previous</a>
-    {% else %}
-      <a href="{{ site.url }}/page{{ paginator.previous_page }}" class="btn">Previous</a>
-    {% endif %}
-  {% else %}
-    Previous
-  {% endif %}
-  <ul class="inline-list">
-    <li>
-      {% if paginator.page == 1 %}
-        <span class="current-page">1</span>
-      {% else %}
-        <a href="{{ site.url }}">1</a>
-      {% endif %}
-    </li>
-    {% for count in (2..paginator.total_pages) %}
-      <li>
-        {% if count == paginator.page %}
-          <span class="current-page">{{ count }}</span>
-        {% else %}
-          <a href="{{ site.url }}/page{{ count }}">{{ count }}</a>
+        <!-- Pagination -->
+        {% if paginator.total_pages > 1 %}
+          <ul class="pagination">
+            <li class="{% if paginator.previous_page %}{% else %}disabled{% endif %}"><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
+            {% for page in (1..paginator.total_pages) %}
+              {% if page == paginator.page %}
+                <li class="active"><a href="#">{{ page }}<span class="sr-only">{{ page }}</span></a></li>
+              {% elsif page == 1 %}
+                <li><a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+              {% else %}
+                <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+              {% endif %}
+            {% endfor %}
+            <li class="{% if paginator.next_page %}{% else %}disabled{% endif %}"><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
+          </ul>
         {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-  {% if paginator.next_page %}
-    <a href="{{ site.url }}/page{{ paginator.next_page }}" class="btn">Next</a>
-  {% else %}
-    Next
+      <div class="clearfix"></div>
+    </div>
+    <div class="col-sm-4">
+      {% include sidebar.html %}
+      <h3>Tags</h3>
+      <hr>
+      <p class="tags">
+        {% for data_tag in site.data.tags %}
+          <a href="/tag/{{ data_tag.slug }}" class="background-color bg-hover-color">{{ data_tag.name }}</a>
+        {% endfor %}
+      </p>          
+    </div>
+  </div>
+</div>
+{% if site.disqus_shortname %}
+  <script type="text/javascript">
+    var disqus_shortname = '{{ site.disqus_shortname}}';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+
+  </script>
   {% endif %}
-</div><!-- /.pagination -->

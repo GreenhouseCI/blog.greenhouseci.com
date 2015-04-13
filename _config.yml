@@ -1,71 +1,18 @@
-title:            Greenhouse Blog
-description:      Simple and secure continuous integration for mobile apps.
+# Site settings
+title: Greenhouse Blog
+email: team@greenhouseci.com
+description: 
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://127.0.0.1:4000" # the base hostname & protocol for your site
+twitter_username: greenhouseci
+github_username:  greenhouseci
 disqus_shortname: greenhouseci
-#Your site's domain goes here. Leave localhost server or blank when working locally.
-url:              http://blog.greenhouseci.com
-static_files: assets/favicon.ico
-upload: assets/favicon.ico
 
-# Owner/author information
-owner:
-  name:           Greenhouseci.com
-  avatar:         avatar.jpg
-  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
-  email:          team@greenhouseci.com
-  # Social networking links used in footer. Update and remove as you like.
-  twitter:        greenhouseci
-  facebook:       
-  github:         GreenhouseCI
-  stackexchange:  
-  linkedin:       
-  instagram:      
-  flickr:         
-  tumblr:         
-  # For Google Authorship https://plus.google.com/authorship
-  google_plus:   
-
-# Background image to be tiled on all pages
-background: ps_neutral.png
-
-# Analytics and webmaster tools stuff goes here
-google_analytics:   UA-42648687-1
-google_verify:      
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
-
-# Links to include in top navigation
-# For external links add external: true
-links:
- # - title: Greenhouseci.com
- #   url: http://Greenhouseci.com
- #   external: true
-
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
-future:      true
+# Build settings
+markdown: kramdown
+paginate: 5
 highlighter: pygments
-# markdown:    kramdown
-# https://github.com/mojombo/jekyll/wiki/Permalinks
+
 permalink:   /:categories/:title/
 
-# Amount of post to show on home page
-paginate: 3
-
 excerpt_separator: <!--more-->
-
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: true
-
-  coderay:
-    coderay_line_numbers: nil
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
-
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

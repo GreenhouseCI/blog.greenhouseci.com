@@ -3,6 +3,8 @@ layout: post
 title:  "Goodbye TestFlight, Hello iTunes Connect!"
 date:   2015-02-20 16:00:00
 categories: Greenhouse update
+tags: [ios, testflight, itunes, publishing]
+author: uku
 share: true
 comments: true
 ---

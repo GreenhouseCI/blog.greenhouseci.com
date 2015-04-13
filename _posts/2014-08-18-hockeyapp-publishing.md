@@ -2,7 +2,9 @@
 layout: post
 title:  "Publish all your apps to HockeyApp"
 date:   2014-08-18 12:00:00
+author: priit
 categories: Greenhouse update
+tags: [publishing, ios, android]
 share: true
 comments: true
 ---

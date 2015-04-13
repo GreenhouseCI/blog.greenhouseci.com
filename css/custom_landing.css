@@ -1,0 +1,62 @@
+.landing-hero {
+	width: 100%;
+	margin-bottom: 100px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-top: -30px;
+	background: url(../img/img_background.jpg) no-repeat center center;
+	background-size: cover;
+	color: #FFF;
+	border-bottom: 1px solid #eee;
+	overflow: hidden;
+}
+
+.landing-hero h1 {
+	font-family: 'Oswald', sans-serif;
+	font-size: 54px;
+	line-height: 1.5em;
+}
+.landing-hero h2 {
+	  line-height: 1.5em;
+}
+
+.form-white {
+    background: #FFF;
+    border: 1px solid #DDD;
+    padding: 30px 20px;
+    position: relative;
+}
+
+.form-white h2, h3, label {
+    color: #333333;
+    margin-top: 0px
+}
+
+.form-white h3 {
+    margin-bottom: 40px;
+    font-size: 22px;
+}
+
+#sign-up-button {
+    font-size: 18px;
+}
+
+.glr-show {
+    background: transparent;
+}
+
+.glr-show h3 {
+    color: #12B868;
+}
+
+.glr-show .text-muted {
+    color: #ebf5f1;
+}
+
+.glr-show img {
+    margin-top: 10px;
+}
+
+.carousel-indicators {
+    bottom: -40px;
+}

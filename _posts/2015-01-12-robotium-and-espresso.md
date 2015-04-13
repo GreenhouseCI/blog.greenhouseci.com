@@ -2,7 +2,9 @@
 layout: post
 title:  "Making UI testing on Android easy"
 date:   2015-01-05 16:00:00
+author: uku
 categories: Greenhouse update
+tags: [testing, android, robotium, espresso]
 share: true
 comments: true
 ---

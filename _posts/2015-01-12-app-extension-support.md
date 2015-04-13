@@ -2,7 +2,9 @@
 layout: post
 title:  "App Extension Support"
 date:   2015-01-12 16:00:00
+author: lauris
 categories: Greenhouse update
+tags: [ios]
 share: true
 comments: true
 ---

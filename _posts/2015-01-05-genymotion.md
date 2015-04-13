@@ -2,7 +2,9 @@
 layout: post
 title:  "Why we started using Genymotion emulators for continuous integration"
 date:   2015-01-05 16:00:00
+author: uku
 categories: Greenhouse update
+tags: [android, testing]
 share: true
 comments: true
 ---

@@ -1,0 +1,23 @@
+
+{% if include.get == "name" %}
+	{% if include.post.author %}
+		{% for author in site.data.authors %}
+			{% if author.slug == include.post.author %}
+				{{ author.display_name }}
+			{% endif %}
+		{% endfor %}
+	{% else %}
+		Greenhouseci.com
+	{% endif %}
+{% endif %}
+{% if include.get == "avatar" %}
+	{% if include.post.author %}
+		{% for author in site.data.authors %}
+			{% if author.slug == include.post.author %}
+				{{ author.avatar }}
+			{% endif %}
+		{% endfor %}
+	{% else %}
+		http://greenhouseci.com/img/logo_gh_500x500_alpha.png
+	{% endif %}
+{% endif %}

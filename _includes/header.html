@@ -1,0 +1,38 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand-logo navbar-brand" href="http://greenhouseci.com/index.html"></a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a id="nav-home" href="http://greenhouseci.com/index.html" onclick="trackHeader('home', 'http://greenhouseci.com/index.html'); ">Home</a></li>
+            <li><a id="nav-features" href="http://greenhouseci.com/index.html#features" onclick="trackHeader('features', 'http://greenhouseci.com/index.html#features'); ">Features</a></li>
+            <li><a id="nav-pricing" href="http://greenhouseci.com/pricing.html" onclick="trackHeader('pricing', 'http://greenhouseci.com/pricing.html'); ">Pricing</a></li>
+            <li><a id="nav-about" href="http://greenhouseci.com/about-us.html" onclick="trackHeader('about-us', 'http://greenhouseci.com/about-us.html'); ">About Us</a></li>
+            <li><a id="nav-blog" class="navbar-bold" href="http://blog.greenhouseci.com" onclick="trackHeader('blog', 'http://blog.greenhouseci.com'); ">Blog</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li ><a id="nav-sign-in" href="https://app.greenhouseci.com/#/login" onclick="trackHeader('sign-in', 'https://app.greenhouseci.com/#/login');">Sign In</a></li>
+          <li ><a id="nav-sign-up" href="http://greenhouseci.com/sign-up.html" class="navbar-bold" onclick="trackHeader('sign-up', 'http://greenhouseci.com/sign-up.html');">Sign Up</a></li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    
+  var trackHeader = function(label, url) {
+    ga('send', 'event', 'navbar', 'click', label, {'hitCallback':
+      function () {
+          document.location = url;
+     }
+   });
+  };
+
+</script>

@@ -2,7 +2,9 @@
 layout: post
 title:  "TestFlight Integration for iOS"
 date:   2014-04-02 12:18:52
+author: uku
 categories: Greenhouse update
+tags: [ios, testflight, publishing]
 share: true
 comments: true
 ---

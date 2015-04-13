@@ -2,7 +2,9 @@
 layout: post
 title:  "iOS Testing is Live"
 date:   2014-05-28 12:19:45
+author: uku
 categories: Greenhouse update
+tags: [ios, testing]
 share: true
 comments: true
 ---

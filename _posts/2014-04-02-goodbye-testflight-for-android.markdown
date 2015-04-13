@@ -2,8 +2,9 @@
 layout: post
 title:  "Goodbye TestFlight for Android"
 date:   2014-04-02 11:20:43
+author: uku
 categories: Greenhouse update
-tags: android testflight
+tags: [android, testflight, publishing]
 share: true
 comments: true
 ---
