@@ -24,7 +24,7 @@ layout: default
           <ul class="text-muted list-inline blg-header">
             <li><i class="fa fa-user"></i> {% include author.html post=post get="name" %}</li>
             <li><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}</li>
-            <li><i class="fa fa-comments-o"></i> <a href="{{ site.url }}{{ post.url }}/#disqus_thread">0 Comments</a>.</li>
+            <li><i class="fa fa-comments-o"></i> <a href="{{ site.url }}{{ post.url }}#disqus_thread">0 Comments</a>.</li>
           </ul>
           <hr>
           <p class="blg-text">
