@@ -3,7 +3,7 @@ title: Greenhouse Blog
 email: team@greenhouseci.com
 description: 
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://127.0.0.1:4000" # the base hostname & protocol for your site
+url: "http://greenhouseci.com" # the base hostname & protocol for your site
 twitter_username: greenhouseci
 github_username:  greenhouseci
 disqus_shortname: greenhouseci
