@@ -21,14 +21,13 @@ First, we will get find your **developer certificate**.
 Open up **Keychain Access** by searching for it in Spotlight. 
 In the **Categories** submenu on the left side bar select **My Certificates**
 
-![Teams overview]({{ site.url }}/images/keychain-expanded-cropped.png)
+![Keychain]({{ site.url }}/images/keychain-expanded-cropped.png)
 
 The name of the certificate should start with **iPhone Developer:**
 
 Once you have located your developer certificate, select **File -> Export Items** from the OSX menu bar.
 
-![Teams overview]({{ site.url }}/images/keychain-export-cropped.png)
-![Teams overview]({{ site.url }}/images/keychain-not-expanded-cropped.png)
+![Export from keychain]({{ site.url }}/images/keychain-export-cropped.png)
 
 This will prompt you to save the developer certificate. 
 
