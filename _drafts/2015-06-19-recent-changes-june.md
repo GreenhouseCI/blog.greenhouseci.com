@@ -10,6 +10,7 @@ comments: true
 ---
 
 It has been quite some time since we last wrote about what's going on in Greenhouse but that doesn't mean that we have been idling around. We've been busy at work and have launched a couple of new interesting integrations which will hopefully make your CI setups even more.. hassle-free.
+<!--more-->
 
 Slack
 =====
