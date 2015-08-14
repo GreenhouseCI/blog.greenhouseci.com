@@ -248,10 +248,10 @@ In the screenshot, build log reports that it has published the build artefacts t
 <h2 id="build-versioning">Build versioning</h2>
 
 To make your build version management easy, Greenhouse exports two environment variables
-that you can use in your build scripts: `GREENHOUSE_BUILD` and `BUILD_NUMBER`.
+that you can use in your build scripts: `GREENHOUSE_BUILD` and `GREENHOUSE_BUILD_NUMBER`.
 
-`GREENHOUSE_BUILD` is set to `true` in Greenhouse for every build and it indicates that your build is currently running in a CI environment. `BUILD_NUMBER` environment variable 
-holds the total count of builds (including the ongoing build) for this project in Greenhouse. In other words, if you have triggered 10 builds for some project in Greenhouse, the next time you build it `BUILD_NUMBER` will be exported as `11`.
+`GREENHOUSE_BUILD` is set to `true` in Greenhouse for every build and it indicates that your build is currently running in a CI environment. `GREENHOUSE_BUILD_NUMBER` environment variable 
+holds the total count of builds (including the ongoing build) for this project in Greenhouse. In other words, if you have triggered 10 builds for some project in Greenhouse, the next time you build it `GREENHOUSE_BUILD_NUMBER` will be exported as `11`.
 
 In your `build.gradle` script you can check these values with
 {% highlight java %}
@@ -259,5 +259,5 @@ greenhouseBuild = System.getenv("GREENHOUSE_BUILD")
 {% endhighlight %}
 and
 {% highlight java %}
-greenhouseBuildNumber = System.getenv("BUILD_NUMBER")
+greenhouseBuildNumber = System.getenv("GREENHOUSE_BUILD_NUMBER")
 {% endhighlight %}
