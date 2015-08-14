@@ -379,9 +379,32 @@ In the screenshot, build log reports that it has published the build artefacts t
 <h2 id="build-versioning">Build versioning</h2>
 
 To make your build version management easy, Greenhouse exports two environment variables
-that you can use in your build scripts: `GREENHOUSE_BUILD` and `BUILD_NUMBER`.
+that you can use in your build scripts: `GREENHOUSE_BUILD` and `GREENHOUSE_BUILD_NUMBER`.
 
-`GREENHOUSE_BUILD` is set to `true` in Greenhouse for every build and it indicates that your build is currently running in a CI environment. `BUILD_NUMBER` environment variable 
-holds the total count of builds (including the ongoing build) for this project in Greenhouse. In other words, if you have triggered 10 builds for some project in Greenhouse, the next time you build it `BUILD_NUMBER` will be exported as `11`.
+`GREENHOUSE_BUILD` is set to `true` in Greenhouse for every build and it indicates that your build is currently running in a CI environment. `GREENHOUSE_BUILD_NUMBER` environment variable 
+holds the total count of builds (including the ongoing build) for this project in Greenhouse. In other words, if you have triggered 10 builds for some project in Greenhouse, the next time you build it `GREENHOUSE_BUILD_NUMBER` will be exported as `11`.
 
 Since the iOS build ecosystem supports running arbitrary scripts as a part of your build process, you can check the existence and the value of these environment variables in either bash or a scripting language of your choice (such as Ruby or Python).
+
+Here is an example of updating your build version using a simple `bash` script.
+
+{% highlight bash %}
+buildNumber=$GREENHOUSE_BUILD_NUMBER
+stringLength=${#buildNumber}
+if [ $stringLength -ne 0 ]; then
+    echo "Updating build number to $buildNumber"
+    /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $buildNumber" "${TARGET_BUILD_DIR}/${INFOPLIST_PATH}"
+else
+    echo "Missing build number, skip updating"
+fi
+
+{% endhighlight %}
+
+To use build versioning to your project, do the the following:
+
+1. Select: your Target in Xcode
+2. Select: Build Phases Tab
+3. Select: Add Build Phase -> Add Run Script
+4. Paste code below in to new "Run Script" section
+5. Check the checkbox "Run script only when installing"
+6. Drag the "Run Script" below "Link Binaries With Libraries"
