@@ -23,7 +23,7 @@ Cross-platform apps have been claimed to take over the ruling of native platform
 
 ## Expressive functional testing with Espresso
 
-As mobile apps are become more and more sophisticated, testing these apps is also becoming far more difficult. **Maciej Górski**, a passionate Android developer, is going to show how to write real-world functional tests using Espresso taking a production app as a starting point. This talk won’t be your typical “Hello World” example and is instead packed with tips and tricks from the trenches.
+As mobile apps are becoming more and more sophisticated, testing these apps is also becoming far more difficult. **Maciej Górski**, a passionate Android developer, is going to show how to write real-world functional tests using Espresso taking a production app as a starting point. This talk won’t be your typical “Hello World” example and is instead packed with tips and tricks from the trenches.
 If Maciej can get you excited about writing tests using Espresso then jump right in and add some tests to your apps - Greenhouse will pick them up automatically and run them as part of your build process.
 
 ## Sustainable Functional Automated Testing
