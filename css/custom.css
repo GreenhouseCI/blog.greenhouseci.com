@@ -343,7 +343,7 @@ body {
 	.iphone-container > .iphone-screen {
 		left: 55px;
 		right: 55px;
-	}	
+	}
 }
 @media (min-width: 992px) and (max-width: 1199px) { /* for md devices */
 	.iphone-container {
@@ -353,7 +353,7 @@ body {
 	.iphone-container > .iphone-screen {
 		left: 53px;
 		right: 53px;
-	}	
+	}
 }
 @media (min-width: 1200px) and (min-height: 801px) { /* for lg and high screens */
 	.iphone-container {
@@ -363,7 +363,7 @@ body {
 	.iphone-container > .iphone-screen {
 		left: 65px;
 		right: 65px;
-	}	
+	}
 	.iphone-container > img {
 		max-height: 100%;
 	}
@@ -438,7 +438,7 @@ body {
 @media (min-width: 768px) and (max-width: 991px) { /* for sm devices */
 	.features {
 		width: 748px;
-	}	
+	}
 }
 
 /* ===== Example Blocks ===== */
@@ -650,7 +650,7 @@ footer a:hover {
 
 .faq-cats ul {
 	list-style-type: none;
-	padding: 0; 
+	padding: 0;
 	margin: 0;
 }
 .faq-cats ul li:first-child {
@@ -760,14 +760,14 @@ a .panel-heading {
 	/*margin-bottom: 40px;*/
 /*}*/
 
-/* 
+/*
  * Select all .crp-desc children of #container-pricing, including the first one,
  * and give them a top margin.
  */
 #container-pricing > .crp-desc {
 	margin-top: 40px;
 }
-/* 
+/*
  * Select all but the first .crp-desc child of #container-pricing,
  * and remove the top margin from the previous rule.
  */
@@ -1620,4 +1620,10 @@ a.carousel-arrow-next {
 }
 .preload {
 	display: none;
+}
+
+figcaption {
+	margin-bottom: 10px;
+	font-size: small;
+	text-align: center;
 }

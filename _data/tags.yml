@@ -16,3 +16,5 @@
   name: Espresso
 - slug: android
   name: Android
+- slug: hardware
+  name: Hardware
