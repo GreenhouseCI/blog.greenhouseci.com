@@ -389,11 +389,15 @@ Since the iOS build ecosystem supports running arbitrary scripts as a part of yo
 Here is an example of updating your build version using a simple `bash` script.
 
 {% highlight bash %}
+DSYM_INFO_PLIST="${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist"
 buildNumber=$GREENHOUSE_BUILD_NUMBER
 stringLength=${#buildNumber}
 if [ $stringLength -ne 0 ]; then
     echo "Updating build number to $buildNumber"
     /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $buildNumber" "${TARGET_BUILD_DIR}/${INFOPLIST_PATH}"
+    if [ -f "$DSYM_INFO_PLIST" ]; then
+        /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD_NUMBER" "$DSYM_INFO_PLIST"
+    fi
 else
     echo "Missing build number, skip updating"
 fi
