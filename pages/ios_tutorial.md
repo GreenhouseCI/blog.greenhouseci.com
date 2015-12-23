@@ -404,11 +404,11 @@ fi
 
 {% endhighlight %}
 
-To use build versioning to your project, do the the following:
+To use build versioning in your project, do the the following:
 
 1. Select: your Target in Xcode
 2. Select: Build Phases Tab
 3. Select: Add Build Phase -> Add Run Script
-4. Paste code below in to new "Run Script" section
-5. Check the checkbox "Run script only when installing"
-6. Drag the "Run Script" below "Link Binaries With Libraries"
+4. Paste code above in to "Run Script" section
+5. Uncheck the checkbox "Run script only when installing"
+6. Drag the "Run Script" below "Copy Bundle Resources"
