@@ -18,3 +18,5 @@
   name: Android
 - slug: hardware
   name: Hardware
+- slug: cordova
+  name: Cordova
