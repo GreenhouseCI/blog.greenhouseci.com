@@ -33,7 +33,7 @@ But let's get our hands dirty and see how the process works in detail.
 The first time you log in to [Greenhouse](https://app.greenhouseci.com) you'll be
 presented with an empty dashboard that encourages you to "Add an app to get started!"
 Let's get going by clicking on "add new app".
-![Greenhouse dashboard]({{ site.url }}/assets/empty-dashboard.png "Greenhouse dashboard")
+![Greenhouse dashboard]({{ site.url }}/assets/empty-dashboard-cordova.png "Greenhouse dashboard")
 
 <h2 id="specify-git-repository">Specify Git repository</h2>
 
