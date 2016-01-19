@@ -16,7 +16,7 @@ We will show you how to
  * [add your app's repository](#specify-git-repository)
  * [specify build configuration](#select-configuration)
  * [setup Git hooks](#configure-git-hook)
- * [publish your build artefacts to TestFlight or HockeyApp](#publishing)
+ * [publish your build artefacts](#publishing)
  * [handle build versioning](#build-versioning)
 
 ## First steps
@@ -229,150 +229,68 @@ Using a hook you can trigger a build for every `git push` you make.
 
 Greenhouse automatically detects the hook information from your repository URL
 and provides the necessary instructions for setting it up. Git hook information
-is available from project settings view (Navigate to the dashboard, click on the
-name of your project and then on the little spanner icon), in the **Hooks** subsection.
+is available in the **Hooks** subsection of the project settings view
+(navigate to the dashboard, click on the name of your project and then on the little spanner icon).
 
 <h3>Github hooks</h3>
 ![Github hook]({{ site.url }}/assets/github-git-hook.png "Github hook")
-To setup a hook in Github, navigate to the **Hooks** subsection. Click on **Github hooks page** link that automatically redirects you to your repository settings page in Github.
+To setup a hook in Github, navigate to the **Hooks** subsection. Click on the
+**Github hooks page** link that automatically redirects you to your repository settings page in Github.
 
 Now click on **Add webhook** and copy and paste the Payload URL from the text box in Greenhouse to Github.
 Note that you must be logged into Github, otherwise Github will tell you that the link is invalid.
 
 <h3>Bitbucket hooks</h3>
-To setup a hook for Bitbucket, navigate to the **Hooks subsection**. Click on **Bitbucet hooks page** link that automatically redirects you to your repository settings page in Github.
+To setup a hook for Bitbucket, navigate to the **Hooks subsection**. Click on the
+**Bitbucket hooks page** link that automatically redirects you to your
+repository settings page in Bitbucket.
 ![Bitbucket hook]({{ site.url }}/assets/bitbucket-git-hook.png "Bitbucket hook")
 
-Now click on **Add hook**, choose **POST** from the menu and copy and paste the URL from the text box in Greenhouse to Bitbucket.
+Now click on **Add hook**, choose **POST** from the menu and copy and paste the
+URL from the text box in Greenhouse to Bitbucket.
 
-Note that you must be logged into Bitbucket, otherwise Bitbucket will tell you that the link is invalid.
+Note that you must be logged into Bitbucket, otherwise Bitbucket will tell you
+that the link is invalid.
+
 <h3>Generic hooks</h3>
-If you are not hosting your repository on Github or Bitbucket, then setting up the hook can be a bit more involved.
+If you are not hosting your repository on Github or Bitbucket, then setting up
+the hook can be a bit more involved.
 
 ![Generic hook]({{ site.url }}/assets/generic-git-hook.png "Generic hook")
-When you navigate to the Greenhouse hooks page a **Download hook** button will be shown. Clicking this button downloads a `post-receive` script file. This file *must be* added to your **main Git repository**, where you push your changes, **not your locally checked out version**. 
-
-Finally, you need to add this file to the `.git/hooks` folder which is located at the root of your main Git repository and make the script executable by running
-<pre><code>chmod +x post-receive</code></pre>
-
-
-+++++++++++++++++++++++++++++++
-
+When you navigate to the Greenhouse hooks page, a **Download hook** button will
+be shown. Clicking this button will trigger a download of a `post-receive`
+script file. This file *must be* added to your **main Git repository** to which
+you push your changes, **not your locally checked out version**. Place the file
+in the `.git/hooks` folder located at the root of your main Git repository and
+make the script executable by running <pre><code>chmod +x post-receive</code></pre>.
 
 <h2 id="setup-tests">Testing</h2>
-Setting up testing in Greenhouse is 100% automatic. When you submit your repository, we scan the selected configuration for tests, and if there are any tests present, we run them for every push. 
-
-Greenhouse currently only supports running XCTests. Additionally, the tests must be a part of your scheme in Xcode, otherwise we cannot detect and run them automatically.
-
-The test report screen shows you a simple overview of all passed and failed tests including the failure reason so you can quickly identify what's broken.
-
-![iOS build view]({{ site.url }}/assets/ios_test_view.png)
-
-It provides specific information about where the error occurred, including the stacktrace, so you can zoom in fast on the underlying problem in your code.
-
-![iOS build log]({{ site.url }}/assets/ios_build_log.png)
+Greenhouse does not currently support testing for Cordova projects, but we are
+actively investigating different testing options. If your team makes use of
+Cordova testing please [let us know](https://greenhouseci.com/contact-us.html).
 
 <h2 id="publishing">Publishing</h2>
-Greenhouse supports publishing your artefacts to both [TestFlight](#testflight) and [HockeyApp](#hockeyapp)
-
-
-<h3 id="testflight">Testflight</h3>
-
-The setup is simple. Here's a quick guide:
-In the project view, click the spanner icon,
-
-<img class="post-img" src="{{ site.url }}/assets/spanner.png" />
-
-this leads you to the project settings view.
-
-In project settings you can see the Publishing section on the sidebar.
-By clicking on it, you will be presented with the following fields:
-
-<img class="post-img" src="{{ site.url }}/assets/testflight.png" />
-
-To use TestFlight, insert the your [API token](https://testflightapp.com/account/#api) and the [team token](https://testflightapp.com/dashboard/team/edit/).
-Just copy-paste these, hit save, and you are good to go!
-
-
-All of the other fields are optional, but might be useful if you need some extra configuration.
-Here's a quick overview of their meaning:
-
-* **distribution list** is list of users who have access to the app
-* checking **notify team mates** sends emails for every build to users who are permitted to use your app
-* **replace binary** option replaces the application binary if there exists a binary on TestFlight with the same name and bundle version
-
-Once you have configured Testflight for your project, the produced build artefacts are automatically uploaded to TestFlight and Greenhouse for each build. 
-
-<img class="post-img" src="{{ site.url }}/assets/testflight_log_message_cropped.png"/>
-
-In the screenshot, build log reports that it published the build artefacts to both Greenhouse and TestFlight.
-
-<h3 id="hockeyapp">HockeyApp</h3>
-
-In the project view, click on the spanner icon,
-
-<img class="post-img" src="{{ site.url }}/assets/project-spanner.png" />
-
-this leads you to the project settings view.
-
-In project settings you can see the Publishing section on the sidebar. 
-By clicking it, the fields for configuring HockeyApp are displayed.
-
-<img class="post-img" src="{{ site.url }}/assets/hockeyapp.png" />
-
-To use HockeyApp:
-
- * obtain your API token from [here](https://rink.hockeyapp.net/manage/auth_tokens)
- * copy-paste the token to Greenhouse and hit save
- * and that's it!
-
-Other fields are optional, but might come in handy if you'd like to configure a bit more.
-Here's a quick overview of their meaning:
-
- * checking **notify teammates** sends emails for every build to users who are permitted to use your app
- * private option enables the private download page for artefact
-
-Once you have configured HockeyApp for your project, the produced build artefacts are automatically uploaded to HockeyApp and Greenhouse for each build.
-
-<img class="post-img" src="{{ site.url }}/assets/hockeyapp_log_message_cropped.png"/>
-
-In the screenshot, build log reports that it has published the build artefacts to both Greenhouse and HockeyApp.
-
-*Note that for iOS projects you can configure publishing to both HockeyApp and TestFlight. In that case Greenhouse will publish the artefacts to each configured service.*
+Greenhouse supports publishing the build artefacts of your Cordova apps to
+[HockeyApp](#), [Crashlytics](#) and [TestFairy](#). Additionally, the artefacts
+are always published to Greenhouse and can also be sent to one or multiple
+recepients via email. You can also set up [Slack](#) or [HipChat](#)
+integrations to receive build notifications. While all the setup steps are very
+straight-forward and self-explanatory, we also have dedicated tutorials that you
+can peruse by following the links above.
 
 <h2 id="build-versioning">Build versioning</h2>
 
 To make your build version management easy, Greenhouse exports two environment variables
 that you can use in your build scripts: `GREENHOUSE_BUILD` and `GREENHOUSE_BUILD_NUMBER`.
 
-`GREENHOUSE_BUILD` is set to `true` in Greenhouse for every build and it indicates that your build is currently running in a CI environment. `GREENHOUSE_BUILD_NUMBER` environment variable 
-holds the total count of builds (including the ongoing build) for this project in Greenhouse. In other words, if you have triggered 10 builds for some project in Greenhouse, the next time you build it `GREENHOUSE_BUILD_NUMBER` will be exported as `11`.
+`GREENHOUSE_BUILD` is set to `true` in Greenhouse for every build and it
+indicates that your build is currently running in a CI environment.
+`GREENHOUSE_BUILD_NUMBER` environment variable holds the total count of builds
+(including the ongoing build) for this project in Greenhouse. In other words,
+if you have triggered 10 builds for some project in Greenhouse, the next time
+you build it `GREENHOUSE_BUILD_NUMBER` will be exported as `11`.
 
-Since the iOS build ecosystem supports running arbitrary scripts as a part of your build process, you can check the existence and the value of these environment variables in either bash or a scripting language of your choice (such as Ruby or Python).
-
-Here is an example of updating your build version using a simple `bash` script.
-
-{% highlight bash %}
-DSYM_INFO_PLIST="${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist"
-buildNumber=$GREENHOUSE_BUILD_NUMBER
-stringLength=${#buildNumber}
-if [ $stringLength -ne 0 ]; then
-    echo "Updating build number to $buildNumber"
-    /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $buildNumber" "${TARGET_BUILD_DIR}/${INFOPLIST_PATH}"
-    if [ -f "$DSYM_INFO_PLIST" ]; then
-        /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD_NUMBER" "$DSYM_INFO_PLIST"
-    fi
-else
-    echo "Missing build number, skip updating"
-fi
-
-{% endhighlight %}
-
-To use build versioning in your project, do the the following:
-
-1. Select: your Target in Xcode
-2. Select: Build Phases Tab
-3. Select: Add Build Phase -> Add Run Script
-4. Paste code above in to "Run Script" section
-5. Uncheck the checkbox "Run script only when installing"
-6. Drag the "Run Script" below "Copy Bundle Resources"
+You can use `GREENHOUSE_BUILD_NUMBER` to automatically increment your apps' version
+numbers using [Cordova hooks](https://cordova.apache.org/docs/en/latest/guide/appdev/hooks/index.html).
+This [Github gist](https://gist.github.com/ohh2ahh/f35ff6e0d9f8b4268cdb) has an
+example of such a hook that you can cutomize to fit your needs.

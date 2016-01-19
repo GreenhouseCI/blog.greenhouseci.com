@@ -214,7 +214,7 @@ It provides specific information about where the error occurred, including the s
 <h2 id="publishing">Publishing</h2>
 Greenhouse supports publishing your Android artefacts to [HockeyApp](#hockeyapp)
 
-<h3 id="hockeyapp">HockeyApp</h3>
+<h3 id="hockeyapp-publishing">HockeyApp</h3>
 
 In the project view, click on the spanner icon,
 
