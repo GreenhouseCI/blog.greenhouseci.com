@@ -160,9 +160,9 @@ When building for the iOS platform, the next step is to provide the correspondin
 ----------------------
 *Feel free to [<u>skip</u>](#provisioning-profile) this section if you know how to export your developer certificate*
 
-First, we will find your **developer certificate**. 
+First, we will find your **developer certificate**.
 
-Open up **Keychain Access** by searching for it in Spotlight. 
+Open up **Keychain Access** by searching for it in Spotlight.
 In the **Categories** submenu on the left sidebar select **My Certificates**
 
 ![Teams overview]({{ site.url }}/images/keychain-expanded-cropped.png)
@@ -173,7 +173,7 @@ Once you have located your developer certificate, select **File -> Export Items*
 
 ![Teams overview]({{ site.url }}/images/keychain-export-cropped.png)
 
-This will prompt you to save the developer certificate. 
+This will prompt you to save the developer certificate.
 
 ![Keychain save dialog]({{ site.url }}/images/keychain-save-as-cropped.png)
 
@@ -181,7 +181,7 @@ Be sure to leave the file format filled as **Personal Information Exchange (.p12
 
 Finally, you will be prompted for the **certificate export password**. The password is not actually mandatory and you can leave as blank, but it is recommended to use a strong password.
 
-That's it. Now all you need is the corresponding provisioning profile.
+Now you need the corresponding provisioning profile.
 
 <h3 id="provisioning-profile">Provisioning Profile</h3>
 --------------------
@@ -190,16 +190,14 @@ That's it. Now all you need is the corresponding provisioning profile.
 Select the appropriate provisioning profile from <a href="https://developer.apple.com/account/ios/profile/profileList.action">Apple Developer portal</a>.
 Download it and save it somewhere.
 
-
-That's it. If you successfully downloaded your developer certificate that should be everything you need. Now you can upload both of these files. 
+That's it. If you successfully downloaded your developer certificate that should be everything you need. Now you can upload both of these files.
 We check that the provisioning profile and developer certificate match. And will let you know if something goes wrong.
-
 
 ![Scanning projects]({{ site.url }}/assets/add-app-scan-repo-cordova.png "Scanning projects")
 
 <h3 id="first-build">Running your first build</h3>
 
-That's it!
+You're all set!
 
 ![Configure project]({{ site.url }}/assets/add-app-select-configuration-cordova.png "Configure project")
 
