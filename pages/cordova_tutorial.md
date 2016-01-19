@@ -231,7 +231,7 @@ is available in the **Hooks** subsection of the project settings view
 (navigate to the dashboard, click on the name of your project and then on the little spanner icon).
 
 <h3>Github hooks</h3>
-![Github hook]({{ site.url }}/assets/github-git-hook.png "Github hook")
+![Github hook]({{ site.url }}/assets/github-git-hook-cordova.png "Github hook")
 To setup a hook in Github, navigate to the **Hooks** subsection. Click on the
 **Github hooks page** link that automatically redirects you to your repository settings page in Github.
 
@@ -242,7 +242,7 @@ Note that you must be logged into Github, otherwise Github will tell you that th
 To setup a hook for Bitbucket, navigate to the **Hooks subsection**. Click on the
 **Bitbucket hooks page** link that automatically redirects you to your
 repository settings page in Bitbucket.
-![Bitbucket hook]({{ site.url }}/assets/bitbucket-git-hook.png "Bitbucket hook")
+![Bitbucket hook]({{ site.url }}/assets/bitbucket-git-hook-cordova.png "Bitbucket hook")
 
 Now click on **Add hook**, choose **POST** from the menu and copy and paste the
 URL from the text box in Greenhouse to Bitbucket.
@@ -254,7 +254,7 @@ that the link is invalid.
 If you are not hosting your repository on Github or Bitbucket, then setting up
 the hook can be a bit more involved.
 
-![Generic hook]({{ site.url }}/assets/generic-git-hook.png "Generic hook")
+![Generic hook]({{ site.url }}/assets/generic-git-hook-cordova.png "Generic hook")
 When you navigate to the Greenhouse hooks page, a **Download hook** button will
 be shown. Clicking this button will trigger a download of a `post-receive`
 script file. This file *must be* added to your **main Git repository** to which
