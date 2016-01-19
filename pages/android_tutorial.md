@@ -6,8 +6,6 @@ tags: [tutorial]
 share: true
 ---
 
-# Building Android apps with Greenhouse #
-
 ## What This Guide Covers ##
 
 In this tutorial we give detailed instructions for Android project setup in

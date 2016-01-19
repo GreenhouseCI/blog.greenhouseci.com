@@ -6,8 +6,6 @@ tags: [tutorial]
 share: true
 ---
 
-# Building Apache Cordova apps with Greenhouse
-
 ## What This Guide Covers
 
 This tutorial guides you through setting up your Cordova project in [Greenhouse](https://app.greenhouseci.com).
