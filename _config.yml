@@ -16,5 +16,8 @@ permalink:   /:categories/:title/
 
 excerpt_separator: <!--more-->
 
+gems:
+   - jekyll-paginate
+
 exclude:
     - node_modules
