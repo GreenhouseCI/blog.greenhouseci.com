@@ -10,7 +10,7 @@ disqus_shortname: greenhouseci
 # Build settings
 markdown: kramdown
 paginate: 5
-highlighter: pygments
+highlighter: rouge
 
 permalink:   /:categories/:title/
 
