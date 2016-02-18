@@ -10,7 +10,7 @@ comments: true
 ---
 
 Hot on the heels of our support for the Cordova platform, we are
-excited to announce that GreenhouseCI can now build Ionic projects!
+excited to announce that GreenhouseCI can now build **Ionic projects**!
 
 <!--more-->
 
