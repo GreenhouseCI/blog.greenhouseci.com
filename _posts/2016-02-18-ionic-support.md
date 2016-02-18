@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Ionic devs, charge up at Greenhouse"
+title:  "Ionic devs, charge up at GreenhouseCI"
 date:   2016-02-18 12:00:00
 categories: Greenhouse update
 tags: [ios, android, ionic]
@@ -22,11 +22,11 @@ boast a significant performance boost and offer a formidable SDK that enables
 developers to build robust hybrid mobile apps with great depth of user
 experience.
 
-## How to grow your Ionic project at Greenhouse
+## How to grow your Ionic project at GreenhouseCI
 
 ### Mobile platforms
 As with Cordova, we currently support Ionic builds for Android and iOS.
-Greenhouse will default to building your project for both, unless your
+GreenhouseCI will default to building your project for both, unless your
 repository includes the `platforms/platforms.json` file, which will be parsed to
 extract the platform(s) you've added.
 
@@ -51,16 +51,16 @@ _could_ add it manually, but even though it's tiny and simple, why not let Ionic
 do it for you: just run `ionic serve` from your project's folder.
 This will open a browser window in which you can see your shiny new app, but
 more importantly it will create the `ionic.project` file. Add it to source
-control, and your app is ready for Greenhouse.
+control, and your app is ready for GreenhouseCI.
 
 ### Setting up your project
 - from your dashboard, click on the 'add a new app' card and fill in the
   requisite inputs with your repo's URL and, if necessary, authentication
   credentials
-- select a git branch, and Greenhouse will scan it for projects to build
+- select a git branch, and GreenhouseCI will scan it for projects to build
 - once the scan is complete, select one of the discovered projects and pick a
   build configuration
-- if building for the iOS, add your provisioning profile and developer
+- if building for iOS, add your provisioning profile and developer
   certificate
 - click 'save' to kick off the first build of your Ionic project and sit back
   with a smile - yes, it's that easy
