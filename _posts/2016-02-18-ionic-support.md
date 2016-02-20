@@ -7,7 +7,6 @@ tags: [ios, android, ionic]
 author: nik
 share: true
 comments: true
-published: false
 ---
 
 Hot on the heels of our support for the Cordova platform, we are
