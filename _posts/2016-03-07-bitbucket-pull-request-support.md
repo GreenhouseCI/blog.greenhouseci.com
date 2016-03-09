@@ -7,7 +7,6 @@ tags: [bitbucket, pull request]
 author: nik
 share: true
 comments: true
-published: false
 ---
 
 Good news, everybody!
