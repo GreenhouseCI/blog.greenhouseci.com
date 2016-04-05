@@ -15,7 +15,7 @@ This included a variety of related tasks such as building new app versions from 
 
 After a while, we understood that if we really wanted higher quality apps to reach end-users faster, we would have to implement a proper continuous integration pipeline -  a CI service that’s dead-easy to set up, doesn’t get in the way during day-to-day work, has sensible defaults, is always up to date with the latest SDKs and well.. just works.
 
-<br>
+
 ![Team](/assets/team1.jpg "Team")
 
 ## Does continuous integration have to be so painful?
