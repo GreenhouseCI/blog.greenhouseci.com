@@ -15,6 +15,8 @@ This included a variety of related tasks such as building new app versions from 
 
 After a while, we understood that if we really wanted higher quality apps to reach end-users faster, we would have to implement a proper continuous integration pipeline -  a CI service that’s dead-easy to set up, doesn’t get in the way during day-to-day work, has sensible defaults, is always up to date with the latest SDKs and well.. just works.
 
+![Team](/assets/team1.jpg)
+
 ## Does continuous integration have to be so painful?
 
 Building, testing and distributing mobile apps manually felt like plowing fields with horses in the age of tractors, and so we decided to take a look at the available CI tools. Other professional app developers seemed to rely primarily on Jenkins, which made it our first choice. But, boy, did that turn out to be a huge headache! Jenkins is one of the oldest and most used CI tools for software development. It is an open source automation server that provides hundreds of plugins to support building, deploying and automating any project. While Jenkins may well be the most versatile CI tool out there, the reality is that for a mobile app dev team like ours setting up a Jenkins server may easily take days. And while there’s a lot of configuration to be done up front, maintaining a running Jenkins server is where the hours really start adding up.
