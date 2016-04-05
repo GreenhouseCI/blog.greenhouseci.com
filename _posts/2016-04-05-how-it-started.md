@@ -15,6 +15,7 @@ This included a variety of related tasks such as building new app versions from 
 
 After a while, we understood that if we really wanted higher quality apps to reach end-users faster, we would have to implement a proper continuous integration pipeline -  a CI service that’s dead-easy to set up, doesn’t get in the way during day-to-day work, has sensible defaults, is always up to date with the latest SDKs and well.. just works.
 
+<br>
 ![Team](/assets/team1.jpg)
 
 ## Does continuous integration have to be so painful?
@@ -39,4 +40,4 @@ After launching Greenhouse to the public, at first we just asked developers we k
 
 ## Continuous integration is a must-have for mobile app developers
 
-Today we see more and more mobile app developers starting to understand how important it is to include continuous integration into their app development process. As the expectations of mobile apps’ end users continue to grow, developers need tools to help them build higher quality apps that can be released more quickly and painlessly. This is the essence of *Greenhouse* - we exist to make mobile app developers more productive, less stressed, and happier doing the work they love.
+Today we see more and more mobile app developers starting to understand how important it is to include continuous integration into their app development process. As the expectations of mobile apps’ end users continue to grow, developers need tools to help them build higher quality apps that can be released more quickly and painlessly. This is the essence of **Greenhouse** - we exist to make mobile app developers more productive, less stressed, and happier doing the work they love.
