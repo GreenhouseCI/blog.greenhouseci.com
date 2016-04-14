@@ -3,7 +3,7 @@ layout: post
 title:  "GitHub users, don't be green with envy any longer - PR support is here"
 date:   2016-03-24 12:00:00
 categories: Greenhouse update
-tags: [github, pull request]
+tags: [github, pull_request]
 author: nik
 share: true
 comments: true
