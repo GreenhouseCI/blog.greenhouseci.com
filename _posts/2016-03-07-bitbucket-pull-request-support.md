@@ -14,13 +14,13 @@ Good news, everybody!
 It's been one of the most requested features from our users, and it's finally
 here: Greenhouse will now build and test your pull requests.
 
-<!--more-->
-
 ## Pull requests
 We're big fans of the pull request workflow at Greenhouse and use it daily to
 build new features for our platform. Naturally, we wanted to enable our users to
 take advantage of this as well, and after no small amount of work we are proud
 and happy to roll out the feature today.
+
+<!--more-->
 
 If you'd like to learn about pull requests or simply need a refresher, our
 friends at Atlassian have a great

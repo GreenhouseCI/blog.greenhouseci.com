@@ -12,8 +12,6 @@ comments: true
 Hot on the heels of our support for the Cordova platform, we are
 excited to announce that GreenhouseCI can now build **Ionic projects**!
 
-<!--more-->
-
 ## The Ionic framework
 Built on the base of [Apache Cordova](https://cordova.apache.org/), the [Ionic
 Framework](http://ionicframework.com/) extends this solid foundation by
@@ -21,6 +19,8 @@ leveraging the power of [AngularJS](http://angularjs.org/). This allows Ionic to
 boast a significant performance boost and offer a formidable SDK that enables
 developers to build robust hybrid mobile apps with great depth of user
 experience.
+
+<!--more-->
 
 ## How to grow your Ionic project at GreenhouseCI
 

@@ -12,12 +12,12 @@ comments: true
 As promised, today we are happy to introduce pull request support for GitHub
 repositories!
 
-<!--more-->
-
 For an introduction to the pull request workflow and its implementation on
 Greenhouse, please take a look at our [Bitbucket PR post]({% post_url
 2016-03-07-bitbucket-pull-request-support %}). Our new GitHub PR support works
 exactly the same way:
+
+<!--more-->
 
 - navigate to your team's Integrations section and click Octocat's 'Connect'
   button
