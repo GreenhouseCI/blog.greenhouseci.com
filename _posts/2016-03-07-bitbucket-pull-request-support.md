@@ -3,7 +3,7 @@ layout: post
 title:  "Green light for PR builds"
 date:   2016-03-07 12:00:00
 categories: Greenhouse update
-tags: [bitbucket, pull request]
+tags: [bitbucket, pull_request]
 author: nik
 share: true
 comments: true
