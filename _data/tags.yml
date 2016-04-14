@@ -20,3 +20,11 @@
   name: Hardware
 - slug: cordova
   name: Cordova
+- slug: github
+  name: GitHub
+- slug: bitbucket
+  name: Bitbucket
+- slug: pull_request
+  name: Pull Request
+- slug: general
+  name: General
