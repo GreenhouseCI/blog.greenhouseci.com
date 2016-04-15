@@ -19,12 +19,12 @@ entry thus practically eliminated, and with the seemingly unstoppable growth of
 mobile, there is little excuse for a web developer not to add mobile app
 building to his or her arsenal.
 
-While the transition from web to mobile still takes some effort and learning of
+While the transition from web to mobile still takes some effort and requires learning
 new techniques, many of the concepts and approaches carry over. Particularly,
 developers who have relied on continuous integration in their web work will be
 delighted to learn that CI is very much present on the mobile side.  However,
 while the CI _concept_ remains the same, its _practicalities_ are somewhat
-different, and it's a good idea to become aware of these differences right from
+different. It's a good idea to become aware of these differences right from
 the outset.
 
 <!--more-->
@@ -49,9 +49,11 @@ mobile.
 
 ## Distribution
 
-The difference at the deployment stage comes down the distribution model. A single copy of
-your web application was the only thing needed to make it available to the world
-at large. By contrast, hundreds, thousands and (hopefully) millions of copies of
+The difference at the deployment stage comes down the distribution model. In
+many ways, mobile apps take us back to the days of shipping shrink-wrapped CDs
+for each new version of our software. A single copy of your web application used
+to be the only thing needed to make it available to the entire world. By
+contrast, hundreds, thousands and (hopefully) millions of copies of
 your mobile app will need to be delivered to users' phones. And while you had
 full control of the deployment pipeline for your web app, someone else is in
 charge of the mobile distribution channels and you have to be ready to play by their rules.
@@ -93,11 +95,29 @@ our CI to send the app via email to the addresses you provide. While this is
 very straight-forward, you can get _a lot more_ out of your beta testers if you
 connect with them via a third party such as HockeyApp, Crashlytics or TestFairy.
 These services will not only help you with distribution but can also monitor
-crashes, provide detailed reports, and collect user feedback. Once again,
+crashes, provide detailed reports, and collect user feedback. Here, too,
 Greenhouse has your back with automatic publishing to all three.
 
+## Supporting legacy code
+
+Once again, it feels like we're going back in time. "Fragmentation" was not a concept that
+applied to web applications, but mobile brings it roaring back. Just because an
+awesome new version of your app is available, there is no reason to expect your entire user
+base to install it ASAP. Having to do upgrade testing and supporting multiple
+versions of your software simultaneously are not happy tasks no matter how you
+slice it. Luckily, a good mobile-oriented CI service (ahem, Greenhouse) can help
+here by keeping a reliable version record of the binaries it builds.
 
 
+Whether you are building hybrid or platform-specific apps, and whether you are a
+seasoned web developer transitioning to mobile or someone who's coming into the
+field from another direction, continuous integration tailored to mobile
+development is a powerful tool. It can take care of mundane and error-prone
+tasks and let you spend more time where you want to be - writing code. Just as
+with any tool, proper understanding of what CI is capable of and how it is
+intended to be used in a particular scenario is critical. Without a doubt,
+though, taking the time to understand this is well worth it and will bring
+immediate benefits.
 
 -------------
 
