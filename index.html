@@ -27,10 +27,10 @@ layout: default
             <li><i class="fa fa-comments-o"></i> <a href="{{ site.url }}{{ post.url }}#disqus_thread">0 Comments</a>.</li>
           </ul>
           <hr>
-          <p class="blg-text">
+          <div class="blg-text">
             {{ post.excerpt }}
             <a href="{{ site.url }}{{ post.url }}">Continue reading &#8594;</a>
-          </p>
+          </div>
           <p class="tags">
             {% if post.tags.size > 0 %}
               {% for post_tag in post.tags %}
