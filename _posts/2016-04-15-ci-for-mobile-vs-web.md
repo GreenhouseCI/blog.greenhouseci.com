@@ -32,13 +32,17 @@ the outset.
 ## Laying the foundation
 
 When developing mobile applications, you can - nay, should - check the code into
-a version control system, make use of repository hosting such as GitHub or
-Bitbucket, and write a variety of tests. These foundational building blocks of
+a version control system, make use of remote repository hosting, and write a
+variety of tests. These foundational building blocks of
 continuous integration are well familiar to web developers with CI experience. The next step
 is to choose a CI service and set it up so that each push to the remote repo
-triggers an application build. At Greenhouse, this process is quick and
-painless and requires the minimum of hands-on effort, as you can see from [our
-docs](http://docs.greenhouseci.com/docs).
+triggers an application build. Our strong opinion, borne from [years of first-hand
+experience]({% post_url 2016-04-05-how-it-started %}), is that choosing a CI
+solution _decicated to mobile development_ is essential for developer happiness.
+If you choose Greenhouse as your CI service, you'll find the setup process to be
+quick and painless and to require the minimum of hands-on effort. (And if you do
+get stuck along the way, [our docs](http://docs.greenhouseci.com/docs) will
+guide you through.)
 
 So far, the mobile CI workflow mirrors that of web development: you write some code,
 commit, push, then watch the CI service fetch your repo, install dependencies,
@@ -59,12 +63,12 @@ full control of the deployment pipeline for your web app, someone else is in
 charge of the mobile distribution channels and you have to be ready to play by their rules.
 
 To begin with, all mobile platforms have a set of guidelines to which all apps
-must adhere to be accepted into the official stores. For example, you can take a
-look at Google's [here](http://developer.android.com/distribute/essentials/quality/core.html).
+must adhere to be accepted into the official stores. For an example, you can take a
+look at [Google's](http://developer.android.com/distribute/essentials/quality/core.html).
 Apple goes a step further and requires your app's code to be signed. For this
 purpose, you will need to obtain a digital certificate and a provisioning
 profile from Apple. Since Greenhouse won't be able to do much with your code
-without these, we will request you to upload them if we detect that your project
+without these, we will ask you to upload them if we detect that your project
 targets the iOS platform.
 
 Once your app meets all the necessary requirements of one or multiple mobile
@@ -73,12 +77,9 @@ While using a CI service such as Greenhouse cannot shortcut this, it can make
 things significantly less painful by automating the
 key steps. Once a build completes successfully, Greenhouse can automatically
 publish your build artefacts - i.e. distribution packages for Android and/or iOS - to
-relevant channels. At the moment, we don't support direct publishing to Google
-Play as asking you to share your API key would violate Google's terms of
-service. Nevertheless, [our docs](http://docs.greenhouseci.com/docs/google-play)
-suggest a couple of convenient work-arounds your can use. Things are even
-simpler for iOS apps as Greenhouse can publish directly to iTunes Connect -
-Apple's pipeline for submitting apps to the App Store.
+relevant channels. For instance, you can set up our CI to send your
+successful release builds directly to iTunes Connect - Apple's pipeline for
+submitting apps to the App Store.
 
 ## Beta testing
 
@@ -93,41 +94,68 @@ have them - dedicated beta-testers. There are several ways in which Greenhouse
 can help you get the app on their phones. The simplest by far is to configure
 our CI to send the app via email to the addresses you provide. While this is
 very straight-forward, you can get _a lot more_ out of your beta testers if you
-connect with them via a third party such as HockeyApp, Crashlytics or TestFairy.
+connect with them via a third party such as [HockeyApp](http://hockeyapp.net/),
+[Crashlytics](http://try.crashlytics.com/) or [TestFairy](http://testfairy.com/).
 These services will not only help you with distribution but can also monitor
 crashes, provide detailed reports, and collect user feedback. Here, too,
-Greenhouse has your back with automatic publishing to all three.
+Greenhouse has your back with optional automatic publishing to all three.
 
 ## Supporting legacy code
 
 Once again, it feels like we're going back in time. "Fragmentation" was not a concept that
 applied to web applications, but mobile brings it roaring back. Just because an
 awesome new version of your app is available, there is no reason to expect your entire user
-base to install it ASAP. Having to do upgrade testing and supporting multiple
+base to install it ASAP. (But you won't have to wait too long before seeing
+their 1-star reviews pour in!) Having to do upgrade testing and supporting multiple
 versions of your software simultaneously are not happy tasks no matter how you
 slice it. Luckily, a good mobile-oriented CI service (ahem, Greenhouse) can help
-here by keeping a reliable version record of the binaries it builds.
+here by keeping a reliable version record of the binaries it builds. You can
+then use these as reference when handling user issues.
+
+## Wrap-up
+
+Here's a quick summary of the key differences between web and mobile CI you
+should be aware of before getting started:
+
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Web CI</th>
+      <th>Mobile CI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">Deployment</td>
+      <td>Deploy to live instantly</td>
+      <td>Submit to store for approval</td>
+    </tr>
+    <tr>
+      <td>No code signing</td>
+      <td>May need to upload certificates to CI</td>
+    </tr>
+    <tr>
+      <td>Beta testing</td>
+      <td>Deploy to staging and invite users</td>
+      <td>Distribute build via e-mail or 3<sup>rd</sup> party</td>
+    </tr>
+    <tr>
+      <td>Legacy version support</td>
+      <td>N/A: newest version instantly available for all</td>
+      <td>Use CI to keep track of binaries versions for reference</td>
+    </tr>
+  </tbody>
+</table>
 
 
-Whether you are building hybrid or platform-specific apps, and whether you are a
-seasoned web developer transitioning to mobile or someone who's coming into the
-field from another direction, continuous integration tailored to mobile
-development is a powerful tool. It can take care of mundane and error-prone
-tasks and let you spend more time where you want to be - writing code. Just as
-with any tool, proper understanding of what CI is capable of and how it is
-intended to be used in a particular scenario is critical. Without a doubt,
-though, taking the time to understand this is well worth it and will bring
-immediate benefits.
-
--------------
-
-
-The difference at the deployment stage comes down to the fact that as a
-developer you have no direct access to the main distribution channels for your
-app. To make your web application available to the world, all you needed to do was rent
-some webserver space from the likes of Amazon or Digital Ocean. If you paid the
-bills, you got the keys to your little piece of the internet and were free to
-deploy at will. Not so with mobile. To get the latest version of your code onto
-users' phones, you first need to get your app into the walled gardens of Apple,
-Google and Microsoft.
-
+No matter what kinds of mobile apps you are building and what your background
+is, you will doubtless find that a continuous integration service tailored to
+mobile development is a powerful tool. It can take care of mundane and error-prone
+tasks and let you spend more time doing what you love - writing code. As with
+any tool, proper understanding of how CI works within a particular setup is
+critical to getting the most out of it without undue effort and frustration.
+We hope you'll take a few minutes to get acquainted with Greenhouse, discover
+how well it can fit into your mobile development workflow, and take it for a
+spin with a two-week trial. And don't hesitate to reach out to our support team with
+any questions that may come up.
