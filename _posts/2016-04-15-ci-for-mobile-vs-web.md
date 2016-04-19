@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Continuous integration for mobile vs. web applications"
-date:   2016-04-14 06:00:00
+date:   2016-04-25 06:00:00
 categories: Greenhouse update
 tags: [ci]
 author: nik
 share: true
-published: true
+published: false
 comments: true
 ---
 
