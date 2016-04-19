@@ -30,3 +30,5 @@
   name: General
 - slug: ci
   name: Continuous Integration
+- slug: feature_branch
+  name: Feature Branch
