@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Continuous integration for mobile vs. web applications"
-date:   2016-04-25 06:00:00
+date:   2016-04-26 06:00:00
 categories: Greenhouse update
 tags: [ci]
 author: nik
 share: true
-published: false
+published: true
 comments: true
 ---
 
@@ -38,7 +38,7 @@ continuous integration are well familiar to web developers with CI experience. T
 is to choose a CI service and set it up so that each push to the remote repo
 triggers an application build. Our strong opinion, borne from [years of first-hand
 experience]({% post_url 2016-04-05-how-it-started %}), is that choosing a CI
-solution _decicated to mobile development_ is essential for developer happiness.
+solution _dedicated to mobile development_ is essential for developer happiness.
 If you choose Greenhouse as your CI service, you'll find the setup process to be
 quick and painless and to require the minimum of hands-on effort. (And if you do
 get stuck along the way, [our docs](http://docs.greenhouseci.com/docs) will
@@ -138,7 +138,7 @@ should be aware of before getting started:
     <tr>
       <td>Beta testing</td>
       <td>Deploy to staging and invite users</td>
-      <td>Distribute build via e-mail or 3<sup>rd</sup> party</td>
+      <td>Distribute build via email or 3<sup>rd</sup> party</td>
     </tr>
     <tr>
       <td>Legacy version support</td>
