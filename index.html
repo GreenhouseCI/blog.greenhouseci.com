@@ -29,7 +29,9 @@ layout: default
           <hr>
           <div class="blg-text">
             {{ post.excerpt }}
-            <a href="{{ site.url }}{{ post.url }}">Continue reading &#8594;</a>
+            {% if post.content != post.excerpt %}
+                <a href="{{ site.url }}{{ post.url }}">Continue reading &#8594;</a>
+            {% endif %}
           </div>
           <p class="tags">
             {% if post.tags.size > 0 %}
