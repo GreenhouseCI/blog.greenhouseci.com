@@ -396,7 +396,7 @@ if [ $stringLength -ne 0 ]; then
     echo "Updating build number to $buildNumber"
     /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $buildNumber" "${TARGET_BUILD_DIR}/${INFOPLIST_PATH}"
     if [ -f "$DSYM_INFO_PLIST" ]; then
-        /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD_NUMBER" "$DSYM_INFO_PLIST"
+        /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $buildNumber" "$DSYM_INFO_PLIST"
     fi
 else
     echo "Missing build number, skip updating"
