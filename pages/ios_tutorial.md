@@ -6,8 +6,6 @@ tags: [tutorial]
 share: true
 ---
 
-# Building iOS apps with Greenhouse #
-
 ## What This Guide Covers ##
 
 This tutorial guides you through setting up your iOS project in [Greenhouse](https://app.greenhouseci.com).
