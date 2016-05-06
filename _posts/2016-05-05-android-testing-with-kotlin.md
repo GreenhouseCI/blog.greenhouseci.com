@@ -33,7 +33,7 @@ After being in development for more that 5 years (first commit dating back to 20
 the first stable version of the language [was released](http://blog.jetbrains.com/kotlin/2016/02/kotlin-1-0-released-pragmatic-language-for-jvm-and-android/)
 earlier this year in February.
 
-Among it's key characteristics we can list out
+Among its key characteristics we can list out
 
 - Support for both OO and functional style.
 - Interoperability with Java code meaning you can easily mix Kotlin into your existing Java codebase or *vice versa*.
@@ -53,7 +53,7 @@ JUnit tests we have come to all the way to convenient tools like
 All of which make our jobs easier and consequently our lives happier.
 
 But it is rarely the case that your tests consist only of assertion statements. It is not
-rare to have tons of utility and glue code just to prepare the test case, especsially when you
+rare to have tons of utility and glue code just to prepare the test case, especially when you
 are testing our more complicated user flows. And to make the matters worse, in some cases the
 complexity of tests could easily exceed that of the main application. Those are exactly the
 cases where the verbosity of Java could get in the way. Every now and then it is just bloody
@@ -61,7 +61,7 @@ convenient to open a file and loop over it's contents with one or two lines inst
 couple of dozen LOCs that are required to do so in Java.
 
 In those situations language like Kotlin really help you to step up your game. The
-expressivness and clean syntax, combined with nifty language idioms make it a huge
+expressiveness and clean syntax, combined with nifty language idioms make it a huge
 improvement over the clumsiness that Java comes with. But enough of the small talk,
 let us see how it all works out in practise with a hand on example.
 
