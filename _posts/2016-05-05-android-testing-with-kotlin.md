@@ -52,11 +52,24 @@ JUnit tests we have come to all the way to convenient tools like
 [UI Automator](https://google.github.io/android-testing-support-library/docs/uiautomator/index.html).
 All of which make our jobs easier and consequently our lives happier.
 
-But it is rarely the case that your tests consist only of assertion statements. It is not rare to have
-tons of utility and glue code just to prepare the test case, especsially when you are
-testing our more complicated user flows. And to make the matters worse, in some cases the complexity of
-tests could easily exceed that of the main application. Those are exactly the cases where the verbosity
-of Java could get in the way.
+But it is rarely the case that your tests consist only of assertion statements. It is not
+rare to have tons of utility and glue code just to prepare the test case, especsially when you
+are testing our more complicated user flows. And to make the matters worse, in some cases the
+complexity of tests could easily exceed that of the main application. Those are exactly the
+cases where the verbosity of Java could get in the way. Every now and then it is just bloody
+convenient to open a file and loop over it's contents with one or two lines instead of
+couple of dozen LOCs that are required to do so in Java.
+
+In those situations language like Kotlin really help you to step up your game. The
+expressivness and clean syntax, combined with nifty language idioms make it a huge
+improvement over the clumsiness that Java comes with. But enough of the small talk,
+let us see how it all works out in practise with a hand on example.
+
+## Project dependencies
+
+> For easier reference you can already grab complete source code of the example
+> application from [this GitHub repository](https://github.com/priitlatt/kotlin-tests).
+> All code snippets to come will be extracted from there.
 
 <!-- ## Common pitfalls/It's not all roses -->
 
