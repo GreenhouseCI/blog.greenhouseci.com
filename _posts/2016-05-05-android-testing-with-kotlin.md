@@ -65,11 +65,71 @@ expressiveness and clean syntax, combined with nifty language idioms make it a h
 improvement over the clumsiness that Java comes with. But enough of the small talk,
 let us see how it all works out in practise with a hand on example.
 
-## Project dependencies
+## Plug Kotlin into your Android project
 
 > For easier reference you can already grab complete source code of the example
 > application from [this GitHub repository](https://github.com/priitlatt/kotlin-tests).
 > All code snippets to come will be extracted from there.
+
+To start using Kotlin in your existing Android project you just have to add a few lines to your
+project's Gradle build file, declaring which version of Kotlin you'd like to use and
+which dependencies need to be additionally compiled. As far my experience goes, [the official documentation](https://kotlinlang.org/docs/reference/using-gradle.html), which seem to be great, will point you to the right direction. In any case, my `build.gradle` build script ened up being like
+
+```groovy
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+buildscript {
+    ext.kotlin_version = '1.0.+'
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+android {
+    ...
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testCompile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+    ...
+}
+```
+
+Let us tear down the extra lines now. On the second line, right after Android plugin is applied,
+we inject Kotlin Gradle plugin that targets Android build model by
+`apply plugin: 'kotlin-android'`.
+To make that plugin available we need to declare it as a `buildscript` level dependency with
+
+```groovy
+dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+}
+```
+where preceeding `ext.kotlin_version = '1.0.+'` just selects the newest version of Kotlin from
+1.0 series.
+
+Finally, under `dependencies` section we need to state that Kotlin _stdlib_ has to be compiled.
+And as we are going to use Kotlin especially for testing purposes, it needs to be compiled to
+tests as well.
+
+As unit and UI tests are usually stored in `src/test/java` and `src/androidTest/java` respectively, we might want to maintain sanity in our codebase and keep Kotlin tests in dedicated directories like `src/test/kotlin` and `src/androidTest/kotlin`. As these are not default test directories, we need to notify Gradle about it. This can be done within the `sourceSets` section as
+
+```groovy
+android {
+    ...
+    sourceSets {
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+}
+```
 
 <!-- ## Common pitfalls/It's not all roses -->
 
