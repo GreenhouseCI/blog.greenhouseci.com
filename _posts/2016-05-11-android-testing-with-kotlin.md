@@ -143,7 +143,7 @@ android {
 
 ## Our example app
 
-The above mentioned [example application](https://github.com/GreenhouseCI/kotlin-tests) created for
+The [application](https://github.com/GreenhouseCI/kotlin-tests) created for
 the purposes of this blog post is of course yet another stunning shopping list app. As expected,
 it is possible to add some items to the list and remove them from there as you wish. To add
 some spice into the mix and make things a little bit more __testable__, every item that is
