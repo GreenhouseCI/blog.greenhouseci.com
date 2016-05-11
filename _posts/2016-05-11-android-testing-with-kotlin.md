@@ -147,7 +147,7 @@ The [application](https://github.com/GreenhouseCI/kotlin-tests) created for
 the purposes of this blog post is of course yet another stunning shopping list app. As expected,
 it is possible to add some items to the list and remove them from there as you wish. To add
 some spice into the mix and make things a little bit more __testable__, every item that is
-inserted to the list passes through a formatter that removes all excess whitespaces from the
+inserted to the list passes through a formatter that removes all excess whitespace from the
 input string. Critical business logic in the form of our formatter that we use to clear up
 the strings lives in
 [`Formatter.java`](https://github.com/GreenhouseCI/kotlin-tests/blob/master/app/src/main/java/com/greenhouseci/kotlin_tests/kotlintests/Formatter.java)
@@ -183,7 +183,7 @@ All in all, our app stands in it's full glory as depicted below:
 Evidently we want to test out that whenever item description `EditText` is filled with anything
 meaningful and "Add item" button is pressed, the newly added item is populated to the list.
 Furthermore, it is of utmost importance to ensure that all the items that are added to the list
-do not contain any superfluous whitespaces. For that we need tests of course.
+do not contain any superfluous whitespace characters. For that we need tests of course.
 
 ## Unit tests
 
@@ -225,7 +225,7 @@ class FormatterTestKotlin {
     }
 ```
 
-A glimpse at the snippet above shows that while it is a Kotlin code, there are some
+A glimpse at the snippet above shows that while it is Kotlin code, there are some
 familiar elements from regular Java already, like package name and import statements.
 Further decomposing it reveals lack of semicolons in the end of the lines and differences
 in variable and function declarations. But also some obvious similarities like code block
@@ -233,7 +233,7 @@ separation by usage of curly brackets and support for annotations.
 
 __Variable and function declaration__
 
-In our sample code we can see that declaring a value can be be as simple as
+In our sample code we can see that declaring a value can be as simple as
 
 ```groovy
 val reference = "my string"
@@ -297,7 +297,7 @@ fun myTestCase() { ... }
 ## Espresso tests
 
 Making use of the interoperability of Java and Kotlin code we can blend Espresso into
-our Kotlin test classes with just a blink of an eye. That's how we can benefit both from
+our Kotlin test classes in the blink of an eye. That's how we can benefit both from
 battle tested Espresso framework that makes testing UI components a bliss and
 all the gems that Kotlin provides as a language to make writing our _glue_ code and other
 testing logic as easy and clean as possible.
@@ -381,10 +381,10 @@ var activityRule = ActivityTestRule<MainActivity>(MainActivity::class.java)
 ```
 
 With one minor caveat that you need to annotate it with `@JvmField` to convert it
-from Kotlin *property*, that is unrecognized by JUnit, to a JVM field that is edible
+from Kotlin a *property*, that is unrecognized by JUnit, to a JVM field that is edible
 by JUnit.
 
-Apart from these tiny details, you can just use the familiar Espresso API from the
+Apart from these tiny details, you can just use the familiar Espresso API for the
 test functions.
 
 ## Running our Kotlin tests
