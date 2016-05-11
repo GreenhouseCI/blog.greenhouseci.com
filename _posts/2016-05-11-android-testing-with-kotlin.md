@@ -68,7 +68,7 @@ let us see how it all works out in practise with a hands on example.
 ## Plug Kotlin into your Android project
 
 > *For easier reference you can already grab complete source code of the example
-application from [this GitHub repository](https://github.com/priitlatt/kotlin-tests).
+application from [this GitHub repository](https://github.com/GreenhouseCI/kotlin-tests).
 All code snippets to come will be extracted from there.*
 
 To start using Kotlin in your existing Android project you just have to add a few lines to your
@@ -143,14 +143,14 @@ android {
 
 ## Our example app
 
-The above mentioned [example application](https://github.com/priitlatt/kotlin-tests) created for
+The above mentioned [example application](https://github.com/GreenhouseCI/kotlin-tests) created for
 the purposes of this blog post is of course yet another stunning shopping list app. As expected,
 it is possible to add some items to the list and remove them from there as you wish. To add
 some spice into the mix and make things a little bit more __testable__, every item that is
 inserted to the list passes through a formatter that removes all excess whitespaces from the
 input string. Critical business logic in the form of our formatter that we use to clear up
 the strings lives in
-[`Formatter.java`](https://github.com/priitlatt/kotlin-tests/blob/master/app/src/main/java/com/greenhouseci/kotlin_tests/kotlintests/Formatter.java)
+[`Formatter.java`](https://github.com/GreenhouseCI/kotlin-tests/blob/master/app/src/main/java/com/greenhouseci/kotlin_tests/kotlintests/Formatter.java)
 and looks like
 
 ```java
@@ -174,7 +174,8 @@ public class Formatter {
 }
 ```
 
-Bridge connecting user interactions with formatter resides conveniently in [`MainActivityFragment`](https://github.com/priitlatt/kotlin-tests/blob/master/app/src/main/java/com/greenhouseci/kotlin_tests/kotlintests/MainActivityFragment.java#L38).
+Bridge connecting user interactions with formatter resides conveniently in
+[`MainActivityFragment`](https://github.com/GreenhouseCI/kotlin-tests/blob/master/app/src/main/java/com/greenhouseci/kotlin_tests/kotlintests/MainActivityFragment.java#L38).
 
 All in all, our app stands in it's full glory as depicted below:
 <div style="text-align:center; padding: 20px 0;"><img src="/assets/kotlin-app-screenshot.png" alt="Screenshot"/></div>
@@ -189,7 +190,7 @@ do not contain any superfluous whitespaces. For that we need tests of course.
 Let us start off with unit tests for our `Formatter` class shown above. As already mentioned,
 we'll store our unit tests under `src/test/kotlin`. Right there we have a test class
 `FormatterTestKotlin` defined in
-[`FormatterTestKotlin.kt`](https://github.com/priitlatt/kotlin-tests/blob/master/app/src/test/kotlin/com/greenhouseci/kotlin_tests/kotlintests/FormatterTestKotlin.kt):
+[`FormatterTestKotlin.kt`](https://github.com/GreenhouseCI/kotlin-tests/blob/master/app/src/test/kotlin/com/greenhouseci/kotlin_tests/kotlintests/FormatterTestKotlin.kt):
 
 ```ruby
 package com.greenhouseci.kotlin_tests.kotlintests
@@ -322,7 +323,7 @@ dependencies {
 ```
 
 Now to the test suite itself. Our example Espresso test class
-[`EspressoKotlinTest`](https://github.com/priitlatt/kotlin-tests/blob/master/app/src/androidTest/kotlin/com/greenhouseci/kotlin_tests/kotlintests/EspressoKotlinTest.kt)
+[`EspressoKotlinTest`](https://github.com/GreenhouseCI/kotlin-tests/blob/master/app/src/androidTest/kotlin/com/greenhouseci/kotlin_tests/kotlintests/EspressoKotlinTest.kt)
 looks like
 
 ```ruby
