@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Using Kotlin to test Android applications"
-date:   2016-05-11 12:00:00
+date:   2016-05-11 00:00:00
 categories: Greenhouse update
 tags: [android, testing, kotlin, java]
 author: priit
