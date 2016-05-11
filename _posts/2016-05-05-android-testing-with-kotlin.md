@@ -6,7 +6,7 @@ categories: Greenhouse update
 tags: [android, testing, kotlin, java]
 author: priit
 share: true
-published: false
+published: true
 comments: true
 ---
 
@@ -17,7 +17,7 @@ When talking about code quality and reliability, importance of automated
 testing cannot be overstated, be it regression tests, unit tests or UI tests.
 
 In this blog post we discuss yet another possibility of how to write automated
-tests for your Android applications. Namely we observe how [**Kotlin**](https://kotlinlang.org/),
+tests for your Android applications. Namely, we observe how [**Kotlin**](https://kotlinlang.org/),
 one of the latest stable and noteworthy addition to the vast world of JVM based
 languages, can be utilized to for test automation of Android applications.
 
@@ -36,7 +36,7 @@ earlier this year in February.
 Among its key characteristics we can list out
 
 - Support for both OO and functional style.
-- Interoperability with Java code meaning you can easily mix Kotlin into your existing Java codebase or *vice versa*.
+- Interoperability with Java code, meaning you can easily mix Kotlin into your existing Java codebase or *vice versa*.
 - Superb tooling with plugins available for IntelliJ based IDEs, Eclipse, and text editors like Atom, Emacs, Sublime Text and Vim.
 - Strong emphasis on clarity and type safety.
 
@@ -45,15 +45,15 @@ Among its key characteristics we can list out
 Since the early days of Android ecosystem its tooling, library and framework support
 for testing has significantly improved. From plain instrumentation tests and regular
 JUnit tests we have come to all the way to convenient tools like
-[AssertJ](http://square.github.io/assertj-android/)
+[AssertJ](http://square.github.io/assertj-android/),
 [Espresso](https://google.github.io/android-testing-support-library/docs/espresso/index.html),
 [Robolectric](http://robolectric.org/),
 [Robotium](https://github.com/RobotiumTech/robotium),
-[UI Automator](https://google.github.io/android-testing-support-library/docs/uiautomator/index.html).
-All of which make our jobs easier and consequently our lives happier.
+[UI Automator](https://google.github.io/android-testing-support-library/docs/uiautomator/index.html)
+and the list goes on. All of which make our jobs easier and consequently our lives happier.
 
-But it is rarely the case that your tests consist only of assertion statements. It is not
-rare to have tons of utility and glue code just to prepare the test case, especially when you
+But it is rarely the case that your tests consist only of assertion statements. It is common
+to have tons of utility and glue code just to prepare the test case, especially when you
 are testing our more complicated user flows. And to make the matters worse, in some cases the
 complexity of tests could easily exceed that of the main application. Those are exactly the
 cases where the verbosity of Java could get in the way. Every now and then it is just bloody
@@ -63,13 +63,13 @@ couple of dozen LOCs that are required to do so in Java.
 In those situations language like Kotlin really help you to step up your game. The
 expressiveness and clean syntax, combined with nifty language idioms make it a huge
 improvement over the clumsiness that Java comes with. But enough of the small talk,
-let us see how it all works out in practise with a hand on example.
+let us see how it all works out in practise with a hands on example.
 
 ## Plug Kotlin into your Android project
 
-> For easier reference you can already grab complete source code of the example
-> application from [this GitHub repository](https://github.com/priitlatt/kotlin-tests).
-> All code snippets to come will be extracted from there.
+> *For easier reference you can already grab complete source code of the example
+application from [this GitHub repository](https://github.com/priitlatt/kotlin-tests).
+All code snippets to come will be extracted from there.*
 
 To start using Kotlin in your existing Android project you just have to add a few lines to your
 project's Gradle build file, declaring which version of Kotlin you'd like to use and
@@ -105,7 +105,7 @@ dependencies {
 }
 ```
 
-Let us tear down the extra lines now. On the second line, right after Android plugin is applied,
+Let us tear down the extra lines. On the second line, right after Android plugin is applied,
 we inject Kotlin Gradle plugin that targets Android build model by
 `apply plugin: 'kotlin-android'`.
 To make that plugin available we need to declare it as a `buildscript` level dependency with
@@ -128,7 +128,7 @@ As unit and UI tests are usually stored in `src/test/java` and `src/androidTest/
 respectively, we might want to maintain sanity in our codebase and keep Kotlin tests
 in dedicated directories like `src/test/kotlin` and `src/androidTest/kotlin`. As these
 are directories are not detected as Android test locations by default (*yet?*), we
-need to make Gradle and Android Studio aware of them. This can be done  the `sourceSets`
+need to make Gradle and Android Studio aware of them. This can be done in the `sourceSets`
 section with
 
 ```groovy
@@ -144,7 +144,7 @@ android {
 ## Our example app
 
 The above mentioned [example application](https://github.com/priitlatt/kotlin-tests) created for
-the purposes of this blog post is nothing else but yet another shopping list app. As expected,
+the purposes of this blog post is of course yet another stunning shopping list app. As expected,
 it is possible to add some items to the list and remove them from there as you wish. To add
 some spice into the mix and make things a little bit more __testable__, every item that is
 inserted to the list passes through a formatter that removes all excess whitespaces from the
@@ -174,9 +174,9 @@ public class Formatter {
 }
 ```
 
-Bridge connecting user interactions with formatter resides conveniently in our [`MainActivityFragment.java`](https://github.com/priitlatt/kotlin-tests/blob/master/app/src/main/java/com/greenhouseci/kotlin_tests/kotlintests/MainActivityFragment.java#L38).
+Bridge connecting user interactions with formatter resides conveniently in [`MainActivityFragment`](https://github.com/priitlatt/kotlin-tests/blob/master/app/src/main/java/com/greenhouseci/kotlin_tests/kotlintests/MainActivityFragment.java#L38).
 
-All in all, our app stands in it's full glory like
+All in all, our app stands in it's full glory as depicted below:
 <div style="text-align:center; padding: 20px 0;"><img src="/assets/kotlin-app-screenshot.png" alt="Screenshot"/></div>
 
 Evidently we wan't to test out that whenever item description `EditText` is filled with anything
@@ -253,8 +253,8 @@ It does so by exposing two types of keywords: `val` for declaring read-only fiel
 and `var` for variables that ought to be mutable. In the realm of Java, `val` corresponds
 to the `final` modifier.
 
-_It is also worth noting how we can assign Java object to a Kotlin variable without
-any further ado._
+> *It is also worth noting how we can assign Java object to a Kotlin variable without
+any further ado.*
 
 Functions are defined using `fun` keyword followed by the function name and parameters
 in parentheses. Return type and argument types are specified using the colon notation
@@ -301,8 +301,11 @@ battle tested Espresso framework that makes testing UI components a bliss and
 all the gems that Kotlin provides as a language to make writing our _glue_ code and other
 testing logic as easy and clean as possible.
 
-As usual, we store our Espresso and other UI tests under `src/androidTest/kotlin`. And in order
-to run Espresso tests we need to declare it as a dependency in our build script plus set `AndroidJUnitRunner` as the default test instrumentation runner:
+As usual, we store our Espresso and other UI tests under `src/androidTest`, with a
+little discrepancy that instead of `java` subdirectory, we store our Kotlin source code in
+`kotlin` subdirectory. And in order to run Espresso tests we need to declare it as a dependency
+in our build script plus set `AndroidJUnitRunner` as the default test instrumentation
+runner, exactly like you would do with plain Espresso tests:
 
 ```groovy
 android {
@@ -406,11 +409,11 @@ and
 gradle connectedAndroidTest
 ```
 
-## What good are tests if you don't run them?
+## But what good are tests if you don't run them?
 
 Long story short, running your tests manually is just not feasible. __To ensure the
 wellbeing of your app, it has to be tested after every commit, with no exceptions allowed!__
-Only way to achieve it is to make use of CI. And with Greenhouse you get full support
+The best way to achieve it is to make use of CI. And with Greenhouse you get full support
 for tests written in Kotlin out of the box. Just follow our regular flow for [building
 an Android app](http://docs.greenhouseci.com/docs/building-android-apps) and we'll
 automatically detect and run all your tests, including those written in Kotlin.
