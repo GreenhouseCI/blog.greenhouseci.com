@@ -18,8 +18,8 @@ testing cannot be overstated, be it regression tests, unit tests or UI tests.
 
 In this blog post we discuss yet another possibility of how to write automated
 tests for your Android applications. Namely, we observe how [**Kotlin**](https://kotlinlang.org/),
-one of the latest stable and noteworthy addition to the vast world of JVM based
-languages, can be utilized to for test automation of Android applications.
+one of the latest stable and noteworthy additions to the vast world of JVM based
+languages, can be utilized for test automation of Android applications.
 
 <!--more-->
 
@@ -29,7 +29,7 @@ Kotlin is an [open source language](https://github.com/JetBrains/kotlin)
 developed and maintained by JetBrains, the company behind IntelliJ IDEA and
 possibly your favorite IDE for Android development, Android Studio.
 
-After being in development for more that 5 years (first commit dating back to 2010-11-08),
+After being in development for more than 5 years (first commit dating back to 2010-11-08),
 the first stable version of the language [was released](http://blog.jetbrains.com/kotlin/2016/02/kotlin-1-0-released-pragmatic-language-for-jvm-and-android/)
 earlier this year in February.
 
@@ -60,10 +60,10 @@ cases where the verbosity of Java could get in the way. Every now and then it is
 convenient to open a file and loop over it's contents with one or two lines instead of
 couple of dozen LOCs that are required to do so in Java.
 
-In those situations language like Kotlin really help you to step up your game. The
+In those situations a language like Kotlin can really help you to step up your game. The
 expressiveness and clean syntax, combined with nifty language idioms make it a huge
 improvement over the clumsiness that Java comes with. But enough of the small talk,
-let us see how it all works out in practise with a hands on example.
+let us see how it all works out in practice with a hands on example.
 
 ## Plug Kotlin into your Android project
 
@@ -76,7 +76,7 @@ project's Gradle build file, declaring which version of Kotlin you'd like to use
 which dependencies need to be additionally compiled. As far my experience goes,
 [the official documentation](https://kotlinlang.org/docs/reference/using-gradle.html),
 which seem to be great, will point you in the right direction. In any case, my `build.gradle`
-build script ened up being like
+build script ended up being like this:
 
 ```groovy
 apply plugin: 'com.android.application'
@@ -115,7 +115,7 @@ dependencies {
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 }
 ```
-where preceeding `ext.kotlin_version = '1.0.+'` just selects the newest version of Kotlin from
+where the preceding `ext.kotlin_version = '1.0.+'` just selects the newest version of Kotlin from
 1.0 series.
 
 Finally, under `dependencies` section we need to state that Kotlin _stdlib_ has to be compiled.
@@ -180,7 +180,7 @@ Bridge connecting user interactions with formatter resides conveniently in
 All in all, our app stands in it's full glory as depicted below:
 <div style="text-align:center; padding: 20px 0;"><img src="/assets/kotlin-app-screenshot.png" alt="Screenshot"/></div>
 
-Evidently we wan't to test out that whenever item description `EditText` is filled with anything
+Evidently we want to test out that whenever item description `EditText` is filled with anything
 meaningful and "Add item" button is pressed, the newly added item is populated to the list.
 Furthermore, it is of utmost importance to ensure that all the items that are added to the list
 do not contain any superfluous whitespaces. For that we need tests of course.
