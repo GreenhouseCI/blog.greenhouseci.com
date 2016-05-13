@@ -32,3 +32,8 @@
   name: Continuous Integration
 - slug: feature_branch
   name: Feature Branch
+- slug: kotlin
+  name: Kotlin
+- slug: java
+  name: Java
+
