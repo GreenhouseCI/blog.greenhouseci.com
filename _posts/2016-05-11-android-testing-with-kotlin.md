@@ -302,9 +302,6 @@ our Kotlin test classes and reap the benefits of their synergy. With Espresso, w
 hardened framework that makes testing UI components a breeze. At the same time, all the gems
 of the Kotlin language make our _glue_ code and other test logic clean and easy to write.
 
-"with the minor difference that"
-Since Kotlin is more relevant here, suggest switching the order: ""
-
 As usual, we store our Espresso and other UI tests under `src/androidTest`, with the minor
 difference that we store our Kotlin source code in the `kotlin` subdirectory instead of `java`.
 In order to run new tests we need to declare Espresso as a dependency
