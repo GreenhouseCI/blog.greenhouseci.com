@@ -56,12 +56,13 @@ configure a few things on the AWS side. Follow the instructions in
 [our docs](http://docs.greenhouseci.com/v1.0/docs/aws-device-farm) to generate
 credentials and to create a Device Farm project and a device pool. Please
 follow good security practices and create a dedicated Greenhouse/Device Farm IAM
-user. **Don't give us your root account AWS access!** We don't want it.
+user. **Don't give us your root account AWS access!** Or to anyone else, for
+that matter.
 
 ### Greenhouse
 Once you have the necessary info from AWS, head over to your Greenhouse project
 settings and look in the **Test** section. Enable Device Farm testing with the
-checkbox, then fill in the form below. If you project has tests that are
+checkbox, then fill in the form below. If your project has tests that are
 supported by Device Farm, Greenhouse will present these as an option.
 Alternatively, you will always have the choice of Device Farm's fuzz tests. Only
 one test type can be run at a time.
