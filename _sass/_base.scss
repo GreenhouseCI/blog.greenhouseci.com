@@ -1,15 +1,15 @@
 .blg-text {
-  font-size: 16px;
-  line-height: 1.6em;
+    font-size: 16px;
+    line-height: 1.6em;
 
-  img {
-    max-width: 100%;
-  }
+    img {
+        max-width: 100%;
+    }
 
-  h2 {
-    color: #12B868;
-    font-size: 1.3em;
-  }
+    h2 {
+        color: #12B868;
+        font-size: 1.3em;
+    }
 }
 
 h1 {
@@ -37,7 +37,11 @@ h1 {
 }
 
 img.logo {
-  width: 100px;
-  float: left;
-  margin-right: 25px;
+    width: 100px;
+    float: left;
+    margin-right: 25px;
+}
+
+.timeline-info {
+    width: 95px;
 }
