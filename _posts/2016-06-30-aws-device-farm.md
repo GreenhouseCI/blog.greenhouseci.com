@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "From greenhouse to farm"
+title:  "Another awesome Greenhouse feature? You can bet the (AWS Device) Farm!"
 date:   2016-06-30 00:00:00
 categories: Greenhouse update
-tags: [testing, device farm]
+tags: [testing, device_farm]
 author: nik
 share: true
 published: true
@@ -84,3 +84,10 @@ detailed results in the AWS Console.
 
 ![Device Farm test results in
 Greenhouse](/assets/aws-device-farm-test-results-in-greenhouse.png)
+
+So, how does that sound? If you have any thoughts on testing mobile apps, be it
+in emulators or on physical devices, or have ideas for other cool features we
+could add to Greenhouse, let us know by posting a comment below,
+[contacting us directly](https://greenhouseci.com/contact-us.html), starting a
+discussion in [our forum](http://docs.greenhouseci.com/discuss), or tweeting
+[@GreenhouseCI](https://twitter.com/GreenhouseCI).
