@@ -38,3 +38,5 @@
   name: Java
 - slug: iot
   name: IoT
+- slug: device_farm
+  name: AWS Device Farm

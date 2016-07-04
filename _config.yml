@@ -2,6 +2,7 @@
 title: Greenhouse Blog
 email: team@greenhouseci.com
 url: "http://blog.greenhouseci.com" # the base hostname & protocol for your site
+# url: "http://127.0.0.1:4000/" # use for local testing
 baseurl: "" # the subpath of your site, e.g. /blog/
 twitter_username: greenhouseci
 github_username:  greenhouseci
