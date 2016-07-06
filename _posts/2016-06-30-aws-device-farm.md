@@ -34,8 +34,8 @@ that will exercise your app with random UI events and report the results.
 Imagine a two-year-old playing with your app and you'll understand why they also
 refer to this as "monkey testing".
 
-Even more great news is that at the time of this writing, AWS is offering the
-first 250 minutes of Device Farm use for free. This should give you plenty of
+**Even more great news is that at the time of this writing, AWS is offering the
+first 250 minutes of Device Farm use for free.** This should give you plenty of
 time to get things up and running and to see just how much value real device
 testing can bring.
 
