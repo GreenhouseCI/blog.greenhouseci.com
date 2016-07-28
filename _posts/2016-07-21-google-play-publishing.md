@@ -19,6 +19,8 @@ We have supported publishing via iTunes Connect Beta distribution since its ince
 It would only seem fair that our Android users could also enjoy the same benefits of beta distribution of their apps just shy of uploading them directly to the app market place.
 That is why we have added support for <strong>Google Play</strong> publishing!
 
+<!--more-->
+
 
 ## Distribution tracks
 
