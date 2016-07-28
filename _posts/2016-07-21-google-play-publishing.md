@@ -6,7 +6,7 @@ categories: Greenhouse update
 tags: [publishing, google_play]
 author: uku
 share: true
-published: false
+published: true
 comments: true
 ---
 
