@@ -1627,3 +1627,8 @@ figcaption {
 	font-size: small;
 	text-align: center;
 }
+
+.center-image {
+   display: block;
+   margin: auto;
+}
