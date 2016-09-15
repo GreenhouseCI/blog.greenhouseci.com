@@ -19,7 +19,6 @@ We have supported publishing via iTunes Connect Beta distribution since its ince
 It would only seem fair that our Android users could also enjoy the same benefits of beta distribution of their apps just shy of uploading them directly to the app market place.
 That is why we have added support for <strong>Google Play</strong> publishing!
 
-<!--more-->
 
 
 ## Distribution tracks
@@ -54,3 +53,14 @@ That's it! But before you go ahead and kick off your first build, please be sure
 1. You need to have manually uploaded at least one APK in the Google Play Developer Console before you can successfully publish APKs from Greenhouse.
 2. Your build must produce at least one *release* APK, the Google Play Developer API rejects APKs which are debuggable.
 3. You must increment the build version of your application on each build, otherwise publishing will fail complaining about a duplicate APK version. You can find an example Gradle script for this <a href="http://docs.greenhouseci.com/docs/incrementing-android-app-version">here</a>.
+
+
+   <ul style="width:10%; float:left;">
+      <li>1</li>
+      <li>2</li>
+   </ul>
+
+   <ul style="width:10%; float:left;">
+      <li>3</li>
+      <li>4</li>
+   </ul>
