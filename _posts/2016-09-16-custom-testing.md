@@ -52,10 +52,10 @@ final status.
 ## Setting up custom tests in Greenhouse
 
 The first step of the setup is to ensure that all of your testing dependencies
-are available in the build sandbox. We are including Chrome, Firefox, karma-cli
-and Protractor by default. (If you think something else should be added to this
+are available in the build sandbox. We are including Chrome, Firefox and karma-cli
+by default. (If you think something else should be added to this
 list, please let us know via [our forum](http://docs.greenhouseci.com/discuss).)
-The most natural place to do this is in a [custom post-clone script](http://docs.greenhouseci.com/docs/custom-build-steps),
+The most natural way to install other testing components is via a [custom post-clone script](http://docs.greenhouseci.com/docs/custom-build-steps),
 which you may well be using already to install your cross-platform app's other
 dependencies.
 
