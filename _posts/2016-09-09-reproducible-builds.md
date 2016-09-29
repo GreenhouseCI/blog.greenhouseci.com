@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Reproducible builds"
-date:   2016-09-09 00:00:00
+title:  "Reproducible builds: part I"
+date:   2016-09-29 00:00:00
 categories: Greenhouse update
 tags: [ci, continuous integration, reproducible builds]
 author: uku
@@ -27,9 +27,9 @@ However, most of the applications that we rely on are not open source. An open s
 
 Since compiling everything from scratch is not practical (unless you are a Gentoo user ;)), there exists a great divide between the source code and final application. As a result, most of the libraries and applications that we use are distributed as compiled binaries. **But how can we be sure that the compiled source code matches that of the binary?** 
 
-The obvious answer in this case would be of course that we let the users compile the source code and compare for themselves. If the distributed and self-compiled binaries are byte-for-byte the same then we can say with certainty that the source code matches the binary. But unfortunately it's not that easy! The byte-for-byte comparison must exclude code signatures since the end user will not have the private key which was used for distributing the application. It turns out that code signing is just the tip of the iceberg, as we will learn in the next chapter, very minuscule details can turn builds not reproducible.
+The obvious answer in this case would be of course that we let the users compile the source code and compare for themselves. If the distributed and self-compiled binaries are byte-for-byte the same then we can say with certainty that the source code matches the binary. But unfortunately it's not that easy! The byte-for-byte comparison must exclude code signatures since the end user will not have the private key which was used for distributing the application. It turns out that code signing is just the tip of the iceberg, as we will learn in the next chapter, very minuscule details can turn builds irreproducible.
 
-Alas, it turns out that even with open source applications, we are at the mercy of the vendor of the software, and must assume that the vendor is not malicious nor compromised. At least until we have reproducible builds.
+Alas, it turns out that even with open source applications, we are at the mercy of the vendor of the software, and must assume that the vendor is not malicious nor compromised. At least until we have reproducible builds. **The added benefit of CI, that I discussed above, is added security both for the vendor and the consumer.**
 
 ## Problems with achieving reproducibility
 
@@ -49,9 +49,11 @@ I won't dig into these numerous problems here, since it's out of the scope of th
 ## Reproducible builds for Android
 
 Greenhouse is a continuous integration platform for mobile applications, so it makes sense for me to talk about how to make your mobile app builds reproducible.
-Before we go any further, I would like to give credit where it's due, the following is largely based on the [short and sweet](https://whispersystems.org/blog/reproducible-android/) blog post by [moxie0](https://en.wikipedia.org/wiki/Moxie_Marlinspike)
+Before we go any further, I would like to give credit where it's due, the following is largely based on the [short and sweet](https://whispersystems.org/blog/reproducible-android/) blog post by [moxie0](https://en.wikipedia.org/wiki/Moxie_Marlinspike) about a kind of PoC implementation of reproducible build for Signal Android. Since the blog post only allows outlines it very shortly, I decided to research more into this and so to be able to understand it myself and hopefully communicate the ideas and techniques behind this to others as well.
 
-The structure of Android application. Android applications are packaged and distributed as APKs. The structure of an APK is very similar to that of a jar file, it is basically ZIP archive:
+### The anatomy of an Android application
+
+Android applications are packaged and distributed as APKs. The structure of an APK is very similar to that of a jar file, it is basically ZIP archive:
 <img src="http://image.slidesharecdn.com/english-final-140610053432-phpapp02/95/android-applications-in-the-cruel-world-how-to-save-them-from-threats-6-638.jpg?cb=1402390537"/>
 
 The only directory that is relevant for our purposes here is the **META-INF**, this directory directory contains three files. `MANIFEST.MF`, `CERT.{RSA,DSA,EC}`, `CERT.SF`. For the sake of simplicity, I will not delve into the details of these files, but for our purposes it will be sufficient to know that they deal with the code signing of the application. 
@@ -59,15 +61,14 @@ The only directory that is relevant for our purposes here is the **META-INF**, t
 So, the Android Operating System, when presented with the task of installing or upgrading an APK file, will use this directory to verify whether the signature is valid and whether to allow the installation to continue. The conclusion is that two APKs cannot be compared byte-for-byte, because we do not have the same signing files as the author of the application, so the **META-INF** directories are bound to differ.
 As result these files must be discarded when comparing two APK files.
 
-The guys over at Whisper Systems have created a nifty script that compares two APKs, aptly named [apkdiff](https://github.com/WhisperSystems/Signal-Android/blob/master/apkdiff/apkdiff.py), which does exactly that: it takes two APK files as input and compares them, discarding the code signing related directories, byte-for-byte. The advantage of just comparing files byte-for-byte is that we escape all of the difficulties related to different timestamps which are pain when comparing archive formats such as ZIP files.
+The guys over at Whisper Systems have created a nifty script that compares two APKs, aptly named [apkdiff](https://github.com/WhisperSystems/Signal-Android/blob/master/apkdiff/apkdiff.py), which does exactly that: it takes two APK files as input and compares them, discarding the code signing related files, byte-for-byte. The advantage of just comparing files byte-for-byte is that we escape all of the difficulties related to different timestamps which are pain when comparing archive formats such as ZIP files.
 
 Without even noticing it, we have already made major strides in achieving reproducible builds for Android:we know the about the basic anatomy of Android applications, and thanks to this insight have a programmatic way of determining if two APKs are the same.
 
 So, the only thing left to do is to ensure the APKs are always the same, regardless of the where or by whom they are built. This of course is the most difficult step :)
 
 
-## Make it so 
-**Getting it to build**
+### Getting it to build
 
 Let's try to turn an existing non-deterministic Android build into a reproducible one: for this we will use the [Google 2015 I/O application](https://github.com/google/iosched). Why not 2016? Simply because Google people have not bothered to release the 2016 source code for some reason, despite [promises](https://github.com/google/iosched/issues/199#issuecomment-218789356) to do so very soon. The application consists of two parts: the server application and the Android app, we will only focus on the latter, so when I reference a file in the repository, it's in the `android` folder.
 
@@ -135,7 +136,7 @@ find . -name *.apk
 ```
 So, we have now have our release APK.
 
-**Getting it to reproduce**
+### Getting it to reproduce
 
 Obvious sources for indeterminism are external dependencies which are not part of the project itself, but are fetched from somewhere else. So, the first step would be fix these dependencies with hard-coded versions.
 So, let's start by examining [build.gradle](https://github.com/google/iosched/blob/master/android/build.gradle)
@@ -197,7 +198,17 @@ apply plugin: 'witness'
 
 Now we can run `../gradlew -q calculateChecksums` 
 
-```
+```groovy
+dependencyVerification {
+    verify = [
+        'com.google.android.gms:play-services-analytics:1e6623807b0ad245badc4d4574daa1addfa12884e3fc5627f2e704ee0811b007',
+        'com.google.android.gms:play-services-drive:d94f23abf9757e792b5df756f6aca7ce91592613624f3f249c667cb5af270d30',
+        'com.google.android.gms:play-services-maps:a362307c1084f8be1f048ff02ae4b44426c327c5272a89b656829dabb4d7f593',
+        'com.google.android.gms:play-services-plus:43d7382018504dd7a9a39cafafa8d9125f61162a5c0ef395dac96d9deb9e6956',
+        'com.google.android.gms:play-services-wearable:394e1539c3b4f1114a2ffe5b0a2e77d8aaa4dbd6e7e78aeda29f6bb9a29ff743',
+        // ... some output omitted
+    ]
+}
 ```
 
 
@@ -266,7 +277,7 @@ Unfortunately the addition of Witness requires another change to `proguard.txt`:
 The last piece of information should be, to my mind, included in the documentation of Gradle Witness.
 
 
-## Reproducible build environment 
+### Reproducible build environment 
 
 As the astute reader might have noticed, we have not dealt with keeping the build environment itself reproducible in any way. What is there to ensure that a minor update to Java, update to`libc` or something similar or even more obscure does not break our build? We have, up until now, swept this problem under the rug. Thanks to virtualization and containerization, this is not a huge problem, though. 
 
@@ -308,41 +319,38 @@ If you are not familiar with Docker or the `Dockerfile` format, then what this d
 The next step is to create an actual image out of this Dockerfile. To do so, run
 
 ```bash
-docker build -t "iosched ."
+sudo docker build -t "iosched ."
 ```
 This process can take some time, so grab a hot cup of `$BEVERAGE` while it runs.
 Once it has (hopefully successfully) finished, a Docker image tagged `iosched` will be available which is basically a very minimal installation of Ubuntu 14.04.
 
 If you wish to interactively explore the container, you can start a shell in it:
 ```bash
-docker run -t -i iosched:latest /bin/bash
+sudo docker run -t -i iosched:latest /bin/bash
 ```
 If you navigate to `/usr/local/` you will find the Amdroid SDKs downloaded there, for example. Okay, you got the feel for how it works.
 
 Now it's time to perform the build in our reproducible environment:
 
+```bash
+cd ..
+sudo docker run -v $(pwd):/iosched -w /iosched iosched:latest ./gradlew clean -b android/build.gradle assembleRelease   
+```
+Okay, there's quite a few things going on here, so let's look at them one by one. 
+* First of all, we have changed our working directory to the repository root, because we actually need Gradle and the root project in Docker container as well.
+* `-v $(pwd/iosched)` basically means that we mount the current working directory to the Docker container as `/iosched`  
+* `-w /iosched)` sets the our working directory in the mounted directory, so effectively we are in the same directory in the container as we are locally
+* `iosched:latest` just means that we use the latest image with the tag `iosched` that we created earlier.
 
+To put it simply, this just runs the Gradle build in the container whilst providing the context for build from the current directory, so folder will act as kind of a shared folder between the two.
+Once this process has completed, we'll have a binary in our local folder. Any subsequent builds should produce the same binary which we can verify with `apkdiff.py` as discussed above.
 
+### Issues
 
+In a sense this was an exercise in futility. We cannot really compare the produced APK to the one Google has in the Play Store for Iosched because that would require Google to have used the same process for producing the APK in the first place, furthermore the application they have in the Play Store is much newer in terms of the source code as well. However, the tutorial was more about providing the necessary tools and know-how as how to actually turn an existing project into a reproducible one.
 
-
-This approach is of course not without its problems. This `Dockerfile`, like much in this post, is adopted from WhisperSystems Signal-Android application. Their `Dockerfile` also has dependencies specified in the same manner, however, the particular versions they had specified had become unavailable upstream which made this process fail. Thus, we might run into an inconvenient situation where the build in the CI environment starts failing due to this, but updating the external requirements leads to different binary output. 
-
-### Conclusion
-
-In a sense this was an exercise in futility. We cannot really compare the produced APK to the one Google has in the App Store for Iosched because that would require Google to have used the same process for producing the APK in the first place, furthermore the application they have in the Play Store is much newer as well. However, the tutorial was more about providing the necessary tools and know-how as how to actually turn an existing project into a reproducible one.
-
+This approach is of course not without its problems. This `Dockerfile`, like much in this post, is adopted from WhisperSystems [Signal-Android](https://github.com/WhisperSystems/Signal-Android) application. Their `Dockerfile` also has dependencies specified in the same manner, however, some of versions of packages had specified had become unavailable upstream which made this process fail. Thus, we might run into an inconvenient situation where the build in the CI environment starts failing due to this, but updating the external requirements leads to different binary output. The solution for this would be to follow the tenets outlined by [reproducible-builds.org regarding volatile inputs](https://reproducible-builds.org/docs/volatile-inputs/): ideally we should not rely on remote data, but if needed, verify them via stored cryptographic hashes and keep local backups. I guess in ideal case we would keep a local apt mirror for these files.
 
 ## Reproducible builds for iOS
 
-Unfortunately, reproducible builds are not as straightforward for iOS as they are for Android. 
-
-The first obvious problem is that obtaining the legitimate App Store binary for an iOS application is much more difficult than it is for Google Playstore. To obtain the binary from the Apple App Store, you need to have a jailbroken device. This in turn implies that there is a working exploit for the current version of iOS, which might or might not be the case, whereas in the case of Android, the bootlocker already is or can be unlocked, allowing relatively painless access to installed APK files.
-
-While the first complication might not be that severe for security enthusiasts, there is still more. Unlike for Android, codesigning is not the only change made to the application binary in the App Store. Apple additionally encrypts their binaries with their FairPlay DRM encryption. The reason for this is to hinder the cracking and reverse-engineering efforts. Obviously, the iOS OS cannot make sense of nor execute encrypted binaries, so the binary is decrypted by the kernel at runtime. Tools like Clutch take care of this problem and are able to extract the decrypted binary from memory.
-
-But the complications do not end here. Unlike Android which uses platform-independent bytecode which is executed by the Dalvik virtual machine, iOS applications are actually platform-specific binary executables. Since iOS devices feature several platforms, the applications are usually distributed as fat binaries, or in Apple's terminology, universal binaries.
-Matters are further complicated by the fact that.
-
-The structure of
-At appears to be the case
+I will discuss the problems with reproducible builds for iOS in the second part of this blog post. Stay tuned!
