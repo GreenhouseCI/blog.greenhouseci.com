@@ -345,9 +345,10 @@ cd ..
 sudo docker run -v $(pwd):/iosched -w /iosched iosched:latest ./gradlew clean -b android/build.gradle assembleRelease   
 ```
 Okay, there's quite a few things going on here, so let's look at them one by one.
+
 * First of all, we have changed our working directory to the repository root, because we actually need Gradle and the root project in Docker container as well.
-* `-v $(pwd/iosched)` basically means that we mount the current working directory to the Docker container as `/iosched`  
-* `-w /iosched)` sets the our working directory in the mounted directory, so effectively we are in the same directory in the container as we are locally
+* `-v $(pwd):/iosched` basically means that we mount the current working directory to the Docker container as `/iosched`  
+* `-w /iosched` sets the our working directory in the mounted directory, so effectively we are in the same directory in the container as we are locally
 * `iosched:latest` just means that we use the latest image with the tag `iosched` that we created earlier.
 
 To put it simply, this just runs the Gradle build in the container whilst providing the context for build from the current directory, so folder will act as kind of a shared folder between the two.
