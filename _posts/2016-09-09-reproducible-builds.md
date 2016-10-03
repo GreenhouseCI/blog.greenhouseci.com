@@ -21,7 +21,7 @@ But this need not be the only benefit that CI could bring to the table.
 ## Code versus application: the difference
 Before revealing what this benefit is, it is necessary to delve into some vital distinctions.
 Open source applications are often said to increase security because the source code can easily reviewed by many developers. 
-This line of argumentation is made famous by [Linus' law](https://en.wikipedia.org/wiki/Linus%27s_Law):  many eyes make all bugs shallow. 
+This line of argumentation is made famous by [Linus's law](https://en.wikipedia.org/wiki/Linus%27s_Law):  many eyes make all bugs shallow. 
 
 However, most of the applications that we rely on are not open source. An open source zealot might claim that he is better off by making use of open source applications. But there is still a big problem: only the source code of application has been reviewed. 
 
@@ -43,34 +43,34 @@ Sources for indeterminism include:
 * ...
 * and many more 
 
-I won't dig into these numerous problems here, since it's out of the scope of this short blog post. You can learn more about the problems related to and solutions for reproducible builds at [reproducible-buils.org](https://reproducible-builds.org). But the key takeaway from this should be that even the tiniest change in any of these details can make a build produce different binary output, which makes it almost impossible to tell whether the binary matches the given source code.
+I won't dig into these numerous problems here, since it's out of the scope of this short blog post. You can learn more about the problems related to and solutions for reproducible builds at [reproducible-builds.org](https://reproducible-builds.org). But the key takeaway from this should be that even the tiniest change in any of these details can make a build produce different binary output, which makes it almost impossible to tell whether the binary matches the given source code.
 
 
 ## Reproducible builds for Android
 
 Greenhouse is a continuous integration platform for mobile applications, so it makes sense for me to talk about how to make your mobile app builds reproducible.
-Before we go any further, I would like to give credit where it's due, the following is largely based on the [short and sweet](https://whispersystems.org/blog/reproducible-android/) blog post by [moxie0](https://en.wikipedia.org/wiki/Moxie_Marlinspike) about a kind of PoC implementation of reproducible build for Signal Android. Since the blog post only allows outlines it very shortly, I decided to research more into this and so to be able to understand it myself and hopefully communicate the ideas and techniques behind this to others as well.
+Before we go any further, I would like to give credit where it's due, the following is largely based on the [short and sweet](https://whispersystems.org/blog/reproducible-android/) blog post by [moxie0](https://en.wikipedia.org/wiki/Moxie_Marlinspike) about a kind of PoC implementation of reproducible build for Signal Android. Since the blog post only outlines it very shortly, I decided to look more into this and so as to be able to understand it myself and hopefully communicate the ideas and techniques behind this to others as well.
 
 ### The anatomy of an Android application
 
 Android applications are packaged and distributed as APKs. The structure of an APK is very similar to that of a jar file, it is basically ZIP archive:
 <img src="http://image.slidesharecdn.com/english-final-140610053432-phpapp02/95/android-applications-in-the-cruel-world-how-to-save-them-from-threats-6-638.jpg?cb=1402390537"/>
 
-The only directory that is relevant for our purposes here is the **META-INF**, this directory directory contains three files. `MANIFEST.MF`, `CERT.{RSA,DSA,EC}`, `CERT.SF`. For the sake of simplicity, I will not delve into the details of these files, but for our purposes it will be sufficient to know that they deal with the code signing of the application. 
+The only directory that is relevant for our purposes here is the **META-INF**, this directory contains three files. `MANIFEST.MF`, `CERT.{RSA,DSA,EC}`, `CERT.SF`. For the sake of simplicity, I will not delve into the details of these files, but for our purposes it will be sufficient to know that they deal with the code signing of the application. 
 
 So, the Android Operating System, when presented with the task of installing or upgrading an APK file, will use this directory to verify whether the signature is valid and whether to allow the installation to continue. The conclusion is that two APKs cannot be compared byte-for-byte, because we do not have the same signing files as the author of the application, so the **META-INF** directories are bound to differ.
 As result these files must be discarded when comparing two APK files.
 
 The guys over at Whisper Systems have created a nifty script that compares two APKs, aptly named [apkdiff](https://github.com/WhisperSystems/Signal-Android/blob/master/apkdiff/apkdiff.py), which does exactly that: it takes two APK files as input and compares them, discarding the code signing related files, byte-for-byte. The advantage of just comparing files byte-for-byte is that we escape all of the difficulties related to different timestamps which are pain when comparing archive formats such as ZIP files.
 
-Without even noticing it, we have already made major strides in achieving reproducible builds for Android:we know the about the basic anatomy of Android applications, and thanks to this insight have a programmatic way of determining if two APKs are the same.
+Without even noticing it, we have already made major strides in achieving reproducible builds for Android: we know the about the basic anatomy of Android applications, and thanks to this insight have a programmatic way of determining if two APKs are the same.
 
 So, the only thing left to do is to ensure the APKs are always the same, regardless of the where or by whom they are built. This of course is the most difficult step :)
 
 
 ### Getting it to build
 
-Let's try to turn an existing non-deterministic Android build into a reproducible one: for this we will use the [Google 2015 I/O application](https://github.com/google/iosched). Why not 2016? Simply because Google people have not bothered to release the 2016 source code for some reason, despite [promises](https://github.com/google/iosched/issues/199#issuecomment-218789356) to do so very soon. The application consists of two parts: the server application and the Android app, we will only focus on the latter, so when I reference a file in the repository, it's in the `android` folder.
+Let's try to turn an existing non-deterministic Android build into a reproducible one: for this we will use the [Google 2015 I/O application](https://github.com/google/iosched). The application consists of two parts: the server application and the Android app, we will only focus on the latter, so when I reference a file in the repository, it's in the `android` folder.
 
 Let's start of by fetching the code.
 ```bash
