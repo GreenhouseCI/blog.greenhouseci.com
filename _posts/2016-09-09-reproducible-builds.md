@@ -98,6 +98,7 @@ release {
 We are in luck - well, sort of, because unlike the other buildTypes, `release` does not seem to  have a `signingConfig` set for it and there's a comment that suggests that this is done manually. This means that we don't have to generate a keystore for the build to work at all.
 
 So, let's try to to compile it:
+
 ```bash
 ../gradlew clean assembleRelease
 ...
@@ -120,40 +121,6 @@ We have a small problem which is related to Proguard. Thankfully, adding these l
 -dontwarn com.google.android.gms.internal.zzvp
 -dontwarn com.google.android.gms.common.GooglePlayServicesUtil
 -dontwarn com.google.android.gms.tagmanager.**
--dontwarn com.larvalabs.svgandroid.**
-```
-```
-:android:dexRelease
-:android:packageRelease
-:android:assembleRelease
-
-BUILD SUCCESSFUL
-```
-The build succeeds
-```bash
-find . -name *.apk
-./build/outputs/apk/android-release-unsigned.apk
-```
-So, we have now have our release APK.
-
-### Getting it to reproduce
-
-Obvious sources for indeterminism are external dependencies that are not part of the project itself, but are fetched from somewhere else. So, the first step would be to fix these dependencies with hard-coded versions.
-Let's start by examining [build.gradle](https://github.com/google/iosched/blob/master/android/build.gradle): 
-In the `repositories` section, we see
-
-```groovy
-repositories {
-    mavenCentral()
-    flatDir {
-        dirs 'libs'
-    }
-    flatDir {
-        dirs '../third_party/AndroidSlidingUpPanel/libs/'
-    }
-    flatDir {
-        dirs '../third_party/svg-android/libs/'
-}
 ```
 
 Furthermore, in the `dependencies` section, we see entries like this
@@ -214,15 +181,18 @@ dependencyVerification {
 There is a problem though: for some reason not all of the dependencies are showing up in the output - for example, where is `volley`? It seems that the approach employed by Witness leaves some dependencies off this list.
 
 When you look closely, you can see a pattern: looks like local dependencies which are specified like this:
+
 ```groovy
 compile files('../third_party/disklrucache/libs/disklrucache-2.0.2.jar')
 ```
 
 do not show up, whereas if they are in this form
+
 ```groovy
 compile (name:'svg-android-2.0.7-20150515.214425-1', ext:'jar')
 ```
 they do. So, let's modify our `build.gradle` accordingly
+
 ```diff
 repositories {
      flatDir {
@@ -320,10 +290,12 @@ The next step is to create an actual image out of this Dockerfile. To do so, run
 ```bash
 sudo docker build -t "iosched ."
 ```
+
 This process can take some time, so grab a hot cup of `$BEVERAGE` while it runs.
 Once it has (hopefully successfully) finished, a Docker image tagged `iosched` will be available. Think of it as a very minimal installation of Ubuntu 14.04 plus the Android toolchain.
 
 If you wish to interactively explore the container, you can start a shell in it:
+
 ```bash
 sudo docker run -t -i iosched:latest /bin/bash
 ```
