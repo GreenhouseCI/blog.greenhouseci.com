@@ -6,7 +6,7 @@ categories: Greenhouse update
 tags: [ci, continuous integration, reproducible builds]
 author: uku
 share: true
-published: false
+published: true
 comments: true
 ---
 
