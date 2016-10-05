@@ -1,7 +1,6 @@
 # Site settings
 title: Greenhouse Blog
 email: team@greenhouseci.com
-url: "http://blog.greenhouseci.com" # the base hostname & protocol for your site
 # url: "http://127.0.0.1:4000/" # use for local testing
 baseurl: "" # the subpath of your site, e.g. /blog/
 twitter_username: greenhouseci
@@ -14,6 +13,9 @@ paginate: 5
 highlighter: rouge
 
 permalink:   /:categories/:title/
+
+kramdown:
+  parse_block_html: true
 
 excerpt_separator: <!--more-->
 
