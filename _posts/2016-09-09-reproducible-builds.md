@@ -73,6 +73,7 @@ So, the only thing left to do is to ensure that APKs are always the same, regard
 Let's try to turn an existing non-deterministic Android build into a reproducible one: for this we will use the [Google 2015 I/O application](https://github.com/google/iosched). Why not 2016? Simply because Google people have not bothered to release the 2016 source code for some reason, despite [promises](https://github.com/google/iosched/issues/199#issuecomment-218789356) to do so “very soon”. The application consists of two parts: the server application and the Android app.. We will only focus on the latter, so when I reference a file in the repository, it's in the `android` folder.
 
 Let's start off by fetching the code.
+
 ```bash
 git clone https://github.com/google/iosched && cd iosched/android
 git checkout tags/2015
@@ -124,9 +125,11 @@ We have a small problem which is related to Proguard. Thankfully, adding these l
 ```
 
 Furthermore, in the `dependencies` section, we see entries like this
+
 ```groovy
 compile "com.google.android.gms:play-services-analytics:${google_play_services_client_library_version}"
 ```
+
 
 ```groovy
 compile 'com.google.code.gson:gson:2.3'
