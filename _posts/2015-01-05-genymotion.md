@@ -10,12 +10,14 @@ comments: true
 ---
 
 ## Update
-This article is outdated. The current Greenhouse builders are OSX VMs and as
+_This article is outdated. The current Greenhouse builders are OSX VMs and as
 such lack hardware support for OpenGL, which is required by Genymotion. We are,
 however, exploring the possibility of integrating with Genymotion's cloud
 offerings. Watch this space for possible announcements and sound off in the
 comments or in our [forum](http://docs.greenhouseci.com/discuss) if Genymotion
-is of interest to you.
+is of interest to you._
+
+----------------------
 
 When we started out developing support for Android, especially support for Android testing, things did not go as smoothly as expected. 
 
