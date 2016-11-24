@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Summary: Bots against humans – the future of mobile app development!"
+title:  "Bots against humans – the future of mobile app development!"
 date:   2016-11-24 00:00:00
 categories: Greenhouse update
 tags: [general]
@@ -21,7 +21,7 @@ The growing industry of mobile apps is exposing new threats and also opportuniti
 **Panelists:**  
 Triin Kask, Greenhouse CI (EST) [https://greenhouseci.com](https://greenhouseci.com)  
 Marko Kruustük, Testlio (EST) [https://testlio.com](https://testlio.com)  
-Niko Cankar, Testdroid (FIN) [http://testdroid.com](http://testdroid.com)  
+Niko Cankar, Bitbar (FIN) [http://bitbar.com/](http://bitbar.com/)  
 Michael Samarin, Futurice (FIN) [http://futurice.com](http://futurice.com)  
 
 **Moderator:**  
