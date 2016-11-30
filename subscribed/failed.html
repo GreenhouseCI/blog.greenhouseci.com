@@ -51,6 +51,12 @@
         ga('send', 'pageview');
     </script>
 
+    <script>
+        $(document).ready(function() {
+            localStorage.clear();
+        });
+    </script>
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -114,18 +120,6 @@
                         <p class="text-center"><a href="http://blog.greenhouseci.com/">Back to blog</a></p>
                     </div>
                     <div class="col-sm-4">
-                        <div class="newsletter-form">
-                            <form class="sign-up" action='https://app.getvero.com/forms/9a907ff2dc2a711f41e57a936c125863' method='post'>
-                                <h4 class="sign-up-title">Subscribe to newsletter</h4>
-                                <div class="subscribe-inputs">
-                                    <input type="text" class="sign-up-input" placeholder="Your e-mail" autofocus>
-                                    <input type="submit" value="Subscribe!" class="sign-up-button">
-                                </div>
-                                <div class="subscribe-success">
-                                    <p>You've been successfully subscribed to Greenhouse Blog! Check your inbox soon for great emails from Greenhouse.</p>
-                                </div>
-                            </form>
-                        </div>
                         <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/GreenhouseCI" data-widget-id="587592281781362688">Tweets by @GreenhouseCI</a>
                         <script>
                             ! function(d, s, id) {
