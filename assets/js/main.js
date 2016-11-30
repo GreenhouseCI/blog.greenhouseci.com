@@ -9,17 +9,7 @@ $(document).ready(function() {
 		localStorage.removeItem("newsletter-feedback");
 	}
 	$('.newsletter-form form.sign-up').submit(function(event) {
-		event.preventDefault();
-		alert();
-		_veroq.push(['user', {
-		  id: 'janar.palk@gmail.com',
-		  email: 'janar.palk@gmail.com',
-		  first_name: 'Janar',
-		  last_name: 'Palk',
-		  source: 'blog'
-		}]);
 		localStorage.setItem("newsletter-subscribed", true);
 		localStorage.setItem("newsletter-feedback", true);
-		alert();
 	});
 });
