@@ -178,8 +178,10 @@ public class Formatter {
 The bridge connecting user interactions with the formatter resides conveniently in
 [`MainActivityFragment`](https://github.com/GreenhouseCI/kotlin-tests/blob/master/app/src/main/java/com/greenhouseci/kotlin_tests/kotlintests/MainActivityFragment.java#L38).
 
+<div style="text-align:center; padding: 20px 0;">
 All in all, our app stands in its full glory as depicted below:
-<div style="text-align:center; padding: 20px 0;"><img src="/assets/kotlin-app-screenshot.png" alt="Screenshot"/></div>
+</div>
+<img class="center-image" src="/assets/kotlin-app-screenshot.png" alt="Screenshot"/>
 
 Naturally we want to test that whenever item description `EditText` is filled with something
 and the "Add item" button is pressed, the newly added item is appended to the list.
