@@ -60,3 +60,6 @@ encourage you to reset your Greenhouse-Bitbucket connection as soon as possible
 to avoid interruptions to your service.
 
 Thanks, and stay tuned for the official feature announcement!
+
+_OAuth logo by By Chris Messina, CC BY-SA 3.0
+[https://commons.wikimedia.org/w/index.php?curid=7188066](https://commons.wikimedia.org/w/index.php?curid=7188066)_
