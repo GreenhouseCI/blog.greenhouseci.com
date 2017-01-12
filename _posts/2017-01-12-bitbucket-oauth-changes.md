@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "Changing permissions for Bitbucket OAuth"
-date:   2016-10-18 00:01:00
+date:   2017-01-12 00:00:00
 categories: Greenhouse update
-tags: [general]
+tags: [bitbucket]
 author: nik
 share: true
 published: true
