@@ -10,6 +10,9 @@ published: true
 comments: true
 ---
 
+![iOS simulator selection](/assets/ios_simulator_selection_screenshot.jpg "iOS simulator selection")
+&nbsp;
+
 If you’re developing for a certain iOS device or software version you might want to run your UI and unit tests on that particular device. Currently there are 16 different Apple iPhones in active use that run various OS versions. Certain combinations affect your tests in terms of performance and possible issues of your app on different devices. It is a good idea to keep the diversity in mind and test your app properly on multiple devices.
 
 <!--more-->
@@ -31,10 +34,6 @@ Navigate to your settings in Greenhouse CI and open the Test view of a specific 
 
 Choose the iOS Version, and the iOS device accordingly. If the user has not specified any, Greenhouse will automatically choose a simulator based on your selected Xcode version and project. Take a look at Apple’s Device Compatibility **[Reference](https://developer.apple.com/library/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCompatibilityMatrix/DeviceCompatibilityMatrix.html "Reference")** to determine the required compatibility of each iOS device model.
 Once you setup the workflow in the UI, you can start building your apps and test and debug it on the selected simulated devices for every commit.
-
-&nbsp;
-![iOS simulator selection](/assets/ios_simulator_selection_screenshot.jpg "iOS simulator selection")
-&nbsp;
 
 ## By using iOS simulator during development process you can:
 
