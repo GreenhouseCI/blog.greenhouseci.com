@@ -21,6 +21,7 @@ excerpt_separator: <!--more-->
 
 gems:
    - jekyll-paginate
+   - jekyll-redirect-from
 
 exclude:
     - node_modules
